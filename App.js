@@ -9,7 +9,7 @@ import {
   TouchableHighlight,
   View,
 } from 'react-native';
-import { WebBrowser } from 'expo';
+import { WebBrowser, Constants } from 'expo';
 import Amplify from 'aws-amplify';
 
 import amplify from './src/aws-exports';
@@ -23,22 +23,39 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
           <View style={styles.bcontainer}>
             <TouchableHighlight
-              underlayColor={'#C32148'}
+              underlayColor={'maroon'}
               style={styles.button}
-              onPress={ () => this._onPress}
+              onPress={this._onPress}
             >
-              <Text> Girafe Facts </Text>
+              <Text style={styles.btext}> Girafe Facts </Text>
             </TouchableHighlight>
+            
+              <Text> </Text>
+            <TouchableHighlight
+              underlayColor={'maroon'}
+              style={styles.button}
+              onPress={this._noPress}
+            
+            >
+              <Text style={styles.btext}> No </Text>
+            </TouchableHighlight>
+            </View>
           </View>
-        </ScrollView>
-      </View>
+
     );
   }
   _onPress = () => {
-    WebBrowser.openBrowserAsync('https://www.reddit.com/r/giraffefacts/');
+    Expo.WebBrowser.openBrowserAsync(
+      'https://www.reddit.com/r/giraffefacts/'
+    );
+  };
+  _noPress = () => {
+      Expo.WebBrowser.openBrowserAsync(
+        'https://www.reddit.com/r/giraffefacts/'
+      );
+    
   };
 }
 const styles = StyleSheet.create({
@@ -56,11 +73,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     paddingHorizontal: 10,
-    paddingTop:60
+  },
+  btext: {
+    color: 'white',
   },
   button: {
     alignItems: 'center',
-    backgroundColor: 'red',
+    backgroundColor: '#CB4154',
     padding: 10
   },
 });
