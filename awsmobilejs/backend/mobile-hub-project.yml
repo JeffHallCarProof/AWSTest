@@ -10,5 +10,5 @@ features:
     components:
       analytics: !com.amazonaws.mobilehub.v0.PinpointAnalytics {}
   sign-in: !com.amazonaws.mobilehub.v0.SignIn {}
-name: AWSTest1
+name: AWSTest
 region: us-east-1
