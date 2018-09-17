@@ -73,6 +73,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     paddingHorizontal: 10,
+    borderRadius: 400
   },
   btext: {
     color: 'white',
@@ -80,6 +81,7 @@ const styles = StyleSheet.create({
   button: {
     alignItems: 'center',
     backgroundColor: '#CB4154',
-    padding: 10
+    padding: 10,
+    borderRadius: 400
   },
 });
