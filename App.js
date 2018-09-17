@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {
   Image,
+  Button,
   Platform,
   ScrollView,
   StyleSheet,
@@ -12,60 +13,21 @@ import {
 import { createStackNavigator } from 'react-navigation';
 import { WebBrowser } from 'expo';
 import Amplify from 'aws-amplify';
-
+import HomeScreen from './screens/HomeScreen';
+import noScreen from './screens/noScreen';
+import yesScreen from './screens/yesScreen';
 import amplify from './src/aws-exports';
 import { withAuthenticator } from 'aws-amplify-react-native';
 
 Amplify.configure(amplify);
-class HomeScreen extends React.Component {
-  static navigationOptions = {
-    header: null,
-  };
-  render() {
-    return (
-      <View style={styles.container}>
-          <View style={styles.bcontainer}>
-            <TouchableHighlight
-              underlayColor={'maroon'}
-              style={styles.button}
-              onPress={this._yesPress}
-            >
-              <Text style={styles.btext}> Girafe Facts </Text>
-            </TouchableHighlight>
-            
-              <Text> </Text>
-            <TouchableHighlight
-              underlayColor={'maroon'}
-              style={styles.button}
-              onPress={() => this.props.navigation.navigate('No')}
-            
-            >
-              <Text style={styles.btext}> No Facts </Text>
-            </TouchableHighlight>
-            </View>
-          </View>
 
-    );
-  }
-  _yesPress = () => {
-    Expo.WebBrowser.openBrowserAsync(
-      'https://www.reddit.com/r/giraffefacts/'
-    );
-  };
-}
-class noScreen extends React.Component {
-  render() {
-    return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Details Screen</Text>
-      </View>
-    );
-  }
-}
+
+//rootstack for navigation
 const RootStack = createStackNavigator(
   {
     Home: HomeScreen,
     No: noScreen,
+    Yes: yesScreen,
   },
   {
     initialRouteName: 'Home',
