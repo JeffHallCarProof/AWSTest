@@ -49,7 +49,12 @@ import {
     }
 
     _buttonAction = () => {
-      alert("Make: " + this.userInput + "\nModel: " + this.userInput2 + "\nYear: " + this.userInput3);
+      //alert("Make: " + this.userInput + "\nModel: " + this.userInput2 + "\nYear: " + this.userInput3);
+      this.props.navigation.navigate('Test', {
+        make: this.userInput,
+        model: this.userInput2,
+        year: this.userInput3,
+      });
     };
 
   }
