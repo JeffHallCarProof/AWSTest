@@ -44,7 +44,7 @@ export default class noScreen extends React.Component {
               <TouchableHighlight
                 underlayColor={'maroon'}
                 style={styles.button}
-                onPress={() => {this.props.navigation.navigate('Test', {
+                onPress={() => {this.props.navigation.navigate('Extras', {
                   eId: 2,});
                 }}
               >
@@ -55,7 +55,7 @@ export default class noScreen extends React.Component {
               <TouchableHighlight
                 underlayColor={'maroon'}
                 style={styles.button}
-                onPress={() => {this.props.navigation.navigate('Test', {
+                onPress={() => {this.props.navigation.navigate('Extras', {
                   eId: 3,});
                 }}
               >
@@ -68,7 +68,7 @@ export default class noScreen extends React.Component {
               <TouchableHighlight
                 underlayColor={'maroon'}
                 style={styles.button}
-                onPress={() => {this.props.navigation.navigate('Test', {
+                onPress={() => {this.props.navigation.navigate('Extras', {
                   eId: 4,});
                 }}
               >
@@ -78,7 +78,7 @@ export default class noScreen extends React.Component {
               <TouchableHighlight
                 underlayColor={'maroon'}
                 style={styles.button}
-                onPress={() => {this.props.navigation.navigate('Test', {
+                onPress={() => {this.props.navigation.navigate('Extras', {
                   eId: 5,});
                 }}
               >
@@ -88,7 +88,7 @@ export default class noScreen extends React.Component {
               <TouchableHighlight
                 underlayColor={'maroon'}
                 style={styles.button}
-                onPress={() => {this.props.navigation.navigate('Test', {
+                onPress={() => {this.props.navigation.navigate('Extras', {
                   eId: 6,});
                 }}
               >
