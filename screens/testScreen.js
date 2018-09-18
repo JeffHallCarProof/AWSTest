@@ -11,10 +11,10 @@ import {
     TouchableHighlight,
     View,
   } from 'react-native';
-  import { createStackNavigator } from 'react-navigation';
-  import { WebBrowser } from 'expo';
-  import Amplify from 'aws-amplify';
-  import { withAuthenticator } from 'aws-amplify-react-native';
+import { createStackNavigator } from 'react-navigation';
+import { WebBrowser } from 'expo';
+import Amplify from 'aws-amplify';
+import { withAuthenticator } from 'aws-amplify-react-native';
 
 export default class TestScreen extends React.Component {
     render() {
@@ -43,7 +43,7 @@ export default class TestScreen extends React.Component {
     }
 
     _buttonAction = () => {
-        this.props.navigation.navigate('Features', {
+        this.props.navigation.navigate('Extras', {
           make: this.userInput,
           model: this.userInput2,
           year: this.userInput3,
