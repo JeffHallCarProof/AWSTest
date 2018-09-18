@@ -29,7 +29,7 @@ import {
                 style={styles.button}
                 onPress={() => this.props.navigation.navigate('Yes')}
               >
-                <Text style={styles.btext}> Girafe Facts </Text>
+                <Text style={styles.btext}> Hot Dog </Text>
               </TouchableHighlight>
               
                 <Text> </Text>
@@ -39,7 +39,7 @@ import {
                 onPress={() => this.props.navigation.navigate('No')}
               
               >
-                <Text style={styles.btext}> No Facts </Text>
+                <Text style={styles.btext}> No Hot Dog </Text>
               </TouchableHighlight>
               </View>
             </View>
