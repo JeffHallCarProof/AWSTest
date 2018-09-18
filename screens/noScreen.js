@@ -24,11 +24,18 @@ export default class noScreen extends React.Component {
     render() {
       return (
           <View style={styles.container}>
+          <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+          <Text style={{ paddingLeft: 50, paddingRight: 50, fontWeight: 'bold', fontSize: 20}}>
+          Please select a Life Event!
+          </Text>
+          </View>
             <View style={styles.bcontainer}>
               <TouchableHighlight
                 underlayColor={'maroon'}
                 style={styles.button}
-                onPress={() => this.props.navigation.goBack()}
+                onPress={() => {this.props.navigation.navigate('Extras', {
+                  eId: 1,});
+                }}
               >
                 <Text style={styles.btext}> E1 </Text>
               </TouchableHighlight>
@@ -37,8 +44,9 @@ export default class noScreen extends React.Component {
               <TouchableHighlight
                 underlayColor={'maroon'}
                 style={styles.button}
-                onPress={() => this.props.navigation.goBack()}
-              
+                onPress={() => {this.props.navigation.navigate('Test', {
+                  eId: 2,});
+                }}
               >
                 <Text style={styles.btext}> E2 </Text>
               </TouchableHighlight>
@@ -47,8 +55,9 @@ export default class noScreen extends React.Component {
               <TouchableHighlight
                 underlayColor={'maroon'}
                 style={styles.button}
-                onPress={() => this.props.navigation.goBack()}
-              
+                onPress={() => {this.props.navigation.navigate('Test', {
+                  eId: 3,});
+                }}
               >
                 <Text style={styles.btext}> E3 </Text>
               </TouchableHighlight>
@@ -59,8 +68,9 @@ export default class noScreen extends React.Component {
               <TouchableHighlight
                 underlayColor={'maroon'}
                 style={styles.button}
-                onPress={() => this.props.navigation.goBack()}
-              
+                onPress={() => {this.props.navigation.navigate('Test', {
+                  eId: 4,});
+                }}
               >
                 <Text style={styles.btext}> E4 </Text>
               </TouchableHighlight>              
@@ -68,8 +78,9 @@ export default class noScreen extends React.Component {
               <TouchableHighlight
                 underlayColor={'maroon'}
                 style={styles.button}
-                onPress={() => this.props.navigation.goBack()}
-              
+                onPress={() => {this.props.navigation.navigate('Test', {
+                  eId: 5,});
+                }}
               >
                 <Text style={styles.btext}> E5 </Text>
               </TouchableHighlight>
@@ -77,8 +88,9 @@ export default class noScreen extends React.Component {
               <TouchableHighlight
                 underlayColor={'maroon'}
                 style={styles.button}
-                onPress={() => this.props.navigation.goBack()}
-              
+                onPress={() => {this.props.navigation.navigate('Test', {
+                  eId: 6,});
+                }}
               >
                 <Text style={styles.btext}> E6 </Text>
               </TouchableHighlight>  
@@ -86,7 +98,8 @@ export default class noScreen extends React.Component {
             <View>
             <Button 
             title="Go back"
-            onPress={() => this.props.navigation.goBack()}
+            onPress={() => {this.props.navigation.goBack()
+            }}
           />
           </View>
           </View> 
@@ -100,7 +113,7 @@ export default class noScreen extends React.Component {
       paddingHorizontal: 0
     },
     contentContainer: {
-      paddingTop: 4,
+      paddingTop: 40,
     },
     bcontainer: {
       flex: 1,
