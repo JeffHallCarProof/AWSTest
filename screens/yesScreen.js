@@ -18,56 +18,74 @@ import {
 
   //screen for people who do know what car they want
   export default class yesScreen extends React.Component {
+
     static navigationOptions = {
         header: null,
       };
-    render() {
-      return (
+
+    render() { 
+      
+      return ( 
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+          
           <Text style={{ paddingLeft: 50, paddingRight: 50, fontWeight: 'bold', fontSize: 20}}>Please enter the Make, Model, and Year of the vehicle you are searching for...</Text>
+        
           <View style={styles.inputContainer}>
-          <View style={styles.inputBox}>
-          <TextInput style={styles.inputS} id='userInput' placeholder="Input Make..." placeholderTextColor='#000' onChangeText={(userInput) => this.userInput = userInput} color='#000'></TextInput> 
+
+            <View style={styles.inputBox}>
+              <TextInput style={styles.inputS} id='userInput' placeholder="Input Make..." placeholderTextColor='#000' onChangeText={(userInput) => this.userInput = userInput} color='#000'></TextInput> 
+            </View>
+            
+            <View style={styles.inputBox}>
+              <TextInput style={styles.inputS} id='userInput2' placeholder="Input Model..." placeholderTextColor='#000' onChangeText={(userInput2) => this.userInput2 = userInput2} color='#000'></TextInput>
+            </View>
+            
+            <View style={styles.inputBox}>
+              <TextInput style={styles.inputS} id='userInput3' placeholder="Input Year..." placeholderTextColor='#000' onChangeText={(userInput3) => this.userInput3 = userInput3} color='#000'></TextInput>
+            </View>
+
           </View>
-          <View style={styles.inputBox}>
-          <TextInput style={styles.inputS} id='userInput2' placeholder="Input Model..." placeholderTextColor='#000' onChangeText={(userInput2) => this.userInput2 = userInput2} color='#000'></TextInput>
-          </View>
-          <View style={styles.inputBox}>
-          <TextInput style={styles.inputS} id='userInput3' placeholder="Input Year..." placeholderTextColor='#000' onChangeText={(userInput3) => this.userInput3 = userInput3} color='#000'></TextInput>
-          </View>
-          </View>
+
           <Button
             title = 'Enter Data' 
             onPress={this._buttonAction}
           />
+
           <Button
             title="Go back"
             onPress={() => this.props.navigation.goBack()}
           />
-        </View>
-      );
-    }
 
+        </View>
+      ); //End of return
+    } //End of render
+
+    //Button functionality
     _buttonAction = () => {
-      //alert("Make: " + this.userInput + "\nModel: " + this.userInput2 + "\nYear: " + this.userInput3);
+      //Navigates to testScreen, sending in parameters for make, model and year from user input
       this.props.navigation.navigate('Test', {
         make: this.userInput,
         model: this.userInput2,
         year: this.userInput3,
       });
-    };
+      
+    }; //End of Button Functionality
 
-  }
+  } //End of class
 
+  //Component css
   const styles = StyleSheet.create({
+
     container: {
       flex: 1,
       backgroundColor: 'white',
       paddingHorizontal: 10
     },
+
     contentContainer: {
-      paddingTop: 30,
+      paddingTop: 30
     },
+
     bcontainer: {
       flex: 1,
       backgroundColor: 'white',
@@ -75,20 +93,24 @@ import {
       justifyContent: 'center',
       paddingHorizontal: 10
     },
+
     btext: {
-      color: 'white',
+      color: 'white'
     },
+
     button: {
       alignItems: 'center',
       backgroundColor: '#CB4154',
       padding: 10,
       borderRadius: 400
     },
+
     inputContainer: {
       alignItems: 'center',
       paddingBottom: 30,
-      paddingTop: 30,
+      paddingTop: 30
     },
+
     inputS: {
       paddingBottom: 15,
       paddingTop: 15,
@@ -98,8 +120,10 @@ import {
       borderWidth: 1,
       width: 175
     },
+
     inputBox: {
       paddingTop: 5,
-      paddingBottom: 5,
-    },
+      paddingBottom: 5
+    }
+
   });
