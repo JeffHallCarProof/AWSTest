@@ -23,7 +23,6 @@ import { withAuthenticator } from 'aws-amplify-react-native';
 
 Amplify.configure(amplify);
 
-
 //rootstack for navigation
 const RootStack = createStackNavigator(
   {
@@ -37,34 +36,9 @@ const RootStack = createStackNavigator(
     initialRouteName: 'Home',
   }
 );
+
 export default class App extends React.Component {
   render() {
     return <RootStack />;
   }
 }
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'white',
-    paddingHorizontal: 10
-  },
-  contentContainer: {
-    paddingTop: 30,
-  },
-  bcontainer: {
-    flex: 1,
-    backgroundColor: 'white',
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingHorizontal: 10
-  },
-  btext: {
-    color: 'white',
-  },
-  button: {
-    alignItems: 'center',
-    backgroundColor: '#CB4154',
-    padding: 10,
-    borderRadius: 400
-  },
-});
