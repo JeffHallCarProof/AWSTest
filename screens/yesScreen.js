@@ -30,7 +30,8 @@ import {
 
       if(JSON.stringify(screenId)==1)
       {
-        Path='Test'
+        Path='Extras'
+        bPath='Home'
       } else{
         Path='Home'
       }
@@ -39,7 +40,9 @@ import {
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
           
           <Text style={{ paddingLeft: 50, paddingRight: 50, fontWeight: 'bold', fontSize: 20}}>Please enter the Make, Model, and Year of the vehicle you are searching for...</Text>
-        
+          <Text style={styles.textS}>ID: {JSON.stringify(screenId)}</Text>
+          <Text style={styles.textS}>P: {JSON.stringify(Path)}</Text>
+          <Text style={styles.textS}>bP: {JSON.stringify(bPath)}</Text>
           <View style={styles.inputContainer}>
 
             <View style={styles.inputBox}>
@@ -77,7 +80,7 @@ import {
         make: this.userInput,
         model: this.userInput2,
         year: this.userInput3,
-        sID: 1
+        sId: 1
       });
       
     }; //End of Button Functionality

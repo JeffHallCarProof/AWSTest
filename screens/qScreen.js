@@ -25,12 +25,19 @@ import {
         value: 0.01
     };
     render() {
+      const { navigation } = this.props;
+      const screenId = navigation.getParam('sId', 'Invalid');
+      Path ='Home'
+      bPath ='Extras'
         return (
           <View style={styles.container}>
           <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
           <Text style={{ paddingLeft: 50, paddingRight: 50, fontWeight: 'bold', fontSize: 20}}>
           Hot Dog!
           </Text>
+          <Text style={styles.textS}>ID: {JSON.stringify(screenId)}</Text>
+          <Text style={styles.textS}>P: {JSON.stringify(Path)}</Text>
+          <Text style={styles.textS}>bP: {JSON.stringify(bPath)}</Text>
           </View>
                   <Text>The hot dog or dog (also spelled hotdog) is a grilled or steamed link-sausage sandwich where the sausage is served in the slit of a special hot dog bun, 
                       a partially sliced bun. 
@@ -59,7 +66,10 @@ import {
                 <TouchableHighlight
                   underlayColor={'maroon'}
                   style={styles.button}
-                  onPress={() => this.props.navigation.goBack()}
+                  onPress={() => {
+                    this.props.navigation.navigate(bPath, {
+                      sId: screenId,});
+                    }}
                 
                 >
                   <Text style={styles.btext}> No Hot Dog </Text>
@@ -68,8 +78,8 @@ import {
                 <TouchableHighlight
                   underlayColor={'maroon'}
                   style={styles.button}
-                  onPress={() => {this.props.navigation.navigate('Home', {
-                    eId: 1,});
+                  onPress={() => {this.props.navigation.navigate(Path, {
+                    sId: screenId,});
                 }}
                 
                 >

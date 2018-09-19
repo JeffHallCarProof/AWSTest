@@ -42,19 +42,24 @@ import {
 
       const { navigation } = this.props;
       const itemId = navigation.getParam('eId', 'NO-ID');
-      const screenId = navigation.getParam('sID');
+      const screenId = navigation.getParam('sId');
 
       if(JSON.stringify(screenId)==1)
       {
         Path='No'
+        bPath='Yes'
       } else{
         Path='Questions'
+        bPath='No'
       }
 
       return (
         <View>
         <ScrollView contentContainerStyle={styles.contentContainer}>
             <Text h2>Recommened</Text>
+          <Text style={styles.textS}>ID: {JSON.stringify(screenId)}</Text>
+          <Text style={styles.textS}>P: {JSON.stringify(Path)}</Text>
+          <Text style={styles.textS}>bP: {JSON.stringify(bPath)}</Text>
               <CheckBox
                 title="Item1"
                 checked={this.state.cb1}
@@ -122,13 +127,18 @@ import {
                   underlayColor={'maroon'}
                   style={styles.button}
                   onPress={() => {this.props.navigation.navigate(Path, {
-                  eId: 1,});
+                  sId: screenId,});
                 }}>
                   <Text style={styles.btext}> Confirm </Text>
                 </TouchableHighlight>
-              </View>
-
-        </ScrollView>
+                <Button 
+            title="Go back"
+            onPress={() => {
+              this.props.navigation.navigate(bPath, {
+                sId: screenId,});
+              }}
+          />
+          </View></ScrollView>
         </View>
 
       ); //End of return

@@ -24,7 +24,7 @@ export default class TestScreen extends React.Component {
         const make = navigation.getParam('make', 'Invalid');
         const model = navigation.getParam('model', 'Invalid');
         const year = navigation.getParam('year', 'Invalid');
-        const screenId = navigation.getParam('sID');
+        const screenId = navigation.getParam('sId');
 
         if(JSON.stringify(screenId)==1)
         {
@@ -40,7 +40,9 @@ export default class TestScreen extends React.Component {
                     <Text style={{fontWeight: 'bold', fontSize: 20}}>Vehicle Details</Text>
                     <Text style={{fontSize: 18, paddingLeft: 50, paddingRight: 50}}>Listed below is the make, model and year of the vehicle you are searching for</Text>
                 </View>
-
+                <Text style={styles.textS}>ID: {JSON.stringify(screenId)}</Text>
+          <Text style={styles.textS}>P: {JSON.stringify(Path)}</Text>
+          <Text style={styles.textS}>bP: {JSON.stringify(bPath)}</Text>
                 <View style={{ flex: 1, alignItems: 'center'}}>
                 
                     <Text style={styles.textS}>Make: {JSON.stringify(make)}</Text>
@@ -66,7 +68,7 @@ export default class TestScreen extends React.Component {
           make: this.userInput,
           model: this.userInput2,
           year: this.userInput3,
-          sID: 1
+          sId: 1
         });
 
     }; //End of Button Functionality

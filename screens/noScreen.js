@@ -26,9 +26,11 @@ export default class noScreen extends React.Component {
       const screenId = navigation.getParam('sId', 'Invalid');
       
 if(JSON.stringify(screenId)==0){
-Path ='Extras'
+  Path ='Extras'
+  bPath ='Home'
 }else{
   Path='Home'
+  bPath='Extras'
 }
       return (
           <View style={styles.container}>
@@ -36,6 +38,9 @@ Path ='Extras'
           <Text style={{ paddingLeft: 50, paddingRight: 50, fontWeight: 'bold', fontSize: 20}}>
           Please select a Life Event!
           </Text>
+          <Text style={styles.textS}>ID: {JSON.stringify(screenId)}</Text>
+          <Text style={styles.textS}>P: {JSON.stringify(Path)}</Text>
+          <Text style={styles.textS}>bP: {JSON.stringify(bPath)}</Text>
           </View>
             <View style={styles.bcontainer}>
               <TouchableHighlight
@@ -118,8 +123,10 @@ Path ='Extras'
             <View>
             <Button 
             title="Go back"
-            onPress={() => {this.props.navigation.goBack()
-            }}
+            onPress={() => {
+              this.props.navigation.navigate(bPath, {
+                sId: screenId,});
+              }}
           />
           </View>
           </View> 
