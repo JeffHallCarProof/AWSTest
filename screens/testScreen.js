@@ -15,7 +15,7 @@ import {
   import Amplify from 'aws-amplify';
   import { withAuthenticator } from 'aws-amplify-react-native';
 
-  //home screen
+  //test screen
   export default class testScreen extends React.Component {
 
     static navigationOptions = {
