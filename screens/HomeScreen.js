@@ -31,14 +31,18 @@ import {
             <TouchableHighlight
               underlayColor={'maroon'}
               style={styles.button}
-              onPress={() => this.props.navigation.navigate('Yes')}>
+              onPress={() => {this.props.navigation.navigate('Yes',{
+                sId: 1,});
+                }}>
               <Text style={styles.btext}> Hot Dog </Text>
             </TouchableHighlight>
             <Text></Text>
             <TouchableHighlight
               underlayColor={'maroon'}
               style={styles.button}
-              onPress={() => this.props.navigation.navigate('No')}>
+              onPress={() => {this.props.navigation.navigate('No',{
+                sId: 0,});
+                }}>
               <Text style={styles.btext}> No Hot Dog </Text>
             </TouchableHighlight>
             

@@ -23,8 +23,13 @@ export default class noScreen extends React.Component {
       };
     render() {
       const { navigation } = this.props;
-      const sId = navigation.getParam('sId', '');
-
+      const screenId = navigation.getParam('sId', 'Invalid');
+      
+if(JSON.stringify(screenId)==0){
+Path ='Extras'
+}else{
+  Path='Home'
+}
       return (
           <View style={styles.container}>
           <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -37,7 +42,10 @@ export default class noScreen extends React.Component {
                 underlayColor={'maroon'}
                 style={styles.button}
                 eId={'1'}
-                onPress={this._ifPress}
+                onPress={() => {
+                  this.props.navigation.navigate(Path, {
+                    sId: screenId,});
+                  }}
               >
                 <Text style={styles.btext}> E1 </Text>
               </TouchableHighlight>
@@ -47,7 +55,10 @@ export default class noScreen extends React.Component {
                 underlayColor={'maroon'}
                 style={styles.button}
                 eId={'2'}
-                onPress={this._ifPress}
+                onPress={() => {
+                  this.props.navigation.navigate(Path, {
+                    sId: screenId,});
+                  }}
               >
                 <Text style={styles.btext}> E2 </Text>
               </TouchableHighlight>
@@ -57,7 +68,10 @@ export default class noScreen extends React.Component {
                 underlayColor={'maroon'}
                 style={styles.button}
                 eId={'3'}
-                onPress={this._ifPress}
+                onPress={() => {
+                  this.props.navigation.navigate(Path, {
+                    sId: screenId,});
+                  }}
               >
                 <Text style={styles.btext}> E3 </Text>
               </TouchableHighlight>
@@ -69,7 +83,10 @@ export default class noScreen extends React.Component {
                 underlayColor={'maroon'}
                 style={styles.button}
                 eId={'4'}
-                onPress={this._ifPress}
+                onPress={() => {
+                  this.props.navigation.navigate(Path, {
+                    sId: screenId,});
+                  }}
               >
                 <Text style={styles.btext}> E4 </Text>
               </TouchableHighlight>              
@@ -78,7 +95,10 @@ export default class noScreen extends React.Component {
                 underlayColor={'maroon'}
                 style={styles.button}
                 eId={'5'}
-                onPress={this._ifPress}
+                onPress={() => {
+                  this.props.navigation.navigate(Path, {
+                    sId: screenId,});
+                  }}
               >
                 <Text style={styles.btext}> E5 </Text>
               </TouchableHighlight>
@@ -87,7 +107,10 @@ export default class noScreen extends React.Component {
                 underlayColor={'maroon'}
                 style={styles.button}
                 eId={'6'}
-                onPress={this._ifPress}
+                onPress={() => {
+                  this.props.navigation.navigate(Path, {
+                    sId: screenId,});
+                  }}
               >
                 <Text style={styles.btext}> E6 </Text>
               </TouchableHighlight>  
@@ -103,16 +126,7 @@ export default class noScreen extends React.Component {
       );
     }
   }
-  _ifPress= () => {
-  if(sId==1){
-    {this.props.navigation.navigate('Home', {
-      sId: navigation.getParam('sId', ''),});
-    }
-  }else{
-      {this.props.navigation.navigate('Extras', {
-        sId: navigation.getParam('sId', ''),});
-      }
-  }};
+
   const styles = StyleSheet.create({
     container: {
       flex: 1,
