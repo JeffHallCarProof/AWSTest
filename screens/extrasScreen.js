@@ -132,12 +132,9 @@ import { withAuthenticator } from 'aws-amplify-react-native';
                 }}>
                   <Text style={styles.btext}> Confirm </Text>
                 </TouchableHighlight>
-                <Button 
+                <Button
             title="Go back"
-            onPress={() => {
-              this.props.navigation.navigate(bPath, {
-                sId: screenId,});
-              }}
+            onPress={() => this.props.navigation.goBack()}
           />
           </View></ScrollView>
         </View>

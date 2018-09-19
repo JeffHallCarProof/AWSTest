@@ -127,12 +127,9 @@ export default class noScreen extends React.Component {
               </TouchableHighlight>  
               </View>                          
             <View>
-            <Button 
+            <Button
             title="Go back"
-            onPress={() => {
-              this.props.navigation.navigate(bPath, {
-                sId: screenId,});
-              }}
+            onPress={() => this.props.navigation.goBack()}
           />
           </View>
           </View> 
