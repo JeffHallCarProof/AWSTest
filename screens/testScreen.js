@@ -44,21 +44,27 @@ import { withAuthenticator } from 'aws-amplify-react-native';
                 selected={this.state.p1}
                 underlayColor={'#0018A8'}
               style={[styles.button, this.state.p1 && styles.buttonS]}
-              onPress={() => this.setState({ p1: !this.state.p1})}>
+              onPress={() => this.setState({ p1: !this.state.p1,
+                p2: this.state.p1,
+                p3: this.state.p1})}>
               <Text style={styles.btext}> Hot Dog </Text>
             </TouchableHighlight>
             <TouchableHighlight
                 selected={this.state.p2}
                 underlayColor={'#0018A8'}
               style={[styles.button, this.state.p2 && styles.buttonS]}
-              onPress={() => this.setState({ p2: !this.state.p2})}>
+              onPress={() => this.setState({ p2: !this.state.p2,
+                p1: this.state.p2,
+                p3: this.state.p2})}>
               <Text style={styles.btext}> Hot Dog </Text>
             </TouchableHighlight>
             <TouchableHighlight
                 selected={this.state.p3}
                 underlayColor={'#0018A8'}
               style={[styles.button, this.state.p3 && styles.buttonS]}
-              onPress={() => this.setState({ p3: !this.state.p3})}>
+              onPress={() => this.setState({ p3: !this.state.p3,
+                p2: this.state.p3,
+                p1: this.state.p3})}>
               <Text style={styles.btext}> Hot Dog </Text>
             </TouchableHighlight>
             <TouchableHighlight
