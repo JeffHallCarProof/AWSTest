@@ -29,7 +29,7 @@ export default class TestScreen extends React.Component {
         if(JSON.stringify(screenId)==1)
         {
             Path='Extras'
-        }else{
+        } else{
             Path='Home'
         }
         

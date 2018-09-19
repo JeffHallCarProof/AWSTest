@@ -16,27 +16,30 @@ import {
   import Amplify from 'aws-amplify';
   import { withAuthenticator } from 'aws-amplify-react-native';
 
-  //home screen
-  export default class HomeScreen extends React.Component {
+  //extras screen
+  export default class extrasScreen extends React.Component {
+
     static navigationOptions = {
       header: null,
     };
+
     state = {
-        cb1: false,
-        cb2: false,
-        cb3: false,
-        cb4: false,
-        cb5: false,
-        cb6: false,
-        cb7: false,
-        cb8: false,
-        cb9: false,
-        cb10: false,
-        cb11: false,
-        cb12: false,
-      }
+      cb1: false,
+      cb2: false,
+      cb3: false,
+      cb4: false,
+      cb5: false,
+      cb6: false,
+      cb7: false,
+      cb8: false,
+      cb9: false,
+      cb10: false,
+      cb11: false,
+      cb12: false,
+    }
 
     render() {
+
       const { navigation } = this.props;
       const itemId = navigation.getParam('eId', 'NO-ID');
       const screenId = navigation.getParam('sID');
@@ -44,7 +47,7 @@ import {
       if(JSON.stringify(screenId)==1)
       {
         Path='No'
-      }else{
+      } else{
         Path='Questions'
       }
 
@@ -67,7 +70,6 @@ import {
                 checked={this.state.cb3}
                 onPress={() => this.setState({ cb3: !this.state.cb3})}
               />
-            
               <CheckBox
                 title="Item4"
                 checked={this.state.cb4}
@@ -115,32 +117,39 @@ import {
                 onPress={() => this.setState({ cb12: !this.state.cb12})}
               />
         
-        <View style={styles.bcontainer}>
-        <TouchableHighlight
-                underlayColor={'maroon'}
-                style={styles.button}
-                onPress={() => {this.props.navigation.navigate(Path, {
-                    eId: 1,});
-                }}
-              >
-                <Text style={styles.btext}> Confirm </Text>
-        </TouchableHighlight>
-        </View></ScrollView>
+              <View style={styles.bcontainer}>
+                <TouchableHighlight
+                  underlayColor={'maroon'}
+                  style={styles.button}
+                  onPress={() => {this.props.navigation.navigate(Path, {
+                  eId: 1,});
+                }}>
+                  <Text style={styles.btext}> Confirm </Text>
+                </TouchableHighlight>
+              </View>
+
+        </ScrollView>
         </View>
-      );
-    }
+
+      ); //End of return
+    } //End of render
   
-  }
+  } //End of class
+
+  //Component css
   const styles = StyleSheet.create({
+
     container: {
       flex: 1,
       backgroundColor: 'white',
       paddingHorizontal: 10,
       justifyContent: 'center'
     },
+
     contentContainer: {
-      paddingTop: 30,
+      paddingTop: 30
     },
+
     bcontainer: {
         flex: 1,
         backgroundColor: 'white',
@@ -148,13 +157,16 @@ import {
         justifyContent: 'center',
         paddingHorizontal: 10
       },
+
       btext: {
-        color: 'white',
+        color: 'white'
       },
+
       button: {
         alignItems: 'center',
         backgroundColor: '#CB4154',
         padding: 10,
         borderRadius: 400
-      },
+      }
+
   });

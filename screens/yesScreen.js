@@ -31,7 +31,7 @@ import {
       if(JSON.stringify(screenId)==1)
       {
         Path='Test'
-      }else{
+      } else{
         Path='Home'
       }
 
