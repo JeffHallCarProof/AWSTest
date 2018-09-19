@@ -24,7 +24,15 @@ export default class TestScreen extends React.Component {
         const make = navigation.getParam('make', 'Invalid');
         const model = navigation.getParam('model', 'Invalid');
         const year = navigation.getParam('year', 'Invalid');
+        const screenId = navigation.getParam('sID');
 
+        if(JSON.stringify(screenId)==1)
+        {
+            Path='Extras'
+        }else{
+            Path='Home'
+        }
+        
         return (
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center'}}>
 
@@ -54,10 +62,11 @@ export default class TestScreen extends React.Component {
     //Button functionality
     _buttonAction = () => {
         //Navigates to extrasScreen, sending in parameters for make, model and year from user input
-        this.props.navigation.navigate('Extras', {
+        this.props.navigation.navigate(Path, {
           make: this.userInput,
           model: this.userInput2,
           year: this.userInput3,
+          sID: 1
         });
 
     }; //End of Button Functionality

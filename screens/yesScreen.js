@@ -25,6 +25,16 @@ import {
 
     render() { 
       
+      const { navigation } = this.props;
+      const screenId = navigation.getParam('sId', 'Invalid');
+
+      if(JSON.stringify(screenId)==1)
+      {
+        Path='Test'
+      }else{
+        Path='Home'
+      }
+
       return ( 
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
           
@@ -63,10 +73,11 @@ import {
     //Button functionality
     _buttonAction = () => {
       //Navigates to testScreen, sending in parameters for make, model and year from user input
-      this.props.navigation.navigate('Test', {
+      this.props.navigation.navigate(Path, {
         make: this.userInput,
         model: this.userInput2,
         year: this.userInput3,
+        sID: 1
       });
       
     }; //End of Button Functionality

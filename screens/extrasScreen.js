@@ -37,9 +37,16 @@ import {
       }
 
     render() {
-        const { navigation } = this.props;
-        const itemId = navigation.getParam('eId', 'NO-ID');
+      const { navigation } = this.props;
+      const itemId = navigation.getParam('eId', 'NO-ID');
+      const screenId = navigation.getParam('sID');
 
+      if(JSON.stringify(screenId)==1)
+      {
+        Path='No'
+      }else{
+        Path='Questions'
+      }
 
       return (
         <View>
@@ -112,7 +119,7 @@ import {
         <TouchableHighlight
                 underlayColor={'maroon'}
                 style={styles.button}
-                onPress={() => {this.props.navigation.navigate('Questions', {
+                onPress={() => {this.props.navigation.navigate(Path, {
                     eId: 1,});
                 }}
               >
