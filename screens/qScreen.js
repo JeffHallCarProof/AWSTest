@@ -20,6 +20,7 @@ import {
   export default class HomeScreen extends React.Component {
     static navigationOptions = {
       header: null,
+      gesturesEnabled: false,
     };
     state = {
         value: 0.01

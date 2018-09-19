@@ -20,6 +20,7 @@ import {
 
     static navigationOptions = {
       header: null,
+      gesturesEnabled: false,
     };
 
     render() {

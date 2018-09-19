@@ -20,6 +20,7 @@ import { ButtonGroup } from 'react-native-elements';
 export default class noScreen extends React.Component {
     static navigationOptions = {
         header: null,
+        gesturesEnabled: false,
       };
     render() {
       const { navigation } = this.props;
