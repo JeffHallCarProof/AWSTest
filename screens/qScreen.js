@@ -64,7 +64,7 @@ import {
         </Text>
                 <View style={styles.bcontainer}>
                 <TouchableHighlight
-                  underlayColor={'maroon'}
+                  underlayColor={'#0018A8'}
                   style={styles.button}
                   onPress={() => {
                     this.props.navigation.navigate(bPath, {
@@ -76,7 +76,7 @@ import {
                 </TouchableHighlight>
                 <Text> </Text>
                 <TouchableHighlight
-                  underlayColor={'maroon'}
+                  underlayColor={'#0018A8'}
                   style={styles.button}
                   onPress={() => {this.props.navigation.navigate(Path, {
                     sId: screenId,});
@@ -122,7 +122,7 @@ import {
           },
           button: {
             alignItems: 'center',
-            backgroundColor: '#CB4154',
+            backgroundColor: '#0247FE',
             padding: 10,
             borderRadius: 400
           },

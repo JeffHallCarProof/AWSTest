@@ -44,7 +44,7 @@ if(JSON.stringify(screenId)==0){
           </View>
             <View style={styles.bcontainer}>
               <TouchableHighlight
-                underlayColor={'maroon'}
+                underlayColor={'#0018A8'}
                 style={styles.button}
                 eId={'1'}
                 onPress={() => {
@@ -57,7 +57,7 @@ if(JSON.stringify(screenId)==0){
               
                 <Text> </Text>
               <TouchableHighlight
-                underlayColor={'maroon'}
+                underlayColor={'#0018A8'}
                 style={styles.button}
                 eId={'2'}
                 onPress={() => {
@@ -70,7 +70,7 @@ if(JSON.stringify(screenId)==0){
 
               <Text> </Text>
               <TouchableHighlight
-                underlayColor={'maroon'}
+                underlayColor={'#0018A8'}
                 style={styles.button}
                 eId={'3'}
                 onPress={() => {
@@ -85,7 +85,7 @@ if(JSON.stringify(screenId)==0){
               <View style={styles.bcontainer}>
 
               <TouchableHighlight
-                underlayColor={'maroon'}
+                underlayColor={'#0018A8'}
                 style={styles.button}
                 eId={'4'}
                 onPress={() => {
@@ -97,7 +97,7 @@ if(JSON.stringify(screenId)==0){
               </TouchableHighlight>              
               <Text> </Text>
               <TouchableHighlight
-                underlayColor={'maroon'}
+                underlayColor={'#0018A8'}
                 style={styles.button}
                 eId={'5'}
                 onPress={() => {
@@ -109,7 +109,7 @@ if(JSON.stringify(screenId)==0){
               </TouchableHighlight>
               <Text> </Text>
               <TouchableHighlight
-                underlayColor={'maroon'}
+                underlayColor={'#0018A8'}
                 style={styles.button}
                 eId={'6'}
                 onPress={() => {
@@ -156,7 +156,7 @@ if(JSON.stringify(screenId)==0){
     },
     button: {
       alignItems: 'center',
-      backgroundColor: '#CB4154',
+      backgroundColor: '#0247FE',
       padding: 10,
       borderRadius: 400
     },

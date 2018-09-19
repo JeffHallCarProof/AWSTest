@@ -114,7 +114,7 @@ import {
 
     button: {
       alignItems: 'center',
-      backgroundColor: '#CB4154',
+      backgroundColor: '#0247FE',
       padding: 10,
       borderRadius: 400
     },
