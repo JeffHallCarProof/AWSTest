@@ -17,7 +17,7 @@ import {
   import { withAuthenticator } from 'aws-amplify-react-native';
 
   //home screen
-  export default class HomeScreen extends React.Component {
+  export default class qScreen extends React.Component {
     static navigationOptions = {
       header: null,
       gesturesEnabled: false,
