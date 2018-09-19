@@ -19,6 +19,7 @@ import yesScreen from './screens/yesScreen';
 import testScreen from './screens/testScreen';
 import extrasScreen from './screens/extrasScreen';
 import qScreen from './screens/qScreen';
+import pScreen from './screens/pScreen';
 import amplify from './src/aws-exports';
 import { withAuthenticator } from 'aws-amplify-react-native';
 
@@ -32,7 +33,8 @@ const RootStack = createStackNavigator(
     Yes: yesScreen,
     Test: testScreen,
     Extras: extrasScreen,
-    Questions: qScreen
+    Questions: qScreen,
+    Preferences: pScreen
   },
   {
     initialRouteName: 'Home',

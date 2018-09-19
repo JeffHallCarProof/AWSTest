@@ -30,7 +30,7 @@ if(JSON.stringify(screenId)==0){
   Path ='Extras'
   bPath ='Home'
 }else{
-  Path='Home'
+  Path='Preferences'
   bPath='Extras'
 }
       return (

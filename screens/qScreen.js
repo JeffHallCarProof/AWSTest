@@ -16,7 +16,7 @@ import {
   import Amplify from 'aws-amplify';
   import { withAuthenticator } from 'aws-amplify-react-native';
 
-  //home screen
+  //question screen
   export default class qScreen extends React.Component {
     static navigationOptions = {
       header: null,
@@ -28,7 +28,7 @@ import {
     render() {
       const { navigation } = this.props;
       const screenId = navigation.getParam('sId', 'Invalid');
-      Path ='Home'
+      Path ='Preferences'
       bPath ='Extras'
         return (
           <View style={styles.container}>
