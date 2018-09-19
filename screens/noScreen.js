@@ -22,6 +22,9 @@ export default class noScreen extends React.Component {
         header: null,
       };
     render() {
+      const { navigation } = this.props;
+      const sId = navigation.getParam('sId', '');
+
       return (
           <View style={styles.container}>
           <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -33,9 +36,8 @@ export default class noScreen extends React.Component {
               <TouchableHighlight
                 underlayColor={'maroon'}
                 style={styles.button}
-                onPress={() => {this.props.navigation.navigate('Extras', {
-                  eId: 1,});
-                }}
+                eId={'1'}
+                onPress={this._ifPress}
               >
                 <Text style={styles.btext}> E1 </Text>
               </TouchableHighlight>
@@ -44,9 +46,8 @@ export default class noScreen extends React.Component {
               <TouchableHighlight
                 underlayColor={'maroon'}
                 style={styles.button}
-                onPress={() => {this.props.navigation.navigate('Extras', {
-                  eId: 2,});
-                }}
+                eId={'2'}
+                onPress={this._ifPress}
               >
                 <Text style={styles.btext}> E2 </Text>
               </TouchableHighlight>
@@ -55,9 +56,8 @@ export default class noScreen extends React.Component {
               <TouchableHighlight
                 underlayColor={'maroon'}
                 style={styles.button}
-                onPress={() => {this.props.navigation.navigate('Extras', {
-                  eId: 3,});
-                }}
+                eId={'3'}
+                onPress={this._ifPress}
               >
                 <Text style={styles.btext}> E3 </Text>
               </TouchableHighlight>
@@ -68,9 +68,8 @@ export default class noScreen extends React.Component {
               <TouchableHighlight
                 underlayColor={'maroon'}
                 style={styles.button}
-                onPress={() => {this.props.navigation.navigate('Extras', {
-                  eId: 4,});
-                }}
+                eId={'4'}
+                onPress={this._ifPress}
               >
                 <Text style={styles.btext}> E4 </Text>
               </TouchableHighlight>              
@@ -78,9 +77,8 @@ export default class noScreen extends React.Component {
               <TouchableHighlight
                 underlayColor={'maroon'}
                 style={styles.button}
-                onPress={() => {this.props.navigation.navigate('Extras', {
-                  eId: 5,});
-                }}
+                eId={'5'}
+                onPress={this._ifPress}
               >
                 <Text style={styles.btext}> E5 </Text>
               </TouchableHighlight>
@@ -88,9 +86,8 @@ export default class noScreen extends React.Component {
               <TouchableHighlight
                 underlayColor={'maroon'}
                 style={styles.button}
-                onPress={() => {this.props.navigation.navigate('Extras', {
-                  eId: 6,});
-                }}
+                eId={'6'}
+                onPress={this._ifPress}
               >
                 <Text style={styles.btext}> E6 </Text>
               </TouchableHighlight>  
@@ -106,6 +103,16 @@ export default class noScreen extends React.Component {
       );
     }
   }
+  _ifPress= () => {
+  if(sId==1){
+    {this.props.navigation.navigate('Home', {
+      sId: navigation.getParam('sId', ''),});
+    }
+  }else{
+      {this.props.navigation.navigate('Extras', {
+        sId: navigation.getParam('sId', ''),});
+      }
+  }};
   const styles = StyleSheet.create({
     container: {
       flex: 1,
