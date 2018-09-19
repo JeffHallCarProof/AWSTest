@@ -18,31 +18,36 @@ import { ButtonGroup } from 'react-native-elements';
 
 // Screen for people who do not know what car they want
 export default class noScreen extends React.Component {
+
     static navigationOptions = {
         header: null,
         gesturesEnabled: false,
       };
+
     render() {
+
       const { navigation } = this.props;
       const screenId = navigation.getParam('sId', 'Invalid');
       
-if(JSON.stringify(screenId)==0){
-  Path ='Extras'
-  bPath ='Home'
-}else{
-  Path='Preferences'
-  bPath='Extras'
-}
+      if(JSON.stringify(screenId)==0){
+        Path ='Extras'
+        bPath ='Home'
+      } else{
+        Path='Preferences'
+        bPath='Extras'
+      }
+
       return (
           <View style={styles.container}>
-          <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-          <Text style={{ paddingLeft: 50, paddingRight: 50, fontWeight: 'bold', fontSize: 20}}>
-          Please select a Life Event!
-          </Text>
-          <Text style={styles.textS}>ID: {JSON.stringify(screenId)}</Text>
-          <Text style={styles.textS}>P: {JSON.stringify(Path)}</Text>
-          <Text style={styles.textS}>bP: {JSON.stringify(bPath)}</Text>
-          </View>
+            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+              <Text style={{ paddingLeft: 50, paddingRight: 50, fontWeight: 'bold', fontSize: 20}}>
+                Please select a Life Event!
+              </Text>
+              <Text style={styles.textS}>ID: {JSON.stringify(screenId)}</Text>
+              <Text style={styles.textS}>P: {JSON.stringify(Path)}</Text>
+              <Text style={styles.textS}>bP: {JSON.stringify(bPath)}</Text>
+            </View>
+            
             <View style={styles.bcontainer}>
               <TouchableHighlight
                 underlayColor={'#0018A8'}
@@ -131,19 +136,23 @@ if(JSON.stringify(screenId)==0){
           />
           </View>
           </View> 
-      );
-    }
-  }
+      ); //End of return
+    } //End of render
+  } //End of class
 
+  //Component css
   const styles = StyleSheet.create({
+
     container: {
       flex: 1,
       backgroundColor: 'white',
       paddingHorizontal: 0
     },
+
     contentContainer: {
-      paddingTop: 40,
+      paddingTop: 40
     },
+
     bcontainer: {
       flex: 1,
       backgroundColor: 'white',
@@ -152,20 +161,16 @@ if(JSON.stringify(screenId)==0){
       paddingHorizontal: 10,
       flexDirection: 'row'
     },
+
     btext: {
       color: 'white'
     },
+
     button: {
       alignItems: 'center',
       backgroundColor: '#0247FE',
       padding: 10,
       borderRadius: 400
-    },
-    /* Clear floats (clearfix hack) look into after
-    ButtonGroup:after {
-      content: "",
-      clear: both,
-      display: table
-}, 
-*/
-  });
+    }
+
+});
