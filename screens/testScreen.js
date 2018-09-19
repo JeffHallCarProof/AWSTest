@@ -22,32 +22,54 @@ import {
       header: null,
       gesturesEnabled: false,
     };
-
+    state = {
+        p1: false,
+        p2: false,
+        p3: false,
+        p4: false,
+        p5: false,
+        p6: false,
+        p7: false,
+        p8: false,
+        p9: false,
+        p10: false,
+        p11: false,
+        p12: false,
+      }
     render() {
-
       return (
         <View style={styles.container}>
           <View style={styles.bcontainer}>
-
             <TouchableHighlight
-              underlayColor={'#0018A8'}
-              style={styles.button}
-              onPress={() => {this.props.navigation.navigate('Yes',{
-                sId: 1,});
-                }}>
+                selected={this.state.p1}
+                underlayColor={'#0018A8'}
+              style={[styles.button, this.state.p1 && styles.buttonS]}
+              onPress={() => this.setState({ p1: !this.state.p1})}>
               <Text style={styles.btext}> Hot Dog </Text>
             </TouchableHighlight>
-            <Text></Text>
             <TouchableHighlight
-              underlayColor={'#0018A8'}
+                selected={this.state.p2}
+                underlayColor={'#0018A8'}
+              style={[styles.button, this.state.p2 && styles.buttonS]}
+              onPress={() => this.setState({ p2: !this.state.p2})}>
+              <Text style={styles.btext}> Hot Dog </Text>
+            </TouchableHighlight>
+            <TouchableHighlight
+                selected={this.state.p3}
+                underlayColor={'#0018A8'}
+              style={[styles.button, this.state.p3 && styles.buttonS]}
+              onPress={() => this.setState({ p3: !this.state.p3})}>
+              <Text style={styles.btext}> Hot Dog </Text>
+            </TouchableHighlight>
+            <TouchableHighlight
               style={styles.button}
-              onPress={() => {this.props.navigation.navigate('No',{
-                sId: 0,});
+              onPress={() => {this.props.navigation.navigate('Home',{
+                sId: 404,});
                 }}>
               <Text style={styles.btext}> No Hot Dog </Text>
             </TouchableHighlight>
-            
           </View>
+
         </View>
   
       ); //End of return
@@ -82,7 +104,14 @@ import {
       alignItems: 'center',
       backgroundColor: '#0247FE',
       padding: 10,
-      borderRadius: 400
-    }
+      borderRadius: 400,
+      
+    },
+    buttonS: {
+        alignItems: 'center',
+        backgroundColor: '#0018A8',
+        padding: 10,
+        borderRadius: 400,
+      }
 
   });

@@ -67,10 +67,7 @@ import {
                 <TouchableHighlight
                   underlayColor={'#0018A8'}
                   style={styles.button}
-                  onPress={() => {
-                    this.props.navigation.navigate(bPath, {
-                      sId: screenId,});
-                    }}
+                  onPress={() => this.props.navigation.goBack()}
                 
                 >
                   <Text style={styles.btext}> No Hot Dog </Text>

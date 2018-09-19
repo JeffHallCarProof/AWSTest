@@ -46,6 +46,15 @@ import {
                 }}>
               <Text style={styles.btext}> No Hot Dog </Text>
             </TouchableHighlight>
+            <Text></Text>
+            <TouchableHighlight
+              underlayColor={'#0018A8'}
+              style={styles.button}
+              onPress={() => {this.props.navigation.navigate('Test',{
+                sId: 404,});
+                }}>
+              <Text style={styles.btext}> Test Hot Dog </Text>
+            </TouchableHighlight>
             
           </View>
         </View>
