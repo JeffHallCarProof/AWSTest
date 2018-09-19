@@ -11,9 +11,9 @@ import {
     TouchableHighlight,
     View,
   } from 'react-native';
-  import { createStackNavigator } from 'react-navigation';
-  import { WebBrowser } from 'expo';
-  import Amplify from 'aws-amplify';
+import { createStackNavigator } from 'react-navigation';
+import { WebBrowser } from 'expo';
+import Amplify from 'aws-amplify';
 import { ButtonGroup } from 'react-native-elements';
 
 // Screen for people who do not know what car they want

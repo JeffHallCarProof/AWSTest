@@ -10,11 +10,11 @@ import {
     TouchableHighlight,
     View,
   } from 'react-native';
-  import { ListItem, CheckBox } from 'react-native-elements';
-  import { createStackNavigator } from 'react-navigation';
-  import { WebBrowser } from 'expo';
-  import Amplify from 'aws-amplify';
-  import { withAuthenticator } from 'aws-amplify-react-native';
+import { ListItem, CheckBox } from 'react-native-elements';
+import { createStackNavigator } from 'react-navigation';
+import { WebBrowser } from 'expo';
+import Amplify from 'aws-amplify';
+import { withAuthenticator } from 'aws-amplify-react-native';
 
   //extras screen
   export default class extrasScreen extends React.Component {

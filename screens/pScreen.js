@@ -10,11 +10,11 @@ import {
     TouchableHighlight,
     View,
   } from 'react-native';
-  import { ListItem, CheckBox, Slider } from 'react-native-elements';
-  import { createStackNavigator } from 'react-navigation';
-  import { WebBrowser } from 'expo';
-  import Amplify from 'aws-amplify';
-  import { withAuthenticator } from 'aws-amplify-react-native';
+import { ListItem, CheckBox, Slider } from 'react-native-elements';
+import { createStackNavigator } from 'react-navigation';
+import { WebBrowser } from 'expo';
+import Amplify from 'aws-amplify';
+import { withAuthenticator } from 'aws-amplify-react-native';
 
   //preferences screen
   export default class pScreen extends React.Component {
