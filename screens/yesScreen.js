@@ -11,10 +11,10 @@ import {
     TouchableHighlight,
     View,
   } from 'react-native';
-  import { createStackNavigator } from 'react-navigation';
-  import { WebBrowser } from 'expo';
-  import Amplify from 'aws-amplify';
-  import { withAuthenticator } from 'aws-amplify-react-native';
+import { createStackNavigator } from 'react-navigation';
+import { WebBrowser } from 'expo';
+import Amplify from 'aws-amplify';
+import { withAuthenticator } from 'aws-amplify-react-native';
 
   //screen for people who do know what car they want
   export default class yesScreen extends React.Component {

@@ -10,12 +10,12 @@ import {
     TouchableHighlight,
     View,
   } from 'react-native';
-  import { createStackNavigator } from 'react-navigation';
-  import { WebBrowser } from 'expo';
-  import Amplify from 'aws-amplify';
-  import { withAuthenticator } from 'aws-amplify-react-native';
+import { createStackNavigator } from 'react-navigation';
+import { WebBrowser } from 'expo';
+import Amplify from 'aws-amplify';
+import { withAuthenticator } from 'aws-amplify-react-native';
 
-  //home screen
+  //test screen
   export default class testScreen extends React.Component {
 
     static navigationOptions = {
