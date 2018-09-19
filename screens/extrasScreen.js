@@ -112,7 +112,9 @@ import {
         <TouchableHighlight
                 underlayColor={'maroon'}
                 style={styles.button}
-                onPress={() => {this.props.navigation.goBack()}}
+                onPress={() => {this.props.navigation.navigate('Questions', {
+                    eId: 1,});
+                }}
               >
                 <Text style={styles.btext}> Confirm </Text>
         </TouchableHighlight>
