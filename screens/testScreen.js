@@ -6,82 +6,83 @@ import {
     ScrollView,
     StyleSheet,
     Text,
-    TextInput,
     TouchableOpacity,
     TouchableHighlight,
     View,
   } from 'react-native';
-import { createStackNavigator } from 'react-navigation';
-import { WebBrowser } from 'expo';
-import Amplify from 'aws-amplify';
-import { withAuthenticator } from 'aws-amplify-react-native';
+  import { createStackNavigator } from 'react-navigation';
+  import { WebBrowser } from 'expo';
+  import Amplify from 'aws-amplify';
+  import { withAuthenticator } from 'aws-amplify-react-native';
 
-export default class TestScreen extends React.Component {
-    
+  //home screen
+  export default class testScreen extends React.Component {
+
+    static navigationOptions = {
+      header: null,
+      gesturesEnabled: false,
+    };
+
     render() {
 
-        const { navigation } = this.props;
-        const make = navigation.getParam('make', 'Invalid');
-        const model = navigation.getParam('model', 'Invalid');
-        const year = navigation.getParam('year', 'Invalid');
-        const screenId = navigation.getParam('sId');
+      return (
+        <View style={styles.container}>
+          <View style={styles.bcontainer}>
 
-        if(JSON.stringify(screenId)==1)
-        {
-            Path='Extras'
-        } else{
-            Path='Home'
-        }
-        
-        return (
-            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-
-                <View style={{ flex: 1, alignItems: 'center', justifyContent: 'space-evenly'}}>
-                    <Text style={{fontWeight: 'bold', fontSize: 20}}>Vehicle Details</Text>
-                    <Text style={{fontSize: 18, paddingLeft: 50, paddingRight: 50}}>Listed below is the make, model and year of the vehicle you are searching for</Text>
-                </View>
-                <Text style={styles.textS}>ID: {JSON.stringify(screenId)}</Text>
-          <Text style={styles.textS}>P: {JSON.stringify(Path)}</Text>
-          <Text style={styles.textS}>bP: {JSON.stringify(bPath)}</Text>
-                <View style={{ flex: 1, alignItems: 'center'}}>
-                
-                    <Text style={styles.textS}>Make: {JSON.stringify(make)}</Text>
-                    <Text style={styles.textS}>Model: {JSON.stringify(model)}</Text>
-                    <Text style={styles.textS}>Year: {JSON.stringify(year)}</Text>
-
-                    <Button
-                        title = 'Confirm Vehicle Details' 
-                        onPress={this._buttonAction}
-                    />
-
-                </View>
-
-            </View>
-
-        ); //End of return
+            <TouchableHighlight
+              underlayColor={'#0018A8'}
+              style={styles.button}
+              onPress={() => {this.props.navigation.navigate('Yes',{
+                sId: 1,});
+                }}>
+              <Text style={styles.btext}> Hot Dog </Text>
+            </TouchableHighlight>
+            <Text></Text>
+            <TouchableHighlight
+              underlayColor={'#0018A8'}
+              style={styles.button}
+              onPress={() => {this.props.navigation.navigate('No',{
+                sId: 0,});
+                }}>
+              <Text style={styles.btext}> No Hot Dog </Text>
+            </TouchableHighlight>
+            
+          </View>
+        </View>
+  
+      ); //End of return
     } //End of render
+  } //End of class
 
-    //Button functionality
-    _buttonAction = () => {
-        //Navigates to extrasScreen, sending in parameters for make, model and year from user input
-        this.props.navigation.navigate(Path, {
-          make: this.userInput,
-          model: this.userInput2,
-          year: this.userInput3,
-          sId: 1
-        });
+  //Component css
+  const styles = StyleSheet.create({
 
-    }; //End of Button Functionality
+    container: {
+      flex: 1,
+      backgroundColor: 'white',
+      paddingHorizontal: 10
+    },
 
-} //End of class
+    contentContainer: {
+      paddingTop: 30
+    },
 
-//Component css
-const styles = StyleSheet.create({
-    
-    textS: {
-        fontSize: 16,
-        paddingTop: 10,
-        paddingBottom: 15
+    bcontainer: {
+      flex: 1,
+      backgroundColor: 'white',
+      alignItems: 'center',
+      justifyContent: 'center'
+    },
+
+    btext: {
+      color: 'white'
+    },
+
+    button: {
+      alignItems: 'center',
+      backgroundColor: '#0247FE',
+      padding: 10,
+      borderRadius: 400
     }
 
-});
+  });

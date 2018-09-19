@@ -132,8 +132,6 @@ import {
             justifyContent : 'space-between'
           },
           containerProducts: {
-            paddingTop: 40,
-            paddingLeft: 15,
             flexDirection: 'row',
             justifyContent: 'space-between',
             },
