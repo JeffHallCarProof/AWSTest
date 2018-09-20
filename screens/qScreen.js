@@ -30,6 +30,7 @@ import {
       const screenId = navigation.getParam('sId', 'Invalid');
       Path ='Preferences'
       bPath ='Extras'
+      rPath='Questions'
         return (
           <View style={styles.container}>
           <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -56,30 +57,30 @@ import {
                 <Text style={styles.containerProducts}>Most</Text>
                 </View>
                 </View>  
-                    
+
                 <Text>
           Value: {this.state.value}
         </Text>
                 <View style={styles.bcontainer}>
-                <TouchableHighlight
-                  underlayColor={'#0018A8'}
-                  style={styles.button}
-                  onPress={() => this.props.navigation.goBack()}
-                
-                >
-                  <Text style={styles.btext}> No Hot Dog </Text>
-                </TouchableHighlight>
+                <Button
+            title="Go back"
+            onPress={() => {
+              this.props.navigation.navigate(bPath, {
+                sId: screenId, Path: rPath});
+              }}
+          />
                 <Text> </Text>
                 <TouchableHighlight
                   underlayColor={'#0018A8'}
                   style={styles.button}
                   onPress={() => {this.props.navigation.navigate(Path, {
-                    sId: screenId,});
-                }}
-                
+                    sId: screenId});
+                }} 
                 >
                   <Text style={styles.btext}> Hot Dog </Text>
                 </TouchableHighlight>
+                
+
                 </View>
             </View>
     

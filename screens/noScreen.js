@@ -15,7 +15,7 @@ import { createStackNavigator } from 'react-navigation';
 import { WebBrowser } from 'expo';
 import Amplify from 'aws-amplify';
 import { ButtonGroup } from 'react-native-elements';
-
+import _, {debounce} from 'lodash';
 // Screen for people who do not know what car they want
 export default class noScreen extends React.Component {
 
@@ -23,18 +23,20 @@ export default class noScreen extends React.Component {
         header: null,
         gesturesEnabled: false,
       };
-
     render() {
 
       const { navigation } = this.props;
       const screenId = navigation.getParam('sId', 'Invalid');
+      const routeId = this.props.navigation.dangerouslyGetParent().state.key;
       
       if(JSON.stringify(screenId)==0){
         Path ='Extras'
         bPath ='Home'
+        rPath='No'
       } else{
         Path='Preferences'
         bPath='Extras'
+        rPath='No'
       }
 
       return (
@@ -44,6 +46,7 @@ export default class noScreen extends React.Component {
                 Please select a Life Event!
               </Text>
               <Text style={styles.textS}>ID: {JSON.stringify(screenId)}</Text>
+              <Text style={styles.textS}>rId: {JSON.stringify(routeId)}</Text>
               <Text style={styles.textS}>P: {JSON.stringify(Path)}</Text>
               <Text style={styles.textS}>bP: {JSON.stringify(bPath)}</Text>
             </View>
@@ -53,10 +56,8 @@ export default class noScreen extends React.Component {
                 underlayColor={'#0018A8'}
                 style={styles.button}
                 eId={'1'}
-                onPress={() => {
-                  this.props.navigation.navigate(Path, {
-                    sId: screenId,});
-                  }}
+                onPress={_.debounce(() => {        this.props.navigation.navigate(Path, {
+                  sId: screenId,})},500)}
               >
                 <Text style={styles.btext}> E1 </Text>
               </TouchableHighlight>
@@ -66,10 +67,8 @@ export default class noScreen extends React.Component {
                 underlayColor={'#0018A8'}
                 style={styles.button}
                 eId={'2'}
-                onPress={() => {
-                  this.props.navigation.navigate(Path, {
-                    sId: screenId,});
-                  }}
+                onPress={_.debounce(() => {        this.props.navigation.navigate(Path, {
+                  sId: screenId,})},500)}
               >
                 <Text style={styles.btext}> E2 </Text>
               </TouchableHighlight>
@@ -79,10 +78,8 @@ export default class noScreen extends React.Component {
                 underlayColor={'#0018A8'}
                 style={styles.button}
                 eId={'3'}
-                onPress={() => {
-                  this.props.navigation.navigate(Path, {
-                    sId: screenId,});
-                  }}
+                onPress={_.debounce(() => {        this.props.navigation.navigate(Path, {
+                  sId: screenId,})},500)}
               >
                 <Text style={styles.btext}> E3 </Text>
               </TouchableHighlight>
@@ -94,10 +91,8 @@ export default class noScreen extends React.Component {
                 underlayColor={'#0018A8'}
                 style={styles.button}
                 eId={'4'}
-                onPress={() => {
-                  this.props.navigation.navigate(Path, {
-                    sId: screenId,});
-                  }}
+                onPress={_.debounce(() => {        this.props.navigation.navigate(Path, {
+                  sId: screenId,})},500)}
               >
                 <Text style={styles.btext}> E4 </Text>
               </TouchableHighlight>              
@@ -106,10 +101,8 @@ export default class noScreen extends React.Component {
                 underlayColor={'#0018A8'}
                 style={styles.button}
                 eId={'5'}
-                onPress={() => {
-                  this.props.navigation.navigate(Path, {
-                    sId: screenId,});
-                  }}
+                onPress={_.debounce(() => {        this.props.navigation.navigate(Path, {
+                  sId: screenId,})},500)}
               >
                 <Text style={styles.btext}> E5 </Text>
               </TouchableHighlight>
@@ -118,10 +111,8 @@ export default class noScreen extends React.Component {
                 underlayColor={'#0018A8'}
                 style={styles.button}
                 eId={'6'}
-                onPress={() => {
-                  this.props.navigation.navigate(Path, {
-                    sId: screenId,});
-                  }}
+                onPress={_.debounce(() => {        this.props.navigation.navigate(Path, {
+                  sId: screenId,})},500)}
               >
                 <Text style={styles.btext}> E6 </Text>
               </TouchableHighlight>  
@@ -129,7 +120,10 @@ export default class noScreen extends React.Component {
             <View>
             <Button
             title="Go back"
-            onPress={() => this.props.navigation.goBack()}
+            onPress={() => {
+              this.props.navigation.navigate(bPath, {
+                sId: screenId, Path: rPath});
+              }}
           />
           </View>
           </View> 

@@ -53,8 +53,17 @@ import { withAuthenticator } from 'aws-amplify-react-native';
       
       }
     render() {
+
+      const { navigation } = this.props;
+      const itemId = navigation.getParam('eId', 'NO-ID');
+      const screenId = navigation.getParam('sId');
+      const routeId = this.props.navigation.dangerouslyGetParent().state.key;
       return (
         <View style={styles.container}>
+          <Text style={styles.textS}>ID: {JSON.stringify(screenId)}</Text>
+          <Text style={styles.textS}>rId: {JSON.stringify(routeId)}</Text>
+          <Text style={styles.textS}>P: {JSON.stringify(Path)}</Text>
+          <Text style={styles.textS}>bP: {JSON.stringify(bPath)}</Text>
           <View style={styles.bcontainer}>
             <TouchableHighlight
                 selected={this.state.p1}

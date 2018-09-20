@@ -12,7 +12,6 @@ import {
   } from 'react-native';
   import renderIf from '../components/renderIf';
 import { ListItem, CheckBox, Slider } from 'react-native-elements';
-import { createStackNavigator } from 'react-navigation';
 import { WebBrowser } from 'expo';
 import Amplify from 'aws-amplify';
 import { withAuthenticator } from 'aws-amplify-react-native';
@@ -26,6 +25,7 @@ import { withAuthenticator } from 'aws-amplify-react-native';
       gesturesEnabled: false,
     };
     state = {
+      text: false,
         p1: false,
         v1: 0,
         p2: false,
@@ -58,13 +58,14 @@ import { withAuthenticator } from 'aws-amplify-react-native';
 
       const { navigation } = this.props;
       const screenId = navigation.getParam('sId', 'Invalid');
-
       if(JSON.stringify(screenId)==0){
         Path ='Login'
         bPath ='Questions'
+        rPath ='Preferences'
       } else{
         Path='Login'
         bPath='No'
+        rPath ='Preferences'
       }
 
       return (
@@ -77,6 +78,7 @@ import { withAuthenticator } from 'aws-amplify-react-native';
               style={[styles.button, this.state.p1 && styles.buttonS]}
               onPress={() => this.setState({ p1: !this.state.p1,
                 value: this.state.v1,
+                text: !this.state.p1,
                 p2: false,
                 p3: false,
                 p4: false,
@@ -93,6 +95,7 @@ import { withAuthenticator } from 'aws-amplify-react-native';
               style={[styles.button, this.state.p2 && styles.buttonS]}
               onPress={() => this.setState({ p2: !this.state.p2,
                 value: this.state.v2,
+                text: !this.state.p2,
                 p1: false,
                 p3: false,
                 p4: false,
@@ -109,6 +112,7 @@ import { withAuthenticator } from 'aws-amplify-react-native';
               style={[styles.button, this.state.p3 && styles.buttonS]}
               onPress={() => this.setState({ p3: !this.state.p3,
                 value: this.state.v3,
+                text: !this.state.p3,
                 p2: false,
                 p1: false,
                 p4: false,
@@ -125,6 +129,7 @@ import { withAuthenticator } from 'aws-amplify-react-native';
               style={[styles.button, this.state.p4 && styles.buttonS]}
               onPress={() => this.setState({ p4: !this.state.p4,
                 value: this.state.v4,
+                text: !this.state.p4,
                 p2: false,
                 p3: false,
                 p1: false,
@@ -144,6 +149,7 @@ import { withAuthenticator } from 'aws-amplify-react-native';
               style={[styles.button, this.state.p5 && styles.buttonS]}
               onPress={() => this.setState({ p5: !this.state.p5,
                 value: this.state.v5,
+                text: !this.state.p5,
                 p2: false,
                 p3: false,
                 p4: false,
@@ -160,6 +166,7 @@ import { withAuthenticator } from 'aws-amplify-react-native';
               style={[styles.button, this.state.p6 && styles.buttonS]}
               onPress={() => this.setState({ p6: !this.state.p6,
                 value: this.state.v6,
+                text: !this.state.p6,
                 p2: false,
                 p3: false,
                 p4: false,
@@ -176,6 +183,7 @@ import { withAuthenticator } from 'aws-amplify-react-native';
               style={[styles.button, this.state.p7 && styles.buttonS]}
               onPress={() => this.setState({ p7: !this.state.p7,
                 value: this.state.v7,
+                text: !this.state.p7,
                 p2: false,
                 p3: false,
                 p4: false,
@@ -192,6 +200,7 @@ import { withAuthenticator } from 'aws-amplify-react-native';
               style={[styles.button, this.state.p8 && styles.buttonS]}
               onPress={() => this.setState({ p8: !this.state.p8,
                 value: this.state.v8,
+                text: !this.state.p8,
                 p2: false,
                 p3: false,
                 p4: false,
@@ -241,34 +250,38 @@ import { withAuthenticator } from 'aws-amplify-react-native';
                             {renderIf(this.state.p8, 
                 <Slider
                   value={this.state.value}
-                    onSlidingComplete={value => this.setState({ v8: value,})}/>
+                    onSlidingComplete={value => this.setState({ v8: value,})}/>,
+                    
                 )}
-
+                            {renderIf(this.state.text,
                 <View style={styles.sliderF}>
                 <Text style={styles.containerProducts}>Least</Text>
                 <Text style={styles.containerProducts}>Most</Text>
                 </View>
+                 )}
             </View> 
 <View style={styles.bcontainer}>
-          <TouchableHighlight
-            underlayColor={'#0018A8'}
-            style={styles.button}
+          <Button
+            title="Go back"
             onPress={() => {
-                this.props.navigation.navigate(Path, {sId: screenId});
-            }}>
-
-            <Text style={styles.btext}>Submit</Text>
-
-          </TouchableHighlight>
+              this.props.navigation.navigate(bPath, {
+                sId: screenId, Path: rPath});
+              }}
+          />
           <Text></Text>
           <TouchableHighlight
             underlayColor={'#0018A8'}
             style={styles.button}
-            onPress={() => this.props.navigation.goBack()}>
+            onPress={() => {
+                this.props.navigation.navigate('Login', {sId: screenId});
+            }}
+            >
 
-            <Text style={styles.btext}>Go Back</Text>
+            <Text style={styles.btext}>Submit</Text>
 
           </TouchableHighlight>
+          
+
           </View>
         </View>      
       ); //End of return

@@ -15,6 +15,7 @@ import { createStackNavigator } from 'react-navigation';
 import { WebBrowser } from 'expo';
 import Amplify from 'aws-amplify';
 import { withAuthenticator } from 'aws-amplify-react-native';
+import _, {debounce} from 'lodash';
 
   //screen for people who do know what car they want
   export default class yesScreen extends React.Component {
@@ -73,6 +74,13 @@ import { withAuthenticator } from 'aws-amplify-react-native';
         </View>
       ); //End of return
     } //End of render
+
+//                                              READ THIS 
+// set up functions as below but add debounce
+
+
+
+
 
     //Button functionality
     _buttonAction = () => {

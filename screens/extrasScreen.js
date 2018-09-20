@@ -44,14 +44,15 @@ import { withAuthenticator } from 'aws-amplify-react-native';
       const { navigation } = this.props;
       const itemId = navigation.getParam('eId', 'NO-ID');
       const screenId = navigation.getParam('sId');
-
       if(JSON.stringify(screenId)==1)
       {
         Path='No'
         bPath='Yes'
+        rPath='Extras'
       } else{
         Path='Questions'
         bPath='No'
+        rPath='Extras'
       }
 
       return (
@@ -132,9 +133,13 @@ import { withAuthenticator } from 'aws-amplify-react-native';
                 }}>
                   <Text style={styles.btext}> Confirm </Text>
                 </TouchableHighlight>
-                <Button
+                
+            <Button
             title="Go back"
-            onPress={() => this.props.navigation.goBack()}
+            onPress={() => {
+              this.props.navigation.navigate(bPath, {
+                sId: screenId, Path: rPath});
+              }}
           />
           </View></ScrollView>
         </View>
