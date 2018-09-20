@@ -12,6 +12,7 @@ import {
     View,
   } from 'react-native';
 import { createStackNavigator } from 'react-navigation';
+import renderIf from '../components/renderIf';
 import { WebBrowser } from 'expo';
 import Amplify from 'aws-amplify';
 import { withAuthenticator } from 'aws-amplify-react-native';
@@ -188,16 +189,52 @@ import { withAuthenticator } from 'aws-amplify-react-native';
             </TouchableHighlight>
             </View>
             <View style={styles.sContainer}>
+            {renderIf(this.state.p1, 
                 <Slider
-          value={this.state.value}
-          onSlidingComplete={value => this.setState({ value,
-          })}
-        />
+                  value={this.state.value}
+                    onSlidingComplete={value => this.setState({ v1: value,})}/>
+                )}
+                            {renderIf(this.state.p2, 
+                <Slider
+                  value={this.state.value}
+                    onSlidingComplete={value => this.setState({ v2: value,})}/>
+                )}
+                            {renderIf(this.state.p3, 
+                <Slider
+                  value={this.state.value}
+                    onSlidingComplete={value => this.setState({ v3: value,})}/>
+                )}
+                            {renderIf(this.state.p4, 
+                <Slider
+                  value={this.state.value}
+                    onSlidingComplete={value => this.setState({ v4: value,})}/>
+                )}
+                            {renderIf(this.state.p5, 
+                <Slider
+                  value={this.state.value}
+                    onSlidingComplete={value => this.setState({ v5: value,})}/>
+                )}
+                            {renderIf(this.state.p6, 
+                <Slider
+                  value={this.state.value}
+                    onSlidingComplete={value => this.setState({ v6: value,})}/>
+                )}
+                            {renderIf(this.state.p7, 
+                <Slider
+                  value={this.state.value}
+                    onSlidingComplete={value => this.setState({ v7: value,})}/>
+                )}
+                            {renderIf(this.state.p8, 
+                <Slider
+                  value={this.state.value}
+                    onSlidingComplete={value => this.setState({ v8: value,})}/>
+                )}
+
                 <View style={styles.sliderF}>
                 <Text style={styles.containerProducts}>Least</Text>
                 <Text style={styles.containerProducts}>Most</Text>
                 </View>
-                </View> 
+            </View> 
             <TouchableHighlight
               style={styles.button}
               onPress={() => {this.props.navigation.navigate('Home',{
