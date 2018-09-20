@@ -55,11 +55,8 @@ import {
                 <Text style={styles.containerProducts}>Least</Text>
                 <Text style={styles.containerProducts}>Most</Text>
                 </View>
-
-
-
-
-                </View>      
+                </View>  
+                    
                 <Text>
           Value: {this.state.value}
         </Text>
