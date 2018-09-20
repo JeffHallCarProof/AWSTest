@@ -33,6 +33,14 @@ import { withAuthenticator } from 'aws-amplify-react-native';
       const { navigation } = this.props;
       const screenId = navigation.getParam('sId', 'Invalid');
 
+      if(JSON.stringify(screenId)==0){
+        Path ='Login'
+        bPath ='Questions'
+      } else{
+        Path='Login'
+        bPath='No'
+      }
+
       return (
         <View style={styles.container}>
           <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -58,6 +66,18 @@ import { withAuthenticator } from 'aws-amplify-react-native';
 
           <Text>Value: {this.state.value}</Text>
 
+          <Text></Text>
+          <TouchableHighlight
+            underlayColor={'#0018A8'}
+            style={styles.button}
+            onPress={() => {
+                this.props.navigation.navigate(Path, {sId: screenId});
+            }}>
+
+            <Text style={styles.btext}>Submit</Text>
+
+          </TouchableHighlight>
+          <Text></Text>
           <TouchableHighlight
             underlayColor={'#0018A8'}
             style={styles.button}
