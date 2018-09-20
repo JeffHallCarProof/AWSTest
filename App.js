@@ -21,6 +21,7 @@ import extrasScreen from './screens/extrasScreen';
 import qScreen from './screens/qScreen';
 import pScreen from './screens/pScreen';
 import loginScreen from './screens/loginScreen';
+import resultsScreen from './screens/resultsScreen';
 import amplify from './src/aws-exports';
 import { withAuthenticator } from 'aws-amplify-react-native';
 
@@ -36,7 +37,8 @@ const RootStack = createStackNavigator(
     Extras: extrasScreen,
     Questions: qScreen,
     Preferences: pScreen,
-    Login: loginScreen
+    Login: loginScreen,
+    Results: resultsScreen
   },
   {
     initialRouteName: 'Home',

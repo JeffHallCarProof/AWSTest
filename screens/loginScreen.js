@@ -17,7 +17,7 @@ import { WebBrowser } from 'expo';
 import Amplify from 'aws-amplify';
 import { withAuthenticator } from 'aws-amplify-react-native';
 
-  //preferences screen
+  //login screen
   export default class loginScreen extends React.Component {
 
     static navigationOptions = {
@@ -48,7 +48,7 @@ import { withAuthenticator } from 'aws-amplify-react-native';
                 <TouchableHighlight
                     underlayColor={'#0018A8'}
                     style={styles.button}
-                    onPress={() => {this.props.navigation.navigate('Home');
+                    onPress={() => {this.props.navigation.navigate('Results');
                     }}>
                     <Text style={styles.btext}>Returning user login</Text>
                 </TouchableHighlight>
@@ -56,7 +56,7 @@ import { withAuthenticator } from 'aws-amplify-react-native';
                 <TouchableHighlight
                     underlayColor={'#0018A8'}
                     style={styles.button}
-                    onPress={() => {this.props.navigation.navigate('Home');
+                    onPress={() => {this.props.navigation.navigate('Results');
                     }}>
                     <Text style={styles.btext}>Guest login</Text>
                 </TouchableHighlight>
