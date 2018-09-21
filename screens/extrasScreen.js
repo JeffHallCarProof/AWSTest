@@ -15,6 +15,7 @@ import { createStackNavigator } from 'react-navigation';
 import { WebBrowser } from 'expo';
 import Amplify from 'aws-amplify';
 import { withAuthenticator } from 'aws-amplify-react-native';
+import _, {debounce} from 'lodash';
 
   //extras screen
   export default class extrasScreen extends React.Component {
@@ -128,9 +129,9 @@ import { withAuthenticator } from 'aws-amplify-react-native';
                 <TouchableHighlight
                   underlayColor={'#0018A8'}
                   style={styles.button}
-                  onPress={() => {this.props.navigation.navigate(Path, {
-                  sId: screenId,});
-                }}>
+                  onPress={_.debounce(() => {        this.props.navigation.navigate(Path, {
+                    sId: screenId,})},500)}
+                    >
                   <Text style={styles.btext}> Confirm </Text>
                 </TouchableHighlight>
                 

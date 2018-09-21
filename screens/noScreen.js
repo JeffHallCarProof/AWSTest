@@ -129,6 +129,7 @@ export default class noScreen extends React.Component {
           </View> 
       ); //End of return
     } //End of render
+
   } //End of class
 
   //Component css

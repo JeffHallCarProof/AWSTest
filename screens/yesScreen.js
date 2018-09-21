@@ -63,7 +63,8 @@ import _, {debounce} from 'lodash';
 
           <Button
             title = 'Enter Data' 
-            onPress={this._buttonAction}
+            onPress={_.debounce(() => {        this.props.navigation.navigate(Path, {
+              sId: screenId,})},500)}
           />
 
           <Button
@@ -81,7 +82,7 @@ import _, {debounce} from 'lodash';
 
 
 
-
+/*
     //Button functionality
     _buttonAction = () => {
       //Navigates to testScreen, sending in parameters for make, model and year from user input
@@ -93,7 +94,7 @@ import _, {debounce} from 'lodash';
       });
       
     }; //End of Button Functionality
-
+*/
   } //End of class
 
   //Component css

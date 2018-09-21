@@ -15,7 +15,7 @@ import { ListItem, CheckBox, Slider } from 'react-native-elements';
 import { WebBrowser } from 'expo';
 import Amplify from 'aws-amplify';
 import { withAuthenticator } from 'aws-amplify-react-native';
-
+import _, {debounce} from 'lodash';
   //preferences screen
   export default class pScreen extends React.Component {
 
@@ -272,9 +272,8 @@ import { withAuthenticator } from 'aws-amplify-react-native';
           <TouchableHighlight
             underlayColor={'#0018A8'}
             style={styles.button}
-            onPress={() => {
-                this.props.navigation.navigate('Login', {sId: screenId});
-            }}
+            onPress={_.debounce(() => {        this.props.navigation.navigate('Login', {
+              sId: screenId,})},500)}
             >
 
             <Text style={styles.btext}>Submit</Text>

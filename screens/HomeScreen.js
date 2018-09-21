@@ -14,7 +14,7 @@ import { createStackNavigator } from 'react-navigation';
 import { WebBrowser } from 'expo';
 import Amplify from 'aws-amplify';
 import { withAuthenticator } from 'aws-amplify-react-native';
-
+import _, {debounce} from 'lodash';
   //home screen
   export default class HomeScreen extends React.Component {
 
@@ -32,18 +32,18 @@ import { withAuthenticator } from 'aws-amplify-react-native';
             <TouchableHighlight
               underlayColor={'#0018A8'}
               style={styles.button}
-              onPress={() => {this.props.navigation.navigate('Yes',{
-                sId: 1,});
-                }}>
+              onPress={_.debounce(() => {        this.props.navigation.navigate('Yes', {
+                sId: 1,})},500)}
+                >
               <Text style={styles.btext}> Hot Dog </Text>
             </TouchableHighlight>
             <Text></Text>
             <TouchableHighlight
               underlayColor={'#0018A8'}
               style={styles.button}
-              onPress={() => {this.props.navigation.navigate('No',{
-                sId: 0,});
-                }}>
+              onPress={_.debounce(() => {        this.props.navigation.navigate('No', {
+                sId: 0,})},500)}
+                >
               <Text style={styles.btext}> No Hot Dog </Text>
             </TouchableHighlight>
             <Text></Text>

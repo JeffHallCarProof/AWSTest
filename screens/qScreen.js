@@ -15,7 +15,8 @@ import {
   import { WebBrowser } from 'expo';
   import Amplify from 'aws-amplify';
   import { withAuthenticator } from 'aws-amplify-react-native';
-
+  import _, {debounce} from 'lodash';
+  
   //question screen
   export default class qScreen extends React.Component {
     static navigationOptions = {
@@ -73,9 +74,8 @@ import {
                 <TouchableHighlight
                   underlayColor={'#0018A8'}
                   style={styles.button}
-                  onPress={() => {this.props.navigation.navigate(Path, {
-                    sId: screenId});
-                }} 
+                  onPress={_.debounce(() => {        this.props.navigation.navigate(Path, {
+                    sId: screenId,})},500)}
                 >
                   <Text style={styles.btext}> Hot Dog </Text>
                 </TouchableHighlight>
