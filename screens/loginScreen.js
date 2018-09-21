@@ -16,6 +16,7 @@ import { createStackNavigator } from 'react-navigation';
 import { WebBrowser } from 'expo';
 import Amplify from 'aws-amplify';
 import { withAuthenticator } from 'aws-amplify-react-native';
+import _, {debounce} from 'lodash';
 
   //login screen
   export default class loginScreen extends React.Component {
@@ -28,6 +29,10 @@ import { withAuthenticator } from 'aws-amplify-react-native';
     render() {
 
         const { navigation } = this.props;
+        const screenId = navigation.getParam('sId', 'Invalid');
+        bPath = 'Preferences'
+        rPath = 'Login'
+
   
         return (
             <View style={styles.container}>
@@ -48,18 +53,23 @@ import { withAuthenticator } from 'aws-amplify-react-native';
                 <TouchableHighlight
                     underlayColor={'#0018A8'}
                     style={styles.button}
-                    onPress={() => {this.props.navigation.navigate('Results');
-                    }}>
+                    onPress={_.debounce(() => { this.props.navigation.navigate('Results')},500)}>
                     <Text style={styles.btext}>Returning user login</Text>
                 </TouchableHighlight>
                 <Text></Text>
                 <TouchableHighlight
                     underlayColor={'#0018A8'}
                     style={styles.button}
-                    onPress={() => {this.props.navigation.navigate('Results');
-                    }}>
+                    onPress={_.debounce(() => { this.props.navigation.navigate('Results')},500)}>
                     <Text style={styles.btext}>Guest login</Text>
                 </TouchableHighlight>
+                <Button
+                    title="Go back"
+                    onPress={() => {
+                    this.props.navigation.navigate(bPath, {
+                    sId: screenId, Path: rPath});
+                }}
+                />
 
             </View>
             </View>
