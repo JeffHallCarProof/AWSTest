@@ -27,7 +27,6 @@ export default class noScreen extends React.Component {
 
       const { navigation } = this.props;
       const screenId = navigation.getParam('sId', 'Invalid');
-      
       if(JSON.stringify(screenId)==0){
         Path ='Extras'
         bPath ='Home'
@@ -36,7 +35,8 @@ export default class noScreen extends React.Component {
         Path='Preferences'
         bPath='Extras'
         rPath='No'
-      }
+      } 
+
 
       return (
           <View style={styles.container}>
@@ -45,13 +45,13 @@ export default class noScreen extends React.Component {
                 Please select a Life Event!
               </Text>
             </View>
-            
+            <Text style={styles.textS}>ID: {JSON.stringify(screenId)}</Text>
             <View style={styles.bcontainer}>
               <TouchableHighlight
                 underlayColor={'#0018A8'}
                 style={styles.button}
                 eId={'1'}
-                onPress={_.debounce(() => {this.onPress(screenId)},500)}
+                onPress={_.debounce(() => {this._onPress(screenId)},400)}
               >
                 <Text style={styles.btext}> E1 </Text>
               </TouchableHighlight>
@@ -61,7 +61,7 @@ export default class noScreen extends React.Component {
                 underlayColor={'#0018A8'}
                 style={styles.button}
                 eId={'2'}
-                onPress={_.debounce(() => {this.onPress(screenId)},500)}
+                onPress={_.debounce(() => {this._onPress(screenId)},400)}
               >
                 <Text style={styles.btext}> E2 </Text>
               </TouchableHighlight>
@@ -71,7 +71,7 @@ export default class noScreen extends React.Component {
                 underlayColor={'#0018A8'}
                 style={styles.button}
                 eId={'3'}
-                onPress={_.debounce(() => {this.onPress(screenId)},500)}
+                onPress={_.debounce(() => {this._onPress(screenId)},400)}
               >
                 <Text style={styles.btext}> E3 </Text>
               </TouchableHighlight>
@@ -83,7 +83,7 @@ export default class noScreen extends React.Component {
                 underlayColor={'#0018A8'}
                 style={styles.button}
                 eId={'4'}
-                onPress={_.debounce(() => {this.onPress(screenId)},500)}
+                onPress={_.debounce(() => {this._onPress(screenId)},400)}
               >
                 <Text style={styles.btext}> E4 </Text>
               </TouchableHighlight>              
@@ -92,7 +92,7 @@ export default class noScreen extends React.Component {
                 underlayColor={'#0018A8'}
                 style={styles.button}
                 eId={'5'}
-                onPress={_.debounce(() => {this.onPress(screenId)},500)}
+                onPress={_.debounce(() => {this._onPress(screenId)},400)}
               >
                 <Text style={styles.btext}> E5 </Text>
               </TouchableHighlight>
@@ -101,7 +101,7 @@ export default class noScreen extends React.Component {
                 underlayColor={'#0018A8'}
                 style={styles.button}
                 eId={'6'}
-                onPress={_.debounce(() => {this.onPress(screenId)},500)}
+                onPress={_.debounce(() => {this._onPress(screenId)},400)}
               >
                 <Text style={styles.btext}> E6 </Text>
               </TouchableHighlight>  
@@ -118,7 +118,12 @@ export default class noScreen extends React.Component {
           </View> 
       ); //End of return
     } //End of render
-onPress =(screenId) =>{    
+_onPress =(screenId) =>{  
+  if(JSON.stringify(screenId)==0){
+    Path ='Extras'
+  } else{
+    Path='Preferences'
+  }  
   this.props.navigation.navigate(Path, {
     sId: screenId,})
 }

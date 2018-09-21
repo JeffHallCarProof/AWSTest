@@ -51,6 +51,15 @@ import _, {debounce} from 'lodash';
   
       ); //End of return
     } //End of render
+    onPress =(screenId,) =>{    
+      if(JSON.stringify(screenId)==0){
+        Path ='No'
+      } else{
+        Path='Yes'
+      }
+      this.props.navigation.navigate(Path, {
+        sId: screenId,})
+    }
   } //End of class
 
   //Component css
