@@ -16,7 +16,7 @@ import {
   import Amplify from 'aws-amplify';
   import { withAuthenticator } from 'aws-amplify-react-native';
   import _, {debounce} from 'lodash';
-  
+
   //question screen
   export default class qScreen extends React.Component {
     static navigationOptions = {
@@ -38,9 +38,6 @@ import {
           <Text style={{ paddingLeft: 50, paddingRight: 50, fontWeight: 'bold', fontSize: 20}}>
           Hot Dog!
           </Text>
-          <Text style={styles.textS}>ID: {JSON.stringify(screenId)}</Text>
-          <Text style={styles.textS}>P: {JSON.stringify(Path)}</Text>
-          <Text style={styles.textS}>bP: {JSON.stringify(bPath)}</Text>
           </View>
                   <Text>The hot dog or dog (also spelled hotdog) is a grilled or steamed link-sausage sandwich where the sausage is served in the slit of a special hot dog bun, 
                       a partially sliced bun. 

@@ -42,9 +42,6 @@ import _, {debounce} from 'lodash';
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
           
           <Text style={{ paddingLeft: 50, paddingRight: 50, fontWeight: 'bold', fontSize: 20}}>Please enter the Make, Model, and Year of the vehicle you are searching for...</Text>
-          <Text style={styles.textS}>ID: {JSON.stringify(screenId)}</Text>
-          <Text style={styles.textS}>P: {JSON.stringify(Path)}</Text>
-          <Text style={styles.textS}>bP: {JSON.stringify(bPath)}</Text>
           <View style={styles.inputContainer}>
 
             <View style={styles.inputBox}>

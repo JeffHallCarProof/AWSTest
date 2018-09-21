@@ -43,7 +43,6 @@ import _, {debounce} from 'lodash';
     render() {
 
       const { navigation } = this.props;
-      const itemId = navigation.getParam('eId', 'NO-ID');
       const screenId = navigation.getParam('sId');
       if(JSON.stringify(screenId)==1)
       {
@@ -60,9 +59,7 @@ import _, {debounce} from 'lodash';
         <View>
         <ScrollView contentContainerStyle={styles.contentContainer}>
             <Text h2>Recommened</Text>
-          <Text style={styles.textS}>ID: {JSON.stringify(screenId)}</Text>
-          <Text style={styles.textS}>P: {JSON.stringify(Path)}</Text>
-          <Text style={styles.textS}>bP: {JSON.stringify(bPath)}</Text>
+
               <CheckBox
                 title="Item1"
                 checked={this.state.cb1}

@@ -27,7 +27,6 @@ export default class noScreen extends React.Component {
 
       const { navigation } = this.props;
       const screenId = navigation.getParam('sId', 'Invalid');
-      const routeId = this.props.navigation.dangerouslyGetParent().state.key;
       
       if(JSON.stringify(screenId)==0){
         Path ='Extras'
@@ -45,10 +44,6 @@ export default class noScreen extends React.Component {
               <Text style={{ paddingLeft: 50, paddingRight: 50, fontWeight: 'bold', fontSize: 20}}>
                 Please select a Life Event!
               </Text>
-              <Text style={styles.textS}>ID: {JSON.stringify(screenId)}</Text>
-              <Text style={styles.textS}>rId: {JSON.stringify(routeId)}</Text>
-              <Text style={styles.textS}>P: {JSON.stringify(Path)}</Text>
-              <Text style={styles.textS}>bP: {JSON.stringify(bPath)}</Text>
             </View>
             
             <View style={styles.bcontainer}>
@@ -56,8 +51,7 @@ export default class noScreen extends React.Component {
                 underlayColor={'#0018A8'}
                 style={styles.button}
                 eId={'1'}
-                onPress={_.debounce(() => {        this.props.navigation.navigate(Path, {
-                  sId: screenId,})},500)}
+                onPress={_.debounce(() => {this.onPress(screenId)},500)}
               >
                 <Text style={styles.btext}> E1 </Text>
               </TouchableHighlight>
@@ -67,8 +61,7 @@ export default class noScreen extends React.Component {
                 underlayColor={'#0018A8'}
                 style={styles.button}
                 eId={'2'}
-                onPress={_.debounce(() => {        this.props.navigation.navigate(Path, {
-                  sId: screenId,})},500)}
+                onPress={_.debounce(() => {this.onPress(screenId)},500)}
               >
                 <Text style={styles.btext}> E2 </Text>
               </TouchableHighlight>
@@ -78,8 +71,7 @@ export default class noScreen extends React.Component {
                 underlayColor={'#0018A8'}
                 style={styles.button}
                 eId={'3'}
-                onPress={_.debounce(() => {        this.props.navigation.navigate(Path, {
-                  sId: screenId,})},500)}
+                onPress={_.debounce(() => {this.onPress(screenId)},500)}
               >
                 <Text style={styles.btext}> E3 </Text>
               </TouchableHighlight>
@@ -91,8 +83,7 @@ export default class noScreen extends React.Component {
                 underlayColor={'#0018A8'}
                 style={styles.button}
                 eId={'4'}
-                onPress={_.debounce(() => {        this.props.navigation.navigate(Path, {
-                  sId: screenId,})},500)}
+                onPress={_.debounce(() => {this.onPress(screenId)},500)}
               >
                 <Text style={styles.btext}> E4 </Text>
               </TouchableHighlight>              
@@ -101,8 +92,7 @@ export default class noScreen extends React.Component {
                 underlayColor={'#0018A8'}
                 style={styles.button}
                 eId={'5'}
-                onPress={_.debounce(() => {        this.props.navigation.navigate(Path, {
-                  sId: screenId,})},500)}
+                onPress={_.debounce(() => {this.onPress(screenId)},500)}
               >
                 <Text style={styles.btext}> E5 </Text>
               </TouchableHighlight>
@@ -111,8 +101,7 @@ export default class noScreen extends React.Component {
                 underlayColor={'#0018A8'}
                 style={styles.button}
                 eId={'6'}
-                onPress={_.debounce(() => {        this.props.navigation.navigate(Path, {
-                  sId: screenId,})},500)}
+                onPress={_.debounce(() => {this.onPress(screenId)},500)}
               >
                 <Text style={styles.btext}> E6 </Text>
               </TouchableHighlight>  
@@ -129,7 +118,10 @@ export default class noScreen extends React.Component {
           </View> 
       ); //End of return
     } //End of render
-
+onPress =(screenId) =>{    
+  this.props.navigation.navigate(Path, {
+    sId: screenId,})
+}
   } //End of class
 
   //Component css
