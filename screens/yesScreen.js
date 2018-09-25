@@ -33,12 +33,9 @@ import _, {debounce} from 'lodash';
       this.state.disabled = navigation.getParam('disabled', false);
       const screenId = navigation.getParam('sId', 'Invalid');
 
-      if(JSON.stringify(screenId)==1)
-      {
-        Path='Extras'
-        bPath='Home'
-        rPath='Yes'
-      }
+      Path='Extras'
+      bPath='Home'
+      rPath='Yes'
 
       return ( 
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -76,31 +73,14 @@ import _, {debounce} from 'lodash';
 
 //                                              READ THIS 
 // set up functions as below but add debounce
-_onPress =_.throttle((screenId) =>{ 
+_onPress =_.throttle((screenId, bId) =>{ 
   this.state.disabled=true   
   if(JSON.stringify(bId)==1){
-    if(JSON.stringify(screenId)==1)
-    {
-      Path='Extras'
-      bPath='Home'
-      rPath='Yes'
-    } else{
-      Path='Home'
-    }
     this.props.navigation.navigate(bPath, {
-      sId: screenId,disabled:false, Path: bPath})
-    
+      sId: screenId,disabled:false})
   } else{
-    if(JSON.stringify(screenId)==1)
-    {
-      Path='Extras'
-      bPath='Home'
-      rPath='Yes'
-    } else{
-      Path='Home'
-    }
     this.props.navigation.navigate(Path, {
-      sId: screenId,})
+      sId: screenId,disabled:false})
   } 
 
 },1000,{leading:true, trailing:false});

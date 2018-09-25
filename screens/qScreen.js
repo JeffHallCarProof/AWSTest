@@ -83,7 +83,7 @@ import {
       } //End of render
     
       // set up functions as below but add debounce
-      _onPress =_.throttle((screenId) =>{ 
+      _onPress =_.throttle((screenId, bId) =>{ 
         this.state.disabled=true   
         if(JSON.stringify(bId)==1){
           bPath = 'Extras'

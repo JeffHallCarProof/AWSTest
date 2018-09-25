@@ -142,7 +142,7 @@ import _, {debounce} from 'lodash';
 
       ); //End of return
     } //End of render
-    _onPress =_.throttle((screenId) =>{ 
+    _onPress =_.throttle((screenId, bId) =>{ 
       this.state.disabled=true   
       if(JSON.stringify(bId)==1){
         if(JSON.stringify(screenId)==1)

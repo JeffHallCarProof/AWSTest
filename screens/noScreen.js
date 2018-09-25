@@ -119,7 +119,7 @@ export default class noScreen extends React.Component {
           </View> 
       ); //End of return
     } //End of render
-    _onPress =_.throttle((screenId) =>{ 
+    _onPress =_.throttle((screenId, bId) =>{ 
       this.state.disabled=true   
       if(JSON.stringify(bId)==1){
         if(JSON.stringify(screenId)==0){
