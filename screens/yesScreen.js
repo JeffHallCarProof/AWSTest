@@ -24,9 +24,7 @@ import _, {debounce} from 'lodash';
         header: null,
         gesturesEnabled: false,
       };
-      state={
-        disabled: false,
-            };
+
     render() { 
       
       const { navigation } = this.props;
@@ -36,7 +34,6 @@ import _, {debounce} from 'lodash';
       {
         Path='Extras'
         bPath='Home'
-        rPath='Yes'
       } else{
         Path='Home'
       }
@@ -63,12 +60,13 @@ import _, {debounce} from 'lodash';
 
           <Button
             title = 'Enter Data' 
-            onPress={_.debounce(() => {this._onPress(screenId,bId=0)},400)}
+            onPress={_.debounce(() => {        this.props.navigation.navigate(Path, {
+              sId: screenId,})},500)}
           />
 
-            <Button
+          <Button
             title="Go back"
-            onPress={_.debounce(() => {this._onPress(screenId,bId=1)},400)}
+            onPress={() => this.props.navigation.goBack()}
           />
 
         </View>
@@ -77,34 +75,23 @@ import _, {debounce} from 'lodash';
 
 //                                              READ THIS 
 // set up functions as below but add debounce
-_onPress =_.throttle((screenId) =>{ 
-  this.state.disabled=true   
-  if(JSON.stringify(bId)==1){
-    if(JSON.stringify(screenId)==1)
-    {
-      Path='Extras'
-      bPath='Home'
-      rPath='Yes'
-    } else{
-      Path='Home'
-    }
-    this.props.navigation.navigate(bPath, {
-      sId: screenId,disabled:false, Path: bPath})
-    
-  } else{
-    if(JSON.stringify(screenId)==1)
-    {
-      Path='Extras'
-      bPath='Home'
-      rPath='Yes'
-    } else{
-      Path='Home'
-    }
-    this.props.navigation.navigate(Path, {
-      sId: screenId,})
-  } 
 
-},1000,{leading:true, trailing:false});
+
+
+
+/*
+    //Button functionality
+    _buttonAction = () => {
+      //Navigates to testScreen, sending in parameters for make, model and year from user input
+      this.props.navigation.navigate(Path, {
+        make: this.userInput,
+        model: this.userInput2,
+        year: this.userInput3,
+        sId: 1
+      });
+      
+    }; //End of Button Functionality
+*/
   } //End of class
 
   //Component css
