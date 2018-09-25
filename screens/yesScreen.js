@@ -24,18 +24,20 @@ import _, {debounce} from 'lodash';
         header: null,
         gesturesEnabled: false,
       };
-
+      state={
+        disabled: false,
+            };
     render() { 
       
       const { navigation } = this.props;
+      this.state.disabled = navigation.getParam('disabled', false);
       const screenId = navigation.getParam('sId', 'Invalid');
 
       if(JSON.stringify(screenId)==1)
       {
         Path='Extras'
         bPath='Home'
-      } else{
-        Path='Home'
+        rPath='Yes'
       }
 
       return ( 
@@ -60,13 +62,12 @@ import _, {debounce} from 'lodash';
 
           <Button
             title = 'Enter Data' 
-            onPress={_.debounce(() => {        this.props.navigation.navigate(Path, {
-              sId: screenId,})},500)}
+            onPress={_.debounce(() => {this._onPress(screenId,bId=0)},400)}
           />
 
-          <Button
+            <Button
             title="Go back"
-            onPress={() => this.props.navigation.goBack()}
+            onPress={_.debounce(() => {this._onPress(screenId,bId=1)},400)}
           />
 
         </View>
@@ -75,23 +76,34 @@ import _, {debounce} from 'lodash';
 
 //                                              READ THIS 
 // set up functions as below but add debounce
+_onPress =_.throttle((screenId) =>{ 
+  this.state.disabled=true   
+  if(JSON.stringify(bId)==1){
+    if(JSON.stringify(screenId)==1)
+    {
+      Path='Extras'
+      bPath='Home'
+      rPath='Yes'
+    } else{
+      Path='Home'
+    }
+    this.props.navigation.navigate(bPath, {
+      sId: screenId,disabled:false, Path: bPath})
+    
+  } else{
+    if(JSON.stringify(screenId)==1)
+    {
+      Path='Extras'
+      bPath='Home'
+      rPath='Yes'
+    } else{
+      Path='Home'
+    }
+    this.props.navigation.navigate(Path, {
+      sId: screenId,})
+  } 
 
-
-
-
-/*
-    //Button functionality
-    _buttonAction = () => {
-      //Navigates to testScreen, sending in parameters for make, model and year from user input
-      this.props.navigation.navigate(Path, {
-        make: this.userInput,
-        model: this.userInput2,
-        year: this.userInput3,
-        sId: 1
-      });
-      
-    }; //End of Button Functionality
-*/
+},1000,{leading:true, trailing:false});
   } //End of class
 
   //Component css

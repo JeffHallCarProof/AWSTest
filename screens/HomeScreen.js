@@ -22,9 +22,12 @@ import _, {debounce} from 'lodash';
       header: null,
       gesturesEnabled: false,
     };
-
+    state={
+      disabled: false,
+          };
     render() {
-
+      const { navigation } = this.props;
+      this.state.disabled = navigation.getParam('disabled', false);
       return (
         <View style={styles.container}>
           <View style={styles.bcontainer}>
@@ -32,8 +35,8 @@ import _, {debounce} from 'lodash';
             <TouchableHighlight
               underlayColor={'#0018A8'}
               style={styles.button}
-              onPress={_.debounce(() => {        this.props.navigation.navigate('Yes', {
-                sId: 1,})},500)}
+              disabled={this.state.disabled}
+              onPress={() => {this._onPress(screenId=1)}}
                 >
               <Text style={styles.btext}> Hot Dog </Text>
             </TouchableHighlight>
@@ -41,8 +44,8 @@ import _, {debounce} from 'lodash';
             <TouchableHighlight
               underlayColor={'#0018A8'}
               style={styles.button}
-              onPress={_.debounce(() => {        this.props.navigation.navigate('No', {
-                sId: 0,})},500)}
+              disabled={this.state.disabled}
+              onPress={() => {this._onPress(screenId=0)}}
                 >
               <Text style={styles.btext}> No Hot Dog </Text>
             </TouchableHighlight>
@@ -51,7 +54,8 @@ import _, {debounce} from 'lodash';
   
       ); //End of return
     } //End of render
-    onPress =(screenId,) =>{    
+    _onPress =_.throttle((screenId) =>{ 
+      this.state.disabled=true   
       if(JSON.stringify(screenId)==0){
         Path ='No'
       } else{
@@ -59,7 +63,8 @@ import _, {debounce} from 'lodash';
       }
       this.props.navigation.navigate(Path, {
         sId: screenId,})
-    }
+
+    },1000,{leading:true, trailing:false});
   } //End of class
 
   //Component css

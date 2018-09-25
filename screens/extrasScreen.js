@@ -38,11 +38,13 @@ import _, {debounce} from 'lodash';
       cb10: false,
       cb11: false,
       cb12: false,
+      disabled: false,
     }
 
     render() {
 
       const { navigation } = this.props;
+      this.state.disabled = navigation.getParam('disabled', false);
       const screenId = navigation.getParam('sId');
       if(JSON.stringify(screenId)==1)
       {
@@ -126,25 +128,52 @@ import _, {debounce} from 'lodash';
                 <TouchableHighlight
                   underlayColor={'#0018A8'}
                   style={styles.button}
-                  onPress={_.debounce(() => {        this.props.navigation.navigate(Path, {
-                    sId: screenId,})},500)}
+                  onPress={_.debounce(() => {this._onPress(screenId,bId=0)},400)}
                     >
                   <Text style={styles.btext}> Confirm </Text>
                 </TouchableHighlight>
                 
-            <Button
+                <Button
             title="Go back"
-            onPress={() => {
-              this.props.navigation.navigate(bPath, {
-                sId: screenId, Path: rPath});
-              }}
+            onPress={_.debounce(() => {this._onPress(screenId,bId=1)},400)}
           />
           </View></ScrollView>
         </View>
 
       ); //End of return
     } //End of render
-  
+    _onPress =_.throttle((screenId) =>{ 
+      this.state.disabled=true   
+      if(JSON.stringify(bId)==1){
+        if(JSON.stringify(screenId)==1)
+        {
+          Path='No'
+          bPath='Yes'
+          rPath='Extras'
+        } else{
+          Path='Questions'
+          bPath='No'
+          rPath='Extras'
+        }
+        this.props.navigation.navigate(bPath, {
+          sId: screenId,disabled:false,Path: bPath})
+        
+      } else{
+        if(JSON.stringify(screenId)==1)
+        {
+          Path='No'
+          bPath='Yes'
+          rPath='Extras'
+        } else{
+          Path='Questions'
+          bPath='No'
+          rPath='Extras'
+        }
+        this.props.navigation.navigate(Path, {
+          sId: screenId,})
+      } 
+    
+    },1000,{leading:true, trailing:false});
   } //End of class
 
   //Component css

@@ -51,12 +51,13 @@ import _, {debounce} from 'lodash';
         p12: false,
         v12: 0,
         value: 0.01,
-      
+        disabled: false
       }
 
     render() {
 
       const { navigation } = this.props;
+      this.state.disabled = navigation.getParam('disabled', false);
       const screenId = navigation.getParam('sId', 'Invalid');
       if(JSON.stringify(screenId)==0){
         Path ='Login'
@@ -263,17 +264,13 @@ import _, {debounce} from 'lodash';
 <View style={styles.bcontainer}>
           <Button
             title="Go back"
-            onPress={() => {
-              this.props.navigation.navigate(bPath, {
-                sId: screenId, Path: rPath});
-              }}
+            onPress={_.debounce(() => {this._onPress(screenId,bId=1)},400)}
           />
           <Text></Text>
           <TouchableHighlight
             underlayColor={'#0018A8'}
             style={styles.button}
-            onPress={_.debounce(() => {        this.props.navigation.navigate('Login', {
-              sId: screenId,})},500)}
+            onPress={_.debounce(() => {this._onPress(screenId,bId=0)},400)}
             >
 
             <Text style={styles.btext}>Submit</Text>
@@ -286,6 +283,30 @@ import _, {debounce} from 'lodash';
       ); //End of return
     } //End of render
    
+    // set up functions as below but add debounce
+    _onPress =_.throttle((screenId) =>{ 
+      this.state.disabled=true   
+      if(JSON.stringify(bId)==1){
+        if(JSON.stringify(screenId)==1)
+        {
+          bPath = 'No'
+          this.props.navigation.navigate(bPath, {
+          sId: screenId,disabled:false})
+        }
+        else
+        {
+          bPath = 'Questions'
+          this.props.navigation.navigate(bPath, {
+          sId: screenId,disabled:false})
+        }
+      }
+      else{
+        Path = 'Login'
+        this.props.navigation.navigate(Path, {
+        sId: screenId,})
+      } 
+    },1000,{leading:true, trailing:false})
+
   } //End of class
 
   //Component css

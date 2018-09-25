@@ -24,10 +24,12 @@ import {
       gesturesEnabled: false,
     };
     state = {
-        value: 0.01
+        value: 0.01,
+        disabled: false
     };
     render() {
       const { navigation } = this.props;
+      this.state.disabled = navigation.getParam('disabled', false);
       const screenId = navigation.getParam('sId', 'Invalid');
       Path ='Preferences'
       bPath ='Extras'
@@ -61,18 +63,14 @@ import {
         </Text>
                 <View style={styles.bcontainer}>
                 <Button
-            title="Go back"
-            onPress={() => {
-              this.props.navigation.navigate(bPath, {
-                sId: screenId, Path: rPath});
-              }}
-          />
+                  title="Go back"
+                  onPress={_.debounce(() => {this._onPress(screenId,bId=1)},400)}
+                />
                 <Text> </Text>
                 <TouchableHighlight
                   underlayColor={'#0018A8'}
                   style={styles.button}
-                  onPress={_.debounce(() => {        this.props.navigation.navigate(Path, {
-                    sId: screenId,})},500)}
+                  onPress={_.debounce(() => {this._onPress(screenId,bId=0)},400)}
                 >
                   <Text style={styles.btext}> Hot Dog </Text>
                 </TouchableHighlight>
@@ -81,10 +79,25 @@ import {
                 </View>
             </View>
     
-        );
-      }
+        ); //End of return
+      } //End of render
     
-    }
+      // set up functions as below but add debounce
+      _onPress =_.throttle((screenId) =>{ 
+        this.state.disabled=true   
+        if(JSON.stringify(bId)==1){
+          bPath = 'Extras'
+          this.props.navigation.navigate(bPath, {
+          sId: screenId,disabled:false})
+        }
+        else{
+          Path = 'Preferences'
+          this.props.navigation.navigate(Path, {
+          sId: screenId,})
+        } 
+      },1000,{leading:true, trailing:false})
+
+    } //End of class
     const styles = StyleSheet.create({
         container: {
           flex: 1,
