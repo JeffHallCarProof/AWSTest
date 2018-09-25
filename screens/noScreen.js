@@ -23,19 +23,25 @@ export default class noScreen extends React.Component {
         header: null,
         gesturesEnabled: false,
       };
+
+      //ADD STATE DISABLED/NAV.disabled and add bID into onpress pass for no double screening.!!!!!!
+      //
+      //
+      //
+      //
+      //
+      //
+      //
+      //
+      //
+      state={
+        disabled: false,
+            };
     render() {
 
       const { navigation } = this.props;
+      this.state.disabled = navigation.getParam('disabled', false);
       const screenId = navigation.getParam('sId', 'Invalid');
-      if(JSON.stringify(screenId)==0){
-        Path ='Extras'
-        bPath ='Home'
-        rPath='No'
-      } else{
-        Path='Preferences'
-        bPath='Extras'
-        rPath='No'
-      } 
 
 
       return (
@@ -45,13 +51,13 @@ export default class noScreen extends React.Component {
                 Please select a Life Event!
               </Text>
             </View>
-            <Text style={styles.textS}>ID: {JSON.stringify(screenId)}</Text>
+            <Text style={styles.textS}>ID: {JSON.stringify(screenId,bId=0)}</Text>
             <View style={styles.bcontainer}>
               <TouchableHighlight
                 underlayColor={'#0018A8'}
                 style={styles.button}
                 eId={'1'}
-                onPress={_.debounce(() => {this._onPress(screenId)},400)}
+                onPress={_.debounce(() => {this._onPress(screenId,bId=0)},400)}
               >
                 <Text style={styles.btext}> E1 </Text>
               </TouchableHighlight>
@@ -61,7 +67,7 @@ export default class noScreen extends React.Component {
                 underlayColor={'#0018A8'}
                 style={styles.button}
                 eId={'2'}
-                onPress={_.debounce(() => {this._onPress(screenId)},400)}
+                onPress={_.debounce(() => {this._onPress(screenId,bId=0)},400)}
               >
                 <Text style={styles.btext}> E2 </Text>
               </TouchableHighlight>
@@ -71,7 +77,7 @@ export default class noScreen extends React.Component {
                 underlayColor={'#0018A8'}
                 style={styles.button}
                 eId={'3'}
-                onPress={_.debounce(() => {this._onPress(screenId)},400)}
+                onPress={_.debounce(() => {this._onPress(screenId,bId=0)},400)}
               >
                 <Text style={styles.btext}> E3 </Text>
               </TouchableHighlight>
@@ -83,7 +89,7 @@ export default class noScreen extends React.Component {
                 underlayColor={'#0018A8'}
                 style={styles.button}
                 eId={'4'}
-                onPress={_.debounce(() => {this._onPress(screenId)},400)}
+                onPress={_.debounce(() => {this._onPress(screenId,bId=0)},400)}
               >
                 <Text style={styles.btext}> E4 </Text>
               </TouchableHighlight>              
@@ -92,7 +98,7 @@ export default class noScreen extends React.Component {
                 underlayColor={'#0018A8'}
                 style={styles.button}
                 eId={'5'}
-                onPress={_.debounce(() => {this._onPress(screenId)},400)}
+                onPress={_.debounce(() => {this._onPress(screenId,bId=0)},400)}
               >
                 <Text style={styles.btext}> E5 </Text>
               </TouchableHighlight>
@@ -101,7 +107,7 @@ export default class noScreen extends React.Component {
                 underlayColor={'#0018A8'}
                 style={styles.button}
                 eId={'6'}
-                onPress={_.debounce(() => {this._onPress(screenId)},400)}
+                onPress={_.debounce(() => {this._onPress(screenId,bId=0)},400)}
               >
                 <Text style={styles.btext}> E6 </Text>
               </TouchableHighlight>  
@@ -109,25 +115,43 @@ export default class noScreen extends React.Component {
             <View>
             <Button
             title="Go back"
-            onPress={() => {
-              this.props.navigation.navigate(bPath, {
-                sId: screenId, Path: rPath});
-              }}
+            onPress={_.debounce(() => {this._onPress(screenId,bId=1)},400)}
           />
           </View>
           </View> 
       ); //End of return
     } //End of render
-_onPress =(screenId) =>{  
-  if(JSON.stringify(screenId)==0){
-    Path ='Extras'
+_onPress =_.throttle((screenId) =>{ 
+  this.state.disabled=true   
+  if(JSON.stringify(bId)==1){
+    if(JSON.stringify(screenId)==0){
+      Path ='Extras'
+      bPath ='Home'
+      rPath='No'
+    } else{
+      Path='Preferences'
+      bPath='Extras'
+      rPath='No'
+    } 
+    this.props.navigation.navigate(bPath, {
+      sId: screenId,disabled:false, Path: bPath})
+    
   } else{
-    Path='Preferences'
-  }  
-  this.props.navigation.navigate(Path, {
-    sId: screenId,})
-}
-  } //End of class
+    if(JSON.stringify(screenId)==0){
+      Path ='Extras'
+      bPath ='Home'
+      rPath='No'
+    } else{
+      Path='Preferences'
+      bPath='Extras'
+      rPath='No'
+    } 
+    this.props.navigation.navigate(Path, {
+      sId: screenId,})
+  } 
+
+},1000,{leading:true, trailing:false});
+} //End of class
 
   //Component css
   const styles = StyleSheet.create({
