@@ -10,16 +10,5 @@
             "StackName": "est-20180917103020",
             "StackId": "arn:aws:cloudformation:us-east-1:501701478882:stack/est-20180917103020/34a717f0-ba86-11e8-b5dd-500c219a3c36"
         }
-    },
-    "hosting": {
-        "S3AndCloudFront": {
-            "service": "S3AndCloudFront",
-            "providerPlugin": "awscloudformation",
-            "providerMetadata": {
-                "s3TemplateURL": "https://s3.amazonaws.com/est-20180917103020-deployment/amplify-cfn-templates/hosting/template.json",
-                "logicalId": "hostingS3AndCloudFront"
-            },
-            "lastPushTimeStamp": "2018-09-25T13:21:37.942Z"
-        }
     }
 }
