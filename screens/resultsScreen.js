@@ -32,8 +32,16 @@ import { withAuthenticator } from 'aws-amplify-react-native';
         return (
             
             <View style={styles.bcontainer}>
-                <Text>Results Screen</Text>
-                <Text></Text>
+            <Text> </Text>
+            <Text> </Text>
+               <Text>Results Screen</Text>
+                <ScrollView horizontal={true} backgroundColor= '#246ee5'>
+                    <View style={styles.colContainer}><Text> Column 1 </Text><Text> Column 1 </Text><Text> Column 1 </Text></View>
+                    <View style={styles.colContainer}><Text> Column 2 </Text></View> 
+                    <View style={styles.colContainer}><Text> Column 3 </Text></View>
+                </ScrollView>                
+                <Text> </Text>
+            <Text> </Text>
                 <TouchableHighlight
                     underlayColor={'#0018A8'}
                     style={styles.button}
@@ -64,7 +72,7 @@ const styles = StyleSheet.create({
       flex: 1,
       backgroundColor: 'white',
       alignItems: 'center',
-      justifyContent: 'center'
+      justifyContent: 'space-evenly'
     },
 
     btext: {
@@ -76,6 +84,18 @@ const styles = StyleSheet.create({
       backgroundColor: '#0247FE',
       padding: 10,
       borderRadius: 400
-    }
+    },
 
-  });
+    colContainer: {
+      flexDirection: 'column',
+      justifyContent: 'space-evenly',
+      borderColor: '#FFF',
+      borderWidth: 1,
+      width: 400
+    },
+
+    carContainer: {
+      flexDirection: 'row',
+      justifyContent: 'space-between'
+    },
+});
