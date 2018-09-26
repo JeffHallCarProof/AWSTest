@@ -10,6 +10,8 @@ import {
     TouchableOpacity,
     TouchableHighlight,
     View,
+    ProgressBarAndroid,
+    ProgressViewIOS 
   } from 'react-native';
 import { ListItem, CheckBox, Slider } from 'react-native-elements';
 import { createStackNavigator } from 'react-navigation';
@@ -17,8 +19,29 @@ import { WebBrowser } from 'expo';
 import Amplify from 'aws-amplify';
 import { withAuthenticator } from 'aws-amplify-react-native';
 
+const width = 375
   //results screen
   export default class resultsScreen extends React.Component {
+
+    constructor()
+    {
+        super();
+ 
+        this.state = { 
+          
+          progress_count: 0 
+        
+        }
+
+        this.scrollView_width = 0;
+ 
+        this.scrollViewContent_width = 0;
+    }
+ 
+    UpdateProgressBar = (progress) =>
+      {
+        this.setState({ progress_count: Math.abs( progress.nativeEvent.contentOffset.x / ( this.scrollViewContent_width - this.scrollView_width ))});
+      }
 
     static navigationOptions = {
       header: null,
@@ -35,13 +58,40 @@ import { withAuthenticator } from 'aws-amplify-react-native';
             <Text> </Text>
             <Text> </Text>
                <Text>Results Screen</Text>
-                <ScrollView horizontal={true} backgroundColor= '#246ee5' pagingEnabled={true}>
+                <ScrollView horizontal={true} backgroundColor= '#246ee5' pagingEnabled={true} 
+                onContentSizeChange = {( width, height ) => { this.scrollViewContent_width = width }} 
+                onScroll = { this.UpdateProgressBar } 
+                onLayout = {(event) => this.scrollView_width = ( event.nativeEvent.layout.width )} 
+                scrollEventThrottle = { 12 } >
                     <View style={styles.colContainer}><Text> Column 1 </Text><Text> Column 1 </Text><Text> Column 1 </Text></View>
                     <View style={styles.colContainer}><Text> Column 2 </Text></View> 
                     <View style={styles.colContainer}><Text> Column 3 </Text></View>
-                </ScrollView>                
-                <Text> </Text>
-            <Text> </Text>
+                </ScrollView>
+                <View style = { styles.ProgressBar_HolderView }>
+                {   
+                    ( Platform.OS === 'android' )
+                    ?
+                        (
+                            <ProgressBarAndroid
+                              styleAttr = "Horizontal"
+                              progress = { this.state.progress_count }
+                              color = "#fff"
+                              indeterminate = { false }
+                              style = {{ width: '100%' }}
+                            />
+                        )
+                    :
+                        (
+                            <ProgressViewIOS
+                              progressTintColor = "#fff"
+                              style = {{ width: '100%' }}
+                              progress = { this.state.progress_count }
+                            />
+                        )
+                }
+                    <Text style = { styles.Percentage }> { Math.round( this.state.progress_count * 100 ) }% </Text>
+                </View>
+                <View paddingBottom={75} paddingTop={20}>
                 <TouchableHighlight
                     underlayColor={'#0018A8'}
                     style={styles.button}
@@ -49,6 +99,7 @@ import { withAuthenticator } from 'aws-amplify-react-native';
                     }}>
                     <Text style={styles.btext}>Home</Text>
                 </TouchableHighlight>
+                  </View> 
             </View>
 
         ); //End of return
@@ -98,4 +149,27 @@ const styles = StyleSheet.create({
       flexDirection: 'row',
       justifyContent: 'space-between'
     },
+
+    ProgressBar_HolderView:
+    {
+      justifyContent: 'center',
+      flexDirection: 'row',
+      alignItems: 'center',
+      position: 'absolute',
+      left: 0,
+      right: 0,
+      bottom: 0,
+      paddingLeft: 20,
+      paddingRight: 50,
+      backgroundColor: '#246ee5',
+      height: 50,
+    },
+
+    Percentage:
+    {
+        position: 'absolute',
+        right: 6,
+        fontWeight: 'bold',
+        color: 'white'
+    }
 });
