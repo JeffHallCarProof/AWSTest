@@ -35,7 +35,7 @@ import { withAuthenticator } from 'aws-amplify-react-native';
             <Text> </Text>
             <Text> </Text>
                <Text>Results Screen</Text>
-                <ScrollView horizontal={true} backgroundColor= '#246ee5'>
+                <ScrollView horizontal={true} backgroundColor= '#246ee5' pagingEnabled={true}>
                     <View style={styles.colContainer}><Text> Column 1 </Text><Text> Column 1 </Text><Text> Column 1 </Text></View>
                     <View style={styles.colContainer}><Text> Column 2 </Text></View> 
                     <View style={styles.colContainer}><Text> Column 3 </Text></View>
@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
       justifyContent: 'space-evenly',
       borderColor: '#FFF',
       borderWidth: 1,
-      width: 400
+      width: 375
     },
 
     carContainer: {
