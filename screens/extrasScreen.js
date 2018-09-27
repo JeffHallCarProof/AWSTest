@@ -58,9 +58,8 @@ import _, {debounce} from 'lodash';
       }
 
       return (
-        <View>
         <ScrollView contentContainerStyle={styles.contentContainer}>
-            <Text h2>Recommened</Text>
+            <Text style={styles.headingText}>Recommended</Text>
 
               <CheckBox
                 title="Item1"
@@ -92,7 +91,7 @@ import _, {debounce} from 'lodash';
                 checked={this.state.cb6}
                 onPress={() => this.setState({ cb6: !this.state.cb6})}
               />
-              <Text h2>Optional</Text>
+              <Text style={styles.headingText}>Optional</Text>
               <CheckBox
                 title="Item7"
                 checked={this.state.cb7}
@@ -125,23 +124,25 @@ import _, {debounce} from 'lodash';
               />
         
               <View style={styles.bcontainer}>
+
+                <Button
+                  title="Go back"
+                  onPress={_.debounce(() => {this._onPress(screenId,bId=1)},400)}
+                />
                 <TouchableHighlight
                   underlayColor={'#0018A8'}
                   style={styles.button}
                   onPress={_.debounce(() => {this._onPress(screenId,bId=0)},400)}
-                    >
+                >
                   <Text style={styles.btext}> Confirm </Text>
                 </TouchableHighlight>
                 
-                <Button
-            title="Go back"
-            onPress={_.debounce(() => {this._onPress(screenId,bId=1)},400)}
-          />
-          </View></ScrollView>
-        </View>
+              </View>
+          </ScrollView>
 
       ); //End of return
     } //End of render
+
     _onPress =_.throttle((screenId, bId) =>{ 
       this.state.disabled=true   
       if(JSON.stringify(bId)==1){
@@ -174,6 +175,7 @@ import _, {debounce} from 'lodash';
       } 
     
     },1000,{leading:true, trailing:false});
+
   } //End of class
 
   //Component css
@@ -191,22 +193,32 @@ import _, {debounce} from 'lodash';
     },
 
     bcontainer: {
-        flex: 1,
-        backgroundColor: 'white',
-        alignItems: 'center',
-        justifyContent: 'center',
-        paddingHorizontal: 10
-      },
+      flex: 1,
+      flexDirection: 'row',
+      backgroundColor: 'white',
+      alignItems: 'center',
+      justifyContent: 'center',
+      paddingHorizontal: 10,
+      paddingTop: 10,
+      paddingBottom: 10
+    },
 
-      btext: {
-        color: 'white'
-      },
+    btext: {
+      color: 'white'
+    },
 
-      button: {
-        alignItems: 'center',
-        backgroundColor: '#0247FE',
-        padding: 10,
-        borderRadius: 400
-      }
+    headingText: {
+      fontWeight: 'bold',
+      textAlign: 'center',
+      paddingTop: 10,
+      paddingBottom: 10
+    },
+
+    button: {
+      alignItems: 'center',
+      backgroundColor: '#0247FE',
+      padding: 10,
+      borderRadius: 400
+    }
 
   });
