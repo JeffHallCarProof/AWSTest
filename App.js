@@ -22,6 +22,7 @@ import qScreen from './screens/qScreen';
 import pScreen from './screens/pScreen';
 import loginScreen from './screens/loginScreen';
 import resultsScreen from './screens/resultsScreen';
+import welcomeScreen from './screens/welcomeScreen';
 import amplify from './src/aws-exports';
 import { withAuthenticator } from 'aws-amplify-react-native';
 
@@ -30,6 +31,7 @@ Amplify.configure(amplify);
 //rootstack for navigation
 const RootStack = createStackNavigator(
   {
+    Welcome: welcomeScreen,
     Home: HomeScreen,
     No: noScreen,
     Yes: yesScreen,
@@ -41,7 +43,7 @@ const RootStack = createStackNavigator(
     Results: resultsScreen
   },
   {
-    initialRouteName: 'Home',
+    initialRouteName: 'Welcome',
   }
 );
 

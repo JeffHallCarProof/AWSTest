@@ -15,6 +15,7 @@ import { WebBrowser } from 'expo';
 import Amplify from 'aws-amplify';
 import { withAuthenticator } from 'aws-amplify-react-native';
 import _, {debounce} from 'lodash';
+
   //home screen
   export default class HomeScreen extends React.Component {
 
@@ -22,23 +23,30 @@ import _, {debounce} from 'lodash';
       header: null,
       gesturesEnabled: false,
     };
-    state={
+
+    state = {
       disabled: false,
-          };
+    };
+
     render() {
+
       const { navigation } = this.props;
       this.state.disabled = navigation.getParam('disabled', false);
+
       return (
+        
         <View style={styles.container}>
           <View style={styles.bcontainer}>
+
+            <Text style={styles.qText}>Do you know what vehicle you're looking for?</Text>
 
             <TouchableHighlight
               underlayColor={'#0018A8'}
               style={styles.button}
               disabled={this.state.disabled}
               onPress={() => {this._onPress(screenId=1)}}
-                >
-              <Text style={styles.btext}> Hot Dog </Text>
+            >
+              <Text style={styles.btext}> Yes </Text>
             </TouchableHighlight>
             <Text></Text>
             <TouchableHighlight
@@ -46,14 +54,16 @@ import _, {debounce} from 'lodash';
               style={styles.button}
               disabled={this.state.disabled}
               onPress={() => {this._onPress(screenId=0)}}
-                >
-              <Text style={styles.btext}> No Hot Dog </Text>
+            >
+              <Text style={styles.btext}> No </Text>
             </TouchableHighlight>
+
           </View>
         </View>
   
       ); //End of return
     } //End of render
+
     _onPress =_.throttle((screenId) =>{ 
       this.state.disabled=true   
       if(JSON.stringify(screenId)==0){
@@ -65,6 +75,7 @@ import _, {debounce} from 'lodash';
         sId: screenId,})
 
     },1000,{leading:true, trailing:false});
+
   } //End of class
 
   //Component css
@@ -96,6 +107,13 @@ import _, {debounce} from 'lodash';
       backgroundColor: '#0247FE',
       padding: 10,
       borderRadius: 400
+    },
+
+    qText: {
+      paddingBottom: 40,
+      paddingLeft: 25,
+      paddingRight: 25,
+      fontSize: 18
     }
 
   });
