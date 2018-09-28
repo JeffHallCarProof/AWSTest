@@ -60,15 +60,46 @@ import { withAuthenticator } from 'aws-amplify-react-native';
             <Text style={styles.titleText}>Results Screen</Text>
           </View>
                
-          <ScrollView horizontal={true} backgroundColor= '#246ee5' pagingEnabled={true} 
+          <ScrollView horizontal={true} backgroundColor= '#568fea' pagingEnabled={true} 
             onContentSizeChange = {( width, height ) => { this.scrollViewContent_width = width }} 
             onScroll = { this.UpdateProgressBar } 
             onLayout = {(event) => this.scrollView_width = ( event.nativeEvent.layout.width )} 
             scrollEventThrottle = { 12 } showsHorizontalScrollIndicator={false}
           >
-            <View style={styles.colContainer}><Text style={styles.colText}> Column 1 </Text><Text style={styles.colText}> Column 1 </Text><Text style={styles.colText}> Column 1 </Text></View>
-            <View style={styles.colContainer}><Text style={styles.colText}> Column 2 </Text></View> 
-            <View style={styles.colContainer}><Text style={styles.colText}> Column 3 </Text></View>
+            <View style={styles.colContainer}>
+            <Text style={styles.colText}> Comfort </Text>
+            <Text style={styles.colText}> Fuel Economy </Text>
+            <Text style={styles.colText}> Safety </Text>
+            <Text style={styles.colText}> Reliability </Text>
+            <Text style={styles.colText}> Environment </Text>
+            <Text style={styles.colText}> Performance </Text>
+            <Text style={styles.colText}> Style </Text>
+            <Text style={styles.colText}> Cargo Space </Text>
+            </View>
+
+
+            <View style={styles.colContainer}>
+            <Text style={styles.colText}> Comfort </Text>
+            <Text style={styles.colText}> Fuel Economy </Text>
+            <Text style={styles.colText}> Safety </Text>
+            <Text style={styles.colText}> Reliability </Text>
+            <Text style={styles.colText}> Environment </Text>
+            <Text style={styles.colText}> Performance </Text>
+            <Text style={styles.colText}> Style </Text>
+            <Text style={styles.colText}> Cargo Space </Text>
+            </View> 
+
+
+            <View style={styles.colContainer}>
+            <Text style={styles.colText}> Comfort </Text>
+            <Text style={styles.colText}> Fuel Economy </Text>
+            <Text style={styles.colText}> Safety </Text>
+            <Text style={styles.colText}> Reliability </Text>
+            <Text style={styles.colText}> Environment </Text>
+            <Text style={styles.colText}> Performance </Text>
+            <Text style={styles.colText}> Style </Text>
+            <Text style={styles.colText}> Cargo Space </Text>
+            </View>
           </ScrollView>
 
           <View style = { styles.ProgressBar_HolderView }>
@@ -126,7 +157,7 @@ const styles = StyleSheet.create({
 
     bcontainer: {
       flex: 1,
-      backgroundColor: 'white',
+      backgroundColor: '#568fea',
       alignItems: 'center',
       justifyContent: 'space-evenly'
     },
@@ -144,10 +175,13 @@ const styles = StyleSheet.create({
 
     colContainer: {
       flexDirection: 'column',
-      justifyContent: 'space-evenly',
-      borderColor: '#FFF',
-      borderWidth: 5,
-      width: 375
+      paddingTop: 10,
+      justifyContent: 'center',
+      alignItems: 'flex-start',
+      borderColor: '#1653bc',
+      borderWidth: 1,
+      width: 375,
+      height: 513,
     },
 
     carContainer: {
@@ -156,17 +190,16 @@ const styles = StyleSheet.create({
     },
 
     ProgressBar_HolderView: {
-      justifyContent: 'center',
       flexDirection: 'row',
-      alignItems: 'center',
       position: 'absolute',
       left: 0,
       right: 0,
-      bottom: 20,
-      paddingLeft: 0,
-      paddingRight: 50,
-      backgroundColor: '#246ee5',
-      height: 80,
+      bottom: 15,
+      paddingLeft: 5,
+      paddingRight: 46,
+      paddingTop:10,
+      backgroundColor: '#568fea',
+      height: 45,
     },
     Progressbutton: {
       justifyContent: 'center',
@@ -178,7 +211,7 @@ const styles = StyleSheet.create({
       bottom: 0,
       paddingLeft: 0,
       paddingRight: 0,
-      backgroundColor: '#246ee5',
+      backgroundColor: '#568fea',
       height: 45,
     },
 
@@ -192,7 +225,8 @@ const styles = StyleSheet.create({
     colText: {
         textAlign: 'center',
         color: '#FFFFFF',
-        fontSize: 18
+        fontSize: 18,
+        paddingTop: 20,
     },
 
     titleText: {
@@ -203,7 +237,8 @@ const styles = StyleSheet.create({
 
     textView: {
       paddingTop: 50,
-      paddingBottom: 20
+      paddingBottom: 20,
+      backgroundColor: '#568fea',
     }
     
 });

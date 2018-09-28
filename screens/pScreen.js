@@ -87,7 +87,7 @@ import _, {debounce} from 'lodash';
                 p6: false,
                 p7: false,
                 p8: false})}>
-              <Text style={styles.btext}> Hot Dog </Text>
+              <Text style={styles.btext}> Comfort </Text>
             </TouchableHighlight>
             <TouchableHighlight
                 selected={this.state.p2}
@@ -104,7 +104,7 @@ import _, {debounce} from 'lodash';
                 p6: false,
                 p7: false,
                 p8: false})}>
-              <Text style={styles.btext}> Hot Dog </Text>
+              <Text style={styles.btext}> Environment </Text>
             </TouchableHighlight>
             <TouchableHighlight
                 selected={this.state.p3}
@@ -121,7 +121,7 @@ import _, {debounce} from 'lodash';
                 p6: false,
                 p7: false,
                 p8: false})}>
-              <Text style={styles.btext}> Hot Dog </Text>
+              <Text style={styles.btext}> Fuel Eco </Text>
             </TouchableHighlight>
             <TouchableHighlight
                 selected={this.state.p4}
@@ -138,7 +138,7 @@ import _, {debounce} from 'lodash';
                 p6: false,
                 p7: false,
                 p8: false})}>
-              <Text style={styles.btext}> Hot Dog </Text>
+              <Text style={styles.btext}> Reliability </Text>
             </TouchableHighlight>
             </View>
             
@@ -158,7 +158,7 @@ import _, {debounce} from 'lodash';
                 p6: false,
                 p7: false,
                 p8: false})}>
-              <Text style={styles.btext}> Hot Dog </Text>
+              <Text style={styles.btext}> Safety </Text>
             </TouchableHighlight>
             <TouchableHighlight
                 selected={this.state.p6}
@@ -175,7 +175,7 @@ import _, {debounce} from 'lodash';
                 p1: false,
                 p7: false,
                 p8: false})}>
-              <Text style={styles.btext}> Hot Dog </Text>
+              <Text style={styles.btext}> Style </Text>
             </TouchableHighlight>
             <TouchableHighlight
                 selected={this.state.p7}
@@ -192,7 +192,7 @@ import _, {debounce} from 'lodash';
                 p6: false,
                 p1: false,
                 p8: false})}>
-              <Text style={styles.btext}> Hot Dog </Text>
+              <Text style={styles.btext}> Performance </Text>
             </TouchableHighlight>
             <TouchableHighlight
                 selected={this.state.p8}
@@ -209,7 +209,7 @@ import _, {debounce} from 'lodash';
                 p6: false,
                 p7: false,
                 p1: false})}>
-              <Text style={styles.btext}> Hot Dog </Text>
+              <Text style={styles.btext}> Cargo Space </Text>
             </TouchableHighlight>
             </View>
             <View style={styles.sContainer}>

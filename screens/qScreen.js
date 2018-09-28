@@ -38,14 +38,13 @@ import {
           <View style={styles.container}>
           <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
           <Text style={{ paddingLeft: 50, paddingRight: 50, fontWeight: 'bold', fontSize: 20}}>
-          Hot Dog!
+          Questions
           </Text>
           </View>
-                  <Text>The hot dog or dog (also spelled hotdog) is a grilled or steamed link-sausage sandwich where the sausage is served in the slit of a special hot dog bun, 
-                      a partially sliced bun. 
-                      It can also refer to just the sausage (the wurst or wörst) of its composition. 
-                      Typical sausages include wiener (Vienna sausage), frankfurter (or frank), or knackwurst. 
-                      The names of these sausages also commonly refer to their assembled sandwiches </Text>
+                  <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </Text>
 
                 <View style={styles.sContainer}>
                 <Slider
@@ -72,7 +71,7 @@ import {
                   style={styles.button}
                   onPress={_.debounce(() => {this._onPress(screenId,bId=0)},400)}
                 >
-                  <Text style={styles.btext}> Hot Dog </Text>
+                  <Text style={styles.btext}> Confirm </Text>
                 </TouchableHighlight>
                 
 
