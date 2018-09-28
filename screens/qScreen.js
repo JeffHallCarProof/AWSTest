@@ -24,7 +24,7 @@ import {
       gesturesEnabled: false,
     };
     state = {
-        value: 0.01,
+        value: 0.00,
         disabled: false
     };
     render() {

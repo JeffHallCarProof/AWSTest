@@ -96,7 +96,7 @@ import { withAuthenticator } from 'aws-amplify-react-native';
             <Text style = { styles.Percentage }> { Math.round( this.state.progress_count * 100 ) }% </Text>
           </View>
 
-          <View paddingBottom={75} paddingTop={20}>
+          <View style={styles.Progressbutton}>
             <TouchableHighlight
               underlayColor={'#0018A8'}
               style={styles.button}
@@ -162,11 +162,24 @@ const styles = StyleSheet.create({
       position: 'absolute',
       left: 0,
       right: 0,
-      bottom: 0,
-      paddingLeft: 20,
+      bottom: 20,
+      paddingLeft: 0,
       paddingRight: 50,
       backgroundColor: '#246ee5',
-      height: 50,
+      height: 80,
+    },
+    Progressbutton: {
+      justifyContent: 'center',
+      flexDirection: 'row',
+      alignItems: 'center',
+      position: 'absolute',
+      left: 0,
+      right: 0,
+      bottom: 0,
+      paddingLeft: 0,
+      paddingRight: 0,
+      backgroundColor: '#246ee5',
+      height: 45,
     },
 
     Percentage: {
