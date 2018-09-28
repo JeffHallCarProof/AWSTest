@@ -16,21 +16,25 @@ import { WebBrowser } from 'expo';
 import Amplify from 'aws-amplify';
 import { ButtonGroup } from 'react-native-elements';
 import _, {debounce} from 'lodash';
+
 // Screen for people who do not know what car they want
 export default class noScreen extends React.Component {
 
     static navigationOptions = {
-        header: null,
-        gesturesEnabled: false,
-      };
-      state={
-        disabled: false,
-            };
+      header: null,
+      gesturesEnabled: false,
+    };
+
+    state = {
+      disabled: false,
+    };
+
     render() {
 
       const { navigation } = this.props;
       this.state.disabled = navigation.getParam('disabled', false);
       const screenId = navigation.getParam('sId', 'Invalid');
+
       if(JSON.stringify(screenId)==0){
         Path ='Extras'
         bPath ='Home'
@@ -44,12 +48,13 @@ export default class noScreen extends React.Component {
 
       return (
           <View style={styles.container}>
+
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
               <Text style={{ paddingLeft: 50, paddingRight: 50, fontWeight: 'bold', fontSize: 20}}>
                 Please select a Life Event!
               </Text>
             </View>
-            <Text style={styles.textS}>ID: {JSON.stringify(screenId)}</Text>
+
             <View style={styles.bcontainer}>
               <TouchableHighlight
                 underlayColor={'#0018A8'}
@@ -80,8 +85,9 @@ export default class noScreen extends React.Component {
                 <Text style={styles.btext}> E3 </Text>
               </TouchableHighlight>
 
-              </View>
-              <View style={styles.bcontainer}>
+            </View>
+
+            <View style={styles.bcontainer}>
 
               <TouchableHighlight
                 underlayColor={'#0018A8'}
@@ -109,19 +115,24 @@ export default class noScreen extends React.Component {
               >
                 <Text style={styles.btext}> E6 </Text>
               </TouchableHighlight>  
-              </View>                          
-            <View>
-            <Button
-            title="Go back"
-            onPress={_.debounce(() => {this._onPress(screenId,bId=1)},400)}
-          />
-          </View>
+            </View>       
+
+            <View style={styles.buttonContainer}>
+              <Button
+                title="Go back"
+                onPress={_.debounce(() => {this._onPress(screenId,bId=1)},400)}
+              />
+            </View>
+
           </View> 
       ); //End of return
     } //End of render
+
     _onPress =_.throttle((screenId, bId) =>{ 
-      this.state.disabled=true   
-      if(JSON.stringify(bId)==1){
+      this.state.disabled=true
+
+      if(JSON.stringify(bId)==1)
+      {
         if(JSON.stringify(screenId)==0){
           Path ='Extras'
           bPath ='Home'
@@ -130,24 +141,28 @@ export default class noScreen extends React.Component {
           Path='Preferences'
           bPath='Extras'
           rPath='No'
-        } 
+        }
         this.props.navigation.navigate(bPath, {
           sId: screenId,disabled:false, Path: bPath})
-        }else{    
-            if(JSON.stringify(screenId)==0){
-            Path ='Extras'
-            bPath ='Home'
-            rPath='No'
-          } else{
+      }
+      
+      else
+      {    
+        if(JSON.stringify(screenId)==0){
+          Path ='Extras'
+          bPath ='Home'
+          rPath='No'
+        } else{
             Path='Preferences'
             bPath='Extras'
             rPath='No'
-          } 
-          this.props.navigation.navigate(Path, {
-            sId: screenId,})
         } 
+        this.props.navigation.navigate(Path, {
+          sId: screenId,})
+      } 
       
-      },1000,{leading:true, trailing:false});
+    },1000,{leading:true, trailing:false}); //End of button function
+
   } //End of class
 
   //Component css
@@ -170,6 +185,10 @@ export default class noScreen extends React.Component {
       justifyContent: 'center',
       paddingHorizontal: 10,
       flexDirection: 'row'
+    },
+    
+    buttonContainer: {
+      paddingBottom: 20
     },
 
     btext: {

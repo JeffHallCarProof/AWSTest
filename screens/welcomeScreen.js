@@ -41,12 +41,7 @@ import _, {debounce} from 'lodash';
             </View>
       ); //End of return
     } //End of render
-
-    
-
   } //End of class
-
-  
 
   const styles = StyleSheet.create({
     
