@@ -71,6 +71,9 @@ import _, {debounce} from 'lodash';
 
       return (
         <View style={styles.container}>
+        <View style={styles.tContainer}>
+          <Text>Preference Assesment</Text>
+        </View>
           <View style={styles.bcontainer}>
             <TouchableHighlight
                 selected={this.state.p1}
@@ -89,6 +92,7 @@ import _, {debounce} from 'lodash';
                 p8: false})}>
               <Text style={styles.btext}> Comfort </Text>
             </TouchableHighlight>
+            <Text> </Text>
             <TouchableHighlight
                 selected={this.state.p2}
                 selectedN={this.state.v2}
@@ -106,6 +110,7 @@ import _, {debounce} from 'lodash';
                 p8: false})}>
               <Text style={styles.btext}> Environment </Text>
             </TouchableHighlight>
+            <Text> </Text>
             <TouchableHighlight
                 selected={this.state.p3}
                 selectedN={this.state.v3}
@@ -123,6 +128,9 @@ import _, {debounce} from 'lodash';
                 p8: false})}>
               <Text style={styles.btext}> Fuel Eco </Text>
             </TouchableHighlight>
+            </View>
+            
+            <View style={styles.bcontainer}>
             <TouchableHighlight
                 selected={this.state.p4}
                 selectedN={this.state.v4}
@@ -140,9 +148,7 @@ import _, {debounce} from 'lodash';
                 p8: false})}>
               <Text style={styles.btext}> Reliability </Text>
             </TouchableHighlight>
-            </View>
-            
-            <View style={styles.bcontainer}>
+            <Text> </Text>
             <TouchableHighlight
                 selected={this.state.p5}
                 v5={this.state.v5}
@@ -160,6 +166,7 @@ import _, {debounce} from 'lodash';
                 p8: false})}>
               <Text style={styles.btext}> Safety </Text>
             </TouchableHighlight>
+            <Text> </Text>
             <TouchableHighlight
                 selected={this.state.p6}
                 selectedN={this.state.v6}
@@ -177,6 +184,8 @@ import _, {debounce} from 'lodash';
                 p8: false})}>
               <Text style={styles.btext}> Style </Text>
             </TouchableHighlight>
+            </View>
+            <View style={styles.bcontainer}>
             <TouchableHighlight
                 selected={this.state.p7}
                 selectedN={this.state.v7}
@@ -194,6 +203,7 @@ import _, {debounce} from 'lodash';
                 p8: false})}>
               <Text style={styles.btext}> Performance </Text>
             </TouchableHighlight>
+            <Text> </Text>
             <TouchableHighlight
                 selected={this.state.p8}
                 selectedN={this.state.v8}
@@ -261,7 +271,7 @@ import _, {debounce} from 'lodash';
                 </View>
                  )}
             </View> 
-<View style={styles.bcontainer}>
+<View style={styles.buttonContainer}>
           <Button
             title="Go back"
             onPress={_.debounce(() => {this._onPress(screenId,bId=1)},400)}
@@ -269,11 +279,11 @@ import _, {debounce} from 'lodash';
           <Text></Text>
           <TouchableHighlight
             underlayColor={'#0018A8'}
-            style={styles.button}
+            style={styles.buttonConfirm}
             onPress={_.debounce(() => {this._onPress(screenId,bId=0)},400)}
             >
 
-            <Text style={styles.btext}>Submit</Text>
+            <Text style={styles.btext}>Confirm</Text>
 
           </TouchableHighlight>
           
@@ -315,19 +325,30 @@ import _, {debounce} from 'lodash';
     container: {
       flex: 1,
       backgroundColor: 'white',
-      paddingHorizontal: 10
     },
-
-    contentContainer: {
-      paddingTop: 30
-    },
-
-    bcontainer: {
-      flex: 1,
+    tContainer: {
       backgroundColor: 'white',
       alignItems: 'center',
       justifyContent: 'center',
-      flexDirection: 'row'
+      flexDirection: 'row',
+      paddingBottom: 40,
+      paddingTop: 20
+    },
+    bcontainer: {
+      backgroundColor: 'white',
+      alignItems: 'center',
+      justifyContent: 'center',
+      paddingVertical: 2,
+      flexDirection: 'row',
+    },
+    buttonContainer: {
+      paddingBottom: 5,
+      paddingTop: 30,
+      backgroundColor: 'white',
+      alignItems: 'center',
+      justifyContent: 'center',
+      paddingVertical: 2,
+      flexDirection: 'row',
     },
     sContainer: {
       flex: 1,
@@ -338,19 +359,27 @@ import _, {debounce} from 'lodash';
   },
 
     btext: {
-      color: 'white'
+      color: 'white',
+      alignItems: 'center',
+      justifyContent: 'center',
     },
 
     button: {
       alignItems: 'center',
+      justifyContent: 'center',
       backgroundColor: '#0247FE',
-      padding: 10,
-      borderRadius: 400,
-      
+      borderRadius: 10,
+      width: 115,
+      height: 100,
     },
+    
     buttonS: {
         alignItems: 'center',
         backgroundColor: '#0018A8',
+      },
+      buttonConfirm: {
+        alignItems: 'center',
+        backgroundColor: '#0247FE',
         padding: 10,
         borderRadius: 400,
       },

@@ -62,63 +62,87 @@ import _, {debounce} from 'lodash';
             <Text style={styles.headingText}>Recommended</Text>
 
               <CheckBox
-                title="Item1"
+                checkedIcon='check-circle-o'
+                uncheckedIcon='circle-o'
+                title="                                  Item1"
                 checked={this.state.cb1}
                 onPress={() => this.setState({ cb1: !this.state.cb1})}
               />
               <CheckBox
-                title="Item2"
+                checkedIcon='check-circle-o'
+                uncheckedIcon='circle-o'              
+                title="                                  Item2"
                 checked={this.state.cb2}
                 onPress={() => this.setState({ cb2: !this.state.cb2})}
               />
-              <CheckBox
-                title="Item3"
+              <CheckBox                
+                checkedIcon='check-circle-o'
+                uncheckedIcon='circle-o'
+                title="                                  Item3"
                 checked={this.state.cb3}
                 onPress={() => this.setState({ cb3: !this.state.cb3})}
               />
-              <CheckBox
-                title="Item4"
+              <CheckBox                
+                checkedIcon='check-circle-o'
+                uncheckedIcon='circle-o'
+                title="                                  Item4"
                 checked={this.state.cb4}
                 onPress={() => this.setState({ cb4: !this.state.cb4})}
               />
-              <CheckBox
-                title="Item5"
+              <CheckBox                
+                checkedIcon='check-circle-o'
+                uncheckedIcon='circle-o'
+                title="                                  Item5"
                 checked={this.state.cb5}
                 onPress={() => this.setState({ cb5: !this.state.cb5})}
               />
-              <CheckBox
-                title="Item6"
+              <CheckBox                
+                checkedIcon='check-circle-o'
+                uncheckedIcon='circle-o'
+                title="                                  Item6"
                 checked={this.state.cb6}
                 onPress={() => this.setState({ cb6: !this.state.cb6})}
               />
               <Text style={styles.headingText}>Optional</Text>
-              <CheckBox
-                title="Item7"
+              <CheckBox                
+                checkedIcon='check-circle-o'
+                uncheckedIcon='circle-o'
+                title="                                  Item7"
                 checked={this.state.cb7}
                 onPress={() => this.setState({ cb7: !this.state.cb7})}
               />
-              <CheckBox
-                title="Item8"
+              <CheckBox                
+                checkedIcon='check-circle-o'
+                uncheckedIcon='circle-o'
+                title="                                  Item8"
                 checked={this.state.cb8}
                 onPress={() => this.setState({ cb8: !this.state.cb8})}
               />
-              <CheckBox
-                title="Item9"
+              <CheckBox                
+                checkedIcon='check-circle-o'
+                uncheckedIcon='circle-o'
+                title="                                  Item9"
                 checked={this.state.cb9}
                 onPress={() => this.setState({ cb9: !this.state.cb9})}
               />
-              <CheckBox
-                title="Item10"
+              <CheckBox                
+                checkedIcon='check-circle-o'
+                uncheckedIcon='circle-o'
+                title="                                  Item10"
                 checked={this.state.cb10}
                 onPress={() => this.setState({ cb10: !this.state.cb10})}
               />
-              <CheckBox
-                title="Item11"
+              <CheckBox                
+                checkedIcon='check-circle-o'
+                uncheckedIcon='circle-o'
+                title="                                  Item11"
                 checked={this.state.cb11}
                 onPress={() => this.setState({ cb11: !this.state.cb11})}
               />
-              <CheckBox
-                title="Item12"
+              <CheckBox                
+                checkedIcon='check-circle-o'
+                uncheckedIcon='circle-o'
+                title="                                  Item12"
                 checked={this.state.cb12}
                 onPress={() => this.setState({ cb12: !this.state.cb12})}
               />

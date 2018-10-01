@@ -51,7 +51,7 @@ export default class noScreen extends React.Component {
 
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
               <Text style={{ paddingLeft: 50, paddingRight: 50, fontWeight: 'bold', fontSize: 20}}>
-                Please select a Life Event!
+                Why are you looking for a car?
               </Text>
             </View>
 
@@ -62,7 +62,7 @@ export default class noScreen extends React.Component {
                 eId={'1'}
                 onPress={_.debounce(() => {this._onPress(screenId,bId=0)},400)}
               >
-                <Text style={styles.btext}> E1 </Text>
+                <Text style={styles.btext}> Event1 </Text>
               </TouchableHighlight>
               
                 <Text> </Text>
@@ -72,7 +72,7 @@ export default class noScreen extends React.Component {
                 eId={'2'}
                 onPress={_.debounce(() => {this._onPress(screenId,bId=0)},400)}
               >
-                <Text style={styles.btext}> E2 </Text>
+                <Text style={styles.btext}> Event2 </Text>
               </TouchableHighlight>
 
               <Text> </Text>
@@ -82,7 +82,7 @@ export default class noScreen extends React.Component {
                 eId={'3'}
                 onPress={_.debounce(() => {this._onPress(screenId,bId=0)},400)}
               >
-                <Text style={styles.btext}> E3 </Text>
+                <Text style={styles.btext}> Event3 </Text>
               </TouchableHighlight>
 
             </View>
@@ -95,7 +95,7 @@ export default class noScreen extends React.Component {
                 eId={'4'}
                 onPress={_.debounce(() => {this._onPress(screenId,bId=0)},400)}
               >
-                <Text style={styles.btext}> E4 </Text>
+                <Text style={styles.btext}> Event4 </Text>
               </TouchableHighlight>              
               <Text> </Text>
               <TouchableHighlight
@@ -104,7 +104,7 @@ export default class noScreen extends React.Component {
                 eId={'5'}
                 onPress={_.debounce(() => {this._onPress(screenId,bId=0)},400)}
               >
-                <Text style={styles.btext}> E5 </Text>
+                <Text style={styles.btext}> Event5 </Text>
               </TouchableHighlight>
               <Text> </Text>
               <TouchableHighlight
@@ -113,7 +113,7 @@ export default class noScreen extends React.Component {
                 eId={'6'}
                 onPress={_.debounce(() => {this._onPress(screenId,bId=0)},400)}
               >
-                <Text style={styles.btext}> E6 </Text>
+                <Text style={styles.btext}> Other </Text>
               </TouchableHighlight>  
             </View>       
 
