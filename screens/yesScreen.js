@@ -82,18 +82,18 @@ import ModalDropdown from 'react-native-modal-dropdown';
       ); //End of return
     } //End of render
 
-// set up functions as below but add debounce
-_onPress =_.throttle((screenId, bId) =>{ 
-  this.state.disabled=true   
-  if(JSON.stringify(bId)==1){
-    this.props.navigation.navigate(bPath, {
-      sId: screenId,disabled:false})
-  } else{
-    this.props.navigation.navigate(Path, {
-      sId: screenId,disabled:false})
-  } 
+    // set up functions as below but add debounce
+    _onPress =_.throttle((screenId, bId) =>{ 
+      this.state.disabled=true   
+      if(JSON.stringify(bId)==1){
+        this.props.navigation.navigate(bPath, {
+          sId: screenId,disabled:false})
+      } else{
+        this.props.navigation.navigate(Path, {
+          sId: screenId,disabled:false})
+      }
+    },1000,{leading:true, trailing:false});
 
-},1000,{leading:true, trailing:false});
   } //End of class
 
   //Component css
