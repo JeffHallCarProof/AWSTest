@@ -9,13 +9,14 @@ import {
     TextInput,
     TouchableOpacity,
     TouchableHighlight,
-    View,
+    View
   } from 'react-native';
 import { createStackNavigator } from 'react-navigation';
 import { WebBrowser } from 'expo';
 import Amplify from 'aws-amplify';
 import { withAuthenticator } from 'aws-amplify-react-native';
 import _, {debounce} from 'lodash';
+import ModalDropdown from 'react-native-modal-dropdown';
 
   //screen for people who do know what car they want
   export default class yesScreen extends React.Component {
@@ -24,9 +25,11 @@ import _, {debounce} from 'lodash';
         header: null,
         gesturesEnabled: false,
       };
-      state={
-        disabled: false,
-            };
+
+    state = {
+      disabled: false,
+    };
+
     render() { 
       
       const { navigation } = this.props;
@@ -50,9 +53,16 @@ import _, {debounce} from 'lodash';
             <View style={styles.inputBox}>
               <TextInput style={styles.inputS} id='userInput2' placeholder="Input Model..." placeholderTextColor='#000' onChangeText={(userInput2) => this.userInput2 = userInput2} color='#000'></TextInput>
             </View>
-            
-            <View style={styles.inputBox}>
-              <TextInput style={styles.inputS} id='userInput3' placeholder="Input Year..." placeholderTextColor='#000' onChangeText={(userInput3) => this.userInput3 = userInput3} color='#000'></TextInput>
+          
+            <View style={styles.dropDownView}>
+              <ModalDropdown dropdownStyle={styles.dropDownList} textStyle={styles.dropDownText} dropdownTextStyle={styles.optionText} 
+              dropdownTextHighlightStyle={styles.selectedOption} defaultValue="Select a year..." 
+              options={[
+                '1990', '1991', '1992', '1993', '1994', '1995', '1996', '1997', '1998', '1999',
+                '2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009',
+                '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019'
+              ]}
+              />
             </View>
 
           </View>
@@ -71,7 +81,6 @@ import _, {debounce} from 'lodash';
       ); //End of return
     } //End of render
 
-//                                              READ THIS 
 // set up functions as below but add debounce
 _onPress =_.throttle((screenId, bId) =>{ 
   this.state.disabled=true   
@@ -131,12 +140,40 @@ _onPress =_.throttle((screenId, bId) =>{
       paddingRight: 5,
       borderColor: '#246ee5',
       borderWidth: 1,
-      width: 175
+      width: 175,
+      fontSize: 16
     },
 
     inputBox: {
       paddingTop: 5,
       paddingBottom: 5
+    },
+
+    dropDownView: {
+      paddingBottom: 15,
+      paddingTop: 15,
+      borderWidth: 1,
+      borderColor: '#246ee5',
+      width: 175
+    },
+
+    dropDownText: {
+      paddingLeft: 5,
+      fontSize: 16
+    },
+    
+    dropDownList: {
+      width: 175
+    },
+
+    optionText: {
+      fontSize: 14,
+      paddingLeft: 15
+    },
+
+    selectedOption: {
+      fontWeight: 'bold',
+      backgroundColor: '#adb2ba'
     }
 
   });
