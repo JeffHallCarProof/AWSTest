@@ -18,6 +18,7 @@ import { createStackNavigator } from 'react-navigation';
 import { WebBrowser } from 'expo';
 import Amplify from 'aws-amplify';
 import { withAuthenticator } from 'aws-amplify-react-native';
+import ProgressBar from 'react-native-progress/Bar';
 
   const width = 375
 
@@ -67,14 +68,46 @@ import { withAuthenticator } from 'aws-amplify-react-native';
             scrollEventThrottle = { 12 } showsHorizontalScrollIndicator={false}
           >
             <View style={styles.colContainer}>
-            <Text style={styles.colText}> Comfort </Text>
-            <Text style={styles.colText}> Fuel Economy </Text>
-            <Text style={styles.colText}> Safety </Text>
-            <Text style={styles.colText}> Reliability </Text>
-            <Text style={styles.colText}> Environment </Text>
-            <Text style={styles.colText}> Performance </Text>
-            <Text style={styles.colText}> Style </Text>
-            <Text style={styles.colText}> Cargo Space </Text>
+
+              <View style={styles.rowContainer}>
+                <Text style={styles.colText}> Comfort </Text>
+                <Text style={styles.colText}> </Text>
+                <ProgressBar style={styles.pBar} 
+                progress={0.5} 
+                unfilledColor={'#c8c9d1'} 
+                color={'#0018A8'} 
+                height={18} 
+                width={200} 
+                justifyContent={'space-between'}/>
+              </View>
+              <View style={styles.rowContainer}>
+                <Text style={styles.colText}> Fuel Economy </Text>
+                <ProgressBar progress={1} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={10}/>
+              </View>
+              <View style={styles.rowContainer}>
+                <Text style={styles.colText}> Safety </Text>
+                <ProgressBar progress={0.1} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={10}/>
+              </View>
+              <View style={styles.rowContainer}>
+                <Text style={styles.colText}> Reliability </Text>
+                <ProgressBar progress={0.7} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={10}/>
+              </View>
+              <View style={styles.rowContainer}>
+                <Text style={styles.colText}> Environment </Text>
+                <ProgressBar progress={0.45} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={10}/>
+              </View>
+              <View style={styles.rowContainer}>
+                <Text style={styles.colText}> Performance </Text>
+                <ProgressBar progress={0.65} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={10}/>
+              </View>
+              <View style={styles.rowContainer}>
+                <Text style={styles.colText}> Style </Text>
+                <ProgressBar progress={0.8} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={10}/>
+              </View>
+              <View style={styles.rowContainer}>
+                <Text style={styles.colText}> Cargo Space </Text>
+                <ProgressBar progress={0.3} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={10}/>
+              </View>
             </View>
 
 
@@ -183,12 +216,11 @@ const styles = StyleSheet.create({
       width: 375,
       height: 513,
     },
-
-    carContainer: {
+    rowContainer: {
       flexDirection: 'row',
-      justifyContent: 'space-between'
+      justifyContent: 'space-between',
+      alignItems: 'flex-start',
     },
-
     ProgressBar_HolderView: {
       flexDirection: 'row',
       position: 'absolute',
@@ -221,12 +253,17 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         color: 'white'
     },
-
+    pBar:{
+      justifyContent: 'flex-end',
+      alignItems: 'stretch',
+      borderRadius: 10,
+    },
     colText: {
         textAlign: 'center',
+        justifyContent: 'flex-start',
         color: '#FFFFFF',
         fontSize: 18,
-        paddingTop: 20,
+        paddingBottom: 9,
     },
 
     titleText: {
