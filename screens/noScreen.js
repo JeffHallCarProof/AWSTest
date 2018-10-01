@@ -179,27 +179,33 @@ export default class noScreen extends React.Component {
     },
 
     bcontainer: {
-      flex: 1,
       backgroundColor: 'white',
       alignItems: 'center',
       justifyContent: 'center',
-      paddingHorizontal: 10,
-      flexDirection: 'row'
+      paddingVertical: 2,
+      flexDirection: 'row',
     },
     
     buttonContainer: {
-      paddingBottom: 20
+      paddingBottom: 20,
+      paddingTop: 180,
     },
 
     btext: {
-      color: 'white'
+      color: 'white',
+      alignItems: 'center',
+      justifyContent: 'center',
     },
 
     button: {
       alignItems: 'center',
+      justifyContent: 'center',
       backgroundColor: '#0247FE',
-      padding: 10,
-      borderRadius: 400
+      padding: 20,
+      paddingHorizontal: 10,
+      borderRadius: 10,
+      width: 100,
+      height: 100,
     }
 
 });
