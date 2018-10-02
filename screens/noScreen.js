@@ -200,7 +200,7 @@ export default class noScreen extends React.Component {
     button: {
       alignItems: 'center',
       justifyContent: 'center',
-      backgroundColor: '#0247FE',
+      backgroundColor: '#1294EF',
       padding: 20,
       paddingHorizontal: 10,
       borderRadius: 4,

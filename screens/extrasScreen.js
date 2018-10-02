@@ -240,7 +240,7 @@ import _, {debounce} from 'lodash';
 
     button: {
       alignItems: 'center',
-      backgroundColor: '#0247FE',
+      backgroundColor: '#1294EF',
       padding: 10,
       borderRadius: 4
     }

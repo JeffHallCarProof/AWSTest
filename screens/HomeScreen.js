@@ -67,9 +67,9 @@ import _, {debounce} from 'lodash';
     _onPress =_.throttle((screenId) =>{ 
       this.state.disabled=true   
       if(JSON.stringify(screenId)==0){
-        Path ='No'
+        Path ='Results'
       } else{
-        Path='Yes'
+        Path='Results'
       }
       this.props.navigation.navigate(Path, {
         sId: screenId,})
@@ -104,7 +104,7 @@ import _, {debounce} from 'lodash';
 
     button: {
       alignItems: 'center',
-      backgroundColor: '#0247FE',
+      backgroundColor: '#1294EF',
       padding: 10,
       borderRadius: 4
     },

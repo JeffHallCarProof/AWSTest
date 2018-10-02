@@ -392,7 +392,7 @@ import _, {debounce} from 'lodash';
     button: {
       alignItems: 'center',
       justifyContent: 'center',
-      backgroundColor: '#0247FE',
+      backgroundColor: '#1294EF',
       borderRadius: 4,
       width: 115,
       height: 100,
@@ -405,7 +405,7 @@ import _, {debounce} from 'lodash';
 
     buttonConfirm: {
       alignItems: 'center',
-      backgroundColor: '#0247FE',
+      backgroundColor: '#1294EF',
       padding: 10,
       borderRadius: 4,
     },

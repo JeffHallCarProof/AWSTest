@@ -221,6 +221,7 @@ import ProgressBar from 'react-native-progress/Bar';
                   progressTintColor = "#fff"
                   style = {{ width: '100%' }}
                   progress = { this.state.progress_count }
+                  borderColor= {'#1653bc'}
                 />
               )
           }
@@ -229,7 +230,7 @@ import ProgressBar from 'react-native-progress/Bar';
 
           <View style={styles.Progressbutton}>
             <TouchableHighlight
-              underlayColor={'#0018A8'}
+              underlayColor={'#2C74B1'}
               style={styles.button}
               onPress={() => {this.props.navigation.navigate('Home');}}
             >
@@ -264,9 +265,11 @@ const styles = StyleSheet.create({
 
     button: {
       alignItems: 'center',
-      backgroundColor: '#0247FE',
+      backgroundColor: '#1294EF',
       padding: 10,
-      borderRadius: 4
+      borderRadius: 4,
+      borderColor: '#1653bc',
+      borderWidth: 1,
     },
 
     colContainer: {
@@ -275,7 +278,7 @@ const styles = StyleSheet.create({
       paddingLeft: 15,
       paddingRight: 15,
       bottom: 0,
-      borderColor: '#1294EF',
+      borderColor: '#1653bc',
       borderWidth: 1,
       width: 375,
     },
@@ -347,7 +350,7 @@ const styles = StyleSheet.create({
       width: 310,
       height: 185,
       borderWidth: 2,
-      borderColor: '#FFFFFF',
+      borderColor: '#1653bc',
       borderRadius: 4,
     },
 
