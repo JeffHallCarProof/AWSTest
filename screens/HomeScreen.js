@@ -67,9 +67,9 @@ import _, {debounce} from 'lodash';
     _onPress =_.throttle((screenId) =>{ 
       this.state.disabled=true   
       if(JSON.stringify(screenId)==0){
-        Path ='Results'
+        Path ='No'
       } else{
-        Path='Results'
+        Path='Yes'
       }
       this.props.navigation.navigate(Path, {
         sId: screenId,})
@@ -106,8 +106,11 @@ import _, {debounce} from 'lodash';
       alignItems: 'center',
       backgroundColor: '#1294EF',
       padding: 10,
-      borderRadius: 4
+      borderRadius: 4,
+      borderColor: '#1653bc',
+      borderWidth: 1,
     },
+
 
     qText: {
       paddingBottom: 40,

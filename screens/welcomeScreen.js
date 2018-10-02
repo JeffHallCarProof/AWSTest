@@ -32,13 +32,13 @@ import { LinearGradient } from 'expo';
 
         this.timeoutHandle = setTimeout(()=>{
             this.props.navigation.navigate('Home')
-       }, 10500);
+       }, 2500);
       const { navigation } = this.props;
 
       return (
       <View style={styles.welcomeContainer} onTouchStart={this.onPress}>
         <LinearGradient 
-        colors={['#4FBCFA','#8FCAF3']}
+        colors={['#3151B7','#8FCAF3']}
       
         style={{ flex:1 }}
         justifyContent={'center'}>
@@ -60,7 +60,7 @@ import { LinearGradient } from 'expo';
     welcomeText: {
         fontWeight: 'bold',
         fontSize: 24,
-        color: "#000000",
+        color: "#FFFFFF",
         textAlign: 'center',
         paddingLeft: 30,
         paddingRight: 30

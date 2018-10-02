@@ -123,7 +123,9 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       backgroundColor: '#1294EF',
       padding: 10,
-      borderRadius: 4
+      borderRadius: 4,
+      borderColor: '#1653bc',
+      borderWidth: 1,
     },
 
     inputBox: {

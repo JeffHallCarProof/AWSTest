@@ -206,6 +206,10 @@ export default class noScreen extends React.Component {
       borderRadius: 4,
       width: 100,
       height: 100,
+      borderColor: '#1653bc',
+      borderWidth: 1,
     }
+
+
 
 });

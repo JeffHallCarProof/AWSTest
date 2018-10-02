@@ -396,6 +396,8 @@ import _, {debounce} from 'lodash';
       borderRadius: 4,
       width: 115,
       height: 100,
+      borderColor: '#1653bc',
+      borderWidth: 1,
     },
     
     buttonS: {
@@ -408,6 +410,8 @@ import _, {debounce} from 'lodash';
       backgroundColor: '#1294EF',
       padding: 10,
       borderRadius: 4,
+      borderColor: '#1653bc',
+      borderWidth: 1,
     },
 
     sliderF: {
