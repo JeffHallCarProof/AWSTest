@@ -129,7 +129,7 @@ import {
             alignItems: 'center',
             backgroundColor: '#0247FE',
             padding: 10,
-            borderRadius: 400
+            borderRadius: 4
           },
           sliderF: {
             flexDirection:'row',

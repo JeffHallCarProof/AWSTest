@@ -393,7 +393,7 @@ import _, {debounce} from 'lodash';
       alignItems: 'center',
       justifyContent: 'center',
       backgroundColor: '#0247FE',
-      borderRadius: 10,
+      borderRadius: 4,
       width: 115,
       height: 100,
     },
@@ -407,7 +407,7 @@ import _, {debounce} from 'lodash';
       alignItems: 'center',
       backgroundColor: '#0247FE',
       padding: 10,
-      borderRadius: 400,
+      borderRadius: 4,
     },
 
     sliderF: {

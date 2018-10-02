@@ -61,7 +61,7 @@ import ProgressBar from 'react-native-progress/Bar';
             <Text style={styles.titleText}>Results Screen</Text>
           </View>
                
-          <ScrollView horizontal={true} backgroundColor= '#568fea' pagingEnabled={true} 
+          <ScrollView horizontal={true} backgroundColor= '#8FCAF3' pagingEnabled={true} 
             onContentSizeChange = {( width, height ) => { this.scrollViewContent_width = width }} 
             onScroll = { this.UpdateProgressBar } 
             onLayout = {(event) => this.scrollView_width = ( event.nativeEvent.layout.width )} 
@@ -79,112 +79,127 @@ import ProgressBar from 'react-native-progress/Bar';
               
               <View style={styles.rowContainer}>
                 <Text style={styles.colText}> Comfort </Text>
-                <ProgressBar progress={0.5} unfilledColor={'#c8c9d1'} color={'#0018A8'} height={18}  borderRadius={10}/>
+                <ProgressBar progress={0.5} unfilledColor={'#c8c9d1'} color={'#0018A8'} height={18}  borderRadius={4}/>
               </View>
               <View style={styles.rowContainer}>
                 <Text style={styles.colText}> Fuel Economy </Text>
-                <ProgressBar progress={1} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={10}/>
+                <ProgressBar progress={1} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={4}/>
               </View>
               <View style={styles.rowContainer}>
                 <Text style={styles.colText}> Safety </Text>
-                <ProgressBar progress={0.1} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={10}/>
+                <ProgressBar progress={0.1} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={4}/>
               </View>
               <View style={styles.rowContainer}>
                 <Text style={styles.colText}> Reliability </Text>
-                <ProgressBar progress={0.7} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={10}/>
+                <ProgressBar progress={0.7} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={4}/>
               </View>
               <View style={styles.rowContainer}>
                 <Text style={styles.colText}> Environment </Text>
-                <ProgressBar progress={0.45} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={10}/>
+                <ProgressBar progress={0.45} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={4}/>
               </View>
               <View style={styles.rowContainer}>
                 <Text style={styles.colText}> Performance </Text>
-                <ProgressBar progress={0.65} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={10}/>
+                <ProgressBar progress={0.65} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={4}/>
               </View>
               <View style={styles.rowContainer}>
                 <Text style={styles.colText}> Style </Text>
-                <ProgressBar progress={0.8} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={10}/>
+                <ProgressBar progress={0.8} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={4}/>
               </View>
               <View style={styles.rowContainer}>
                 <Text style={styles.colText}> Cargo Space </Text>
-                <ProgressBar progress={0.3} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={10}/>
+                <ProgressBar progress={0.3} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={4}/>
               </View>
 
             </View>
-
             <View style={styles.colContainer}>
-
+              <View style={styles.topContainer}>
+                <View style={styles.carTitleContainer}>
+                  <Text style={styles.carTitle}>Car title</Text>
+                </View>
+                <View style={styles.images}>
+                  <Image source={require('../assets/sampleCar.png')}/>
+                </View>
+              </View>
+              
               <View style={styles.rowContainer}>
                 <Text style={styles.colText}> Comfort </Text>
-                <ProgressBar progress={0.5} unfilledColor={'#c8c9d1'} color={'#0018A8'} height={18}  borderRadius={10}/>
+                <ProgressBar progress={0.5} unfilledColor={'#c8c9d1'} color={'#0018A8'} height={18}  borderRadius={4}/>
               </View>
               <View style={styles.rowContainer}>
                 <Text style={styles.colText}> Fuel Economy </Text>
-                <ProgressBar progress={1} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={10}/>
+                <ProgressBar progress={1} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={4}/>
               </View>
               <View style={styles.rowContainer}>
                 <Text style={styles.colText}> Safety </Text>
-                <ProgressBar progress={0.1} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={10}/>
+                <ProgressBar progress={0.1} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={4}/>
               </View>
               <View style={styles.rowContainer}>
                 <Text style={styles.colText}> Reliability </Text>
-                <ProgressBar progress={0.7} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={10}/>
+                <ProgressBar progress={0.7} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={4}/>
               </View>
               <View style={styles.rowContainer}>
                 <Text style={styles.colText}> Environment </Text>
-                <ProgressBar progress={0.45} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={10}/>
+                <ProgressBar progress={0.45} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={4}/>
               </View>
               <View style={styles.rowContainer}>
                 <Text style={styles.colText}> Performance </Text>
-                <ProgressBar progress={0.65} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={10}/>
+                <ProgressBar progress={0.65} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={4}/>
               </View>
               <View style={styles.rowContainer}>
                 <Text style={styles.colText}> Style </Text>
-                <ProgressBar progress={0.8} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={10}/>
+                <ProgressBar progress={0.8} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={4}/>
               </View>
               <View style={styles.rowContainer}>
                 <Text style={styles.colText}> Cargo Space </Text>
-                <ProgressBar progress={0.3} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={10}/>
+                <ProgressBar progress={0.3} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={4}/>
               </View>
 
             </View>
-
             <View style={styles.colContainer}>
-
+              <View style={styles.topContainer}>
+                <View style={styles.carTitleContainer}>
+                  <Text style={styles.carTitle}>Car title</Text>
+                </View>
+                <View style={styles.images}>
+                  <Image source={require('../assets/sampleCar.png')}/>
+                </View>
+              </View>
+              
               <View style={styles.rowContainer}>
                 <Text style={styles.colText}> Comfort </Text>
-                <ProgressBar progress={0.5} unfilledColor={'#c8c9d1'} color={'#0018A8'} height={18}  borderRadius={10}/>
+                <ProgressBar progress={0.5} unfilledColor={'#c8c9d1'} color={'#0018A8'} height={18}  borderRadius={4}/>
               </View>
               <View style={styles.rowContainer}>
                 <Text style={styles.colText}> Fuel Economy </Text>
-                <ProgressBar progress={1} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={10}/>
+                <ProgressBar progress={1} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={4}/>
               </View>
               <View style={styles.rowContainer}>
                 <Text style={styles.colText}> Safety </Text>
-                <ProgressBar progress={0.1} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={10}/>
+                <ProgressBar progress={0.1} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={4}/>
               </View>
               <View style={styles.rowContainer}>
                 <Text style={styles.colText}> Reliability </Text>
-                <ProgressBar progress={0.7} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={10}/>
+                <ProgressBar progress={0.7} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={4}/>
               </View>
               <View style={styles.rowContainer}>
                 <Text style={styles.colText}> Environment </Text>
-                <ProgressBar progress={0.45} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={10}/>
+                <ProgressBar progress={0.45} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={4}/>
               </View>
               <View style={styles.rowContainer}>
                 <Text style={styles.colText}> Performance </Text>
-                <ProgressBar progress={0.65} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={10}/>
+                <ProgressBar progress={0.65} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={4}/>
               </View>
               <View style={styles.rowContainer}>
                 <Text style={styles.colText}> Style </Text>
-                <ProgressBar progress={0.8} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={10}/>
+                <ProgressBar progress={0.8} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={4}/>
               </View>
               <View style={styles.rowContainer}>
                 <Text style={styles.colText}> Cargo Space </Text>
-                <ProgressBar progress={0.3} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={10}/>
+                <ProgressBar progress={0.3} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={4}/>
               </View>
 
             </View>
+
           </ScrollView>
 
           <View style = { styles.ProgressBar_HolderView }>
@@ -236,13 +251,9 @@ const styles = StyleSheet.create({
       paddingHorizontal: 10
     },
 
-    contentContainer: {
-      paddingTop: 30
-    },
-
     bcontainer: {
       flex: 1,
-      backgroundColor: '#568fea',
+      backgroundColor: '#8FCAF3',
       alignItems: 'center',
       justifyContent: 'space-evenly'
     },
@@ -255,7 +266,7 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       backgroundColor: '#0247FE',
       padding: 10,
-      borderRadius: 400
+      borderRadius: 4
     },
 
     colContainer: {
@@ -263,10 +274,10 @@ const styles = StyleSheet.create({
       paddingTop: 15,
       paddingLeft: 15,
       paddingRight: 15,
-      borderColor: '#1653bc',
+      bottom: 0,
+      borderColor: '#1294EF',
       borderWidth: 1,
       width: 375,
-      flex: 1
     },
 
     rowContainer: {
@@ -284,8 +295,11 @@ const styles = StyleSheet.create({
       paddingLeft: 5,
       paddingRight: 47,
       paddingTop:10,
-      backgroundColor: '#568fea',
+      backgroundColor: '#8FCAF3',
       height: 45,
+      borderTopWidth: 1,
+      borderColor: '#1653bc',
+
     },
 
     Progressbutton: {
@@ -298,7 +312,7 @@ const styles = StyleSheet.create({
       bottom: 0,
       paddingLeft: 0,
       paddingRight: 0,
-      backgroundColor: '#568fea',
+      backgroundColor: '#8FCAF3',
       height: 45,
     },
 
@@ -326,7 +340,7 @@ const styles = StyleSheet.create({
     textView: {
       paddingTop: 50,
       paddingBottom: 20,
-      backgroundColor: '#568fea',
+      backgroundColor: '#8FCAF3',
     },
 
     images: {
@@ -334,7 +348,7 @@ const styles = StyleSheet.create({
       height: 185,
       borderWidth: 2,
       borderColor: '#FFFFFF',
-      borderRadius: 10
+      borderRadius: 4,
     },
 
     carTitle: {
