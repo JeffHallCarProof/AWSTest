@@ -65,13 +65,21 @@ import ProgressBar from 'react-native-progress/Bar';
             onContentSizeChange = {( width, height ) => { this.scrollViewContent_width = width }} 
             onScroll = { this.UpdateProgressBar } 
             onLayout = {(event) => this.scrollView_width = ( event.nativeEvent.layout.width )} 
-            scrollEventThrottle = { 12 } showsHorizontalScrollIndicator={false}
+            scrollEventThrottle = { 12 } showsHorizontalScrollIndicator={false} flex={1}
           >
             <View style={styles.colContainer}>
-
+              <View style={styles.topContainer}>
+                <View style={styles.carTitleContainer}>
+                  <Text style={styles.carTitle}>Car title</Text>
+                </View>
+                <View style={styles.images}>
+                  <Image source={require('../assets/sampleCar.png')}/>
+                </View>
+              </View>
+              
               <View style={styles.rowContainer}>
                 <Text style={styles.colText}> Comfort </Text>
-                <ProgressBar style={styles.pBar} progress={0.5} unfilledColor={'#c8c9d1'} color={'#0018A8'} height={18}/>
+                <ProgressBar progress={0.5} unfilledColor={'#c8c9d1'} color={'#0018A8'} height={18}  borderRadius={10}/>
               </View>
               <View style={styles.rowContainer}>
                 <Text style={styles.colText}> Fuel Economy </Text>
@@ -101,81 +109,82 @@ import ProgressBar from 'react-native-progress/Bar';
                 <Text style={styles.colText}> Cargo Space </Text>
                 <ProgressBar progress={0.3} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={10}/>
               </View>
+
             </View>
 
+            <View style={styles.colContainer}>
+
+              <View style={styles.rowContainer}>
+                <Text style={styles.colText}> Comfort </Text>
+                <ProgressBar progress={0.5} unfilledColor={'#c8c9d1'} color={'#0018A8'} height={18}  borderRadius={10}/>
+              </View>
+              <View style={styles.rowContainer}>
+                <Text style={styles.colText}> Fuel Economy </Text>
+                <ProgressBar progress={1} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={10}/>
+              </View>
+              <View style={styles.rowContainer}>
+                <Text style={styles.colText}> Safety </Text>
+                <ProgressBar progress={0.1} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={10}/>
+              </View>
+              <View style={styles.rowContainer}>
+                <Text style={styles.colText}> Reliability </Text>
+                <ProgressBar progress={0.7} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={10}/>
+              </View>
+              <View style={styles.rowContainer}>
+                <Text style={styles.colText}> Environment </Text>
+                <ProgressBar progress={0.45} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={10}/>
+              </View>
+              <View style={styles.rowContainer}>
+                <Text style={styles.colText}> Performance </Text>
+                <ProgressBar progress={0.65} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={10}/>
+              </View>
+              <View style={styles.rowContainer}>
+                <Text style={styles.colText}> Style </Text>
+                <ProgressBar progress={0.8} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={10}/>
+              </View>
+              <View style={styles.rowContainer}>
+                <Text style={styles.colText}> Cargo Space </Text>
+                <ProgressBar progress={0.3} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={10}/>
+              </View>
+
+            </View>
 
             <View style={styles.colContainer}>
 
-<View style={styles.rowContainer}>
-  <Text style={styles.colText}> Comfort </Text>
-  <ProgressBar style={styles.pBar} progress={0.5} unfilledColor={'#c8c9d1'} color={'#0018A8'} height={18}/>
-</View>
-<View style={styles.rowContainer}>
-  <Text style={styles.colText}> Fuel Economy </Text>
-  <ProgressBar progress={1} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={10}/>
-</View>
-<View style={styles.rowContainer}>
-  <Text style={styles.colText}> Safety </Text>
-  <ProgressBar progress={0.1} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={10}/>
-</View>
-<View style={styles.rowContainer}>
-  <Text style={styles.colText}> Reliability </Text>
-  <ProgressBar progress={0.7} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={10}/>
-</View>
-<View style={styles.rowContainer}>
-  <Text style={styles.colText}> Environment </Text>
-  <ProgressBar progress={0.45} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={10}/>
-</View>
-<View style={styles.rowContainer}>
-  <Text style={styles.colText}> Performance </Text>
-  <ProgressBar progress={0.65} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={10}/>
-</View>
-<View style={styles.rowContainer}>
-  <Text style={styles.colText}> Style </Text>
-  <ProgressBar progress={0.8} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={10}/>
-</View>
-<View style={styles.rowContainer}>
-  <Text style={styles.colText}> Cargo Space </Text>
-  <ProgressBar progress={0.3} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={10}/>
-</View>
-</View>
+              <View style={styles.rowContainer}>
+                <Text style={styles.colText}> Comfort </Text>
+                <ProgressBar progress={0.5} unfilledColor={'#c8c9d1'} color={'#0018A8'} height={18}  borderRadius={10}/>
+              </View>
+              <View style={styles.rowContainer}>
+                <Text style={styles.colText}> Fuel Economy </Text>
+                <ProgressBar progress={1} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={10}/>
+              </View>
+              <View style={styles.rowContainer}>
+                <Text style={styles.colText}> Safety </Text>
+                <ProgressBar progress={0.1} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={10}/>
+              </View>
+              <View style={styles.rowContainer}>
+                <Text style={styles.colText}> Reliability </Text>
+                <ProgressBar progress={0.7} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={10}/>
+              </View>
+              <View style={styles.rowContainer}>
+                <Text style={styles.colText}> Environment </Text>
+                <ProgressBar progress={0.45} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={10}/>
+              </View>
+              <View style={styles.rowContainer}>
+                <Text style={styles.colText}> Performance </Text>
+                <ProgressBar progress={0.65} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={10}/>
+              </View>
+              <View style={styles.rowContainer}>
+                <Text style={styles.colText}> Style </Text>
+                <ProgressBar progress={0.8} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={10}/>
+              </View>
+              <View style={styles.rowContainer}>
+                <Text style={styles.colText}> Cargo Space </Text>
+                <ProgressBar progress={0.3} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={10}/>
+              </View>
 
-
-            <View style={styles.colContainer}>
-
-<View style={styles.rowContainer}>
-  <Text style={styles.colText}> Comfort </Text>
-  <ProgressBar style={styles.pBar} progress={0.5} unfilledColor={'#c8c9d1'} color={'#0018A8'} height={18}/>
-</View>
-<View style={styles.rowContainer}>
-  <Text style={styles.colText}> Fuel Economy </Text>
-  <ProgressBar progress={1} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={10}/>
-</View>
-<View style={styles.rowContainer}>
-  <Text style={styles.colText}> Safety </Text>
-  <ProgressBar progress={0.1} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={10}/>
-</View>
-<View style={styles.rowContainer}>
-  <Text style={styles.colText}> Reliability </Text>
-  <ProgressBar progress={0.7} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={10}/>
-</View>
-<View style={styles.rowContainer}>
-  <Text style={styles.colText}> Environment </Text>
-  <ProgressBar progress={0.45} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={10}/>
-</View>
-<View style={styles.rowContainer}>
-  <Text style={styles.colText}> Performance </Text>
-  <ProgressBar progress={0.65} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={10}/>
-</View>
-<View style={styles.rowContainer}>
-  <Text style={styles.colText}> Style </Text>
-  <ProgressBar progress={0.8} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={10}/>
-</View>
-<View style={styles.rowContainer}>
-  <Text style={styles.colText}> Cargo Space </Text>
-  <ProgressBar progress={0.3} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={10}/>
-</View>
-</View>
+            </View>
           </ScrollView>
 
           <View style = { styles.ProgressBar_HolderView }>
@@ -251,18 +260,21 @@ const styles = StyleSheet.create({
 
     colContainer: {
       flexDirection: 'column',
-      paddingTop: 10,
-      justifyContent: 'center',
+      paddingTop: 15,
+      paddingLeft: 15,
+      paddingRight: 15,
       borderColor: '#1653bc',
       borderWidth: 1,
       width: 375,
-      height: 513,
+      flex: 1
     },
+
     rowContainer: {
       flexDirection: 'row',
       justifyContent: 'space-between',
       alignItems: 'flex-start',
     },
+
     ProgressBar_HolderView: {
       flexDirection: 'row',
       position: 'absolute',
@@ -275,6 +287,7 @@ const styles = StyleSheet.create({
       backgroundColor: '#568fea',
       height: 45,
     },
+
     Progressbutton: {
       justifyContent: 'center',
       flexDirection: 'row',
@@ -290,21 +303,18 @@ const styles = StyleSheet.create({
     },
 
     Percentage: {
-        position: 'absolute',
-        right: 6,
-        fontWeight: 'bold',
-        color: 'white'
+      position: 'absolute',
+      right: 6,
+      fontWeight: 'bold',
+      color: 'white'
     },
-    pBar:{
-      justifyContent: 'space-between',
-      borderRadius: 10,
-    },
+    
     colText: {
-        textAlign: 'center',
-        justifyContent: 'space-between',
-        color: '#FFFFFF',
-        fontSize: 18,
-        paddingBottom: 5,
+      textAlign: 'center',
+      justifyContent: 'space-between',
+      color: '#FFFFFF',
+      fontSize: 18,
+      paddingBottom: 5,
     },
 
     titleText: {
@@ -317,6 +327,30 @@ const styles = StyleSheet.create({
       paddingTop: 50,
       paddingBottom: 20,
       backgroundColor: '#568fea',
+    },
+
+    images: {
+      width: 310,
+      height: 185,
+      borderWidth: 2,
+      borderColor: '#FFFFFF',
+      borderRadius: 10
+    },
+
+    carTitle: {
+      fontWeight: 'bold',
+      fontSize: 18,
+      color: '#FFFFFF',
+      textAlign: 'center'
+    },
+
+    carTitleContainer: {
+      paddingBottom: 10,
+    },
+
+    topContainer: {
+      alignItems: 'center',
+      paddingBottom: 50
     }
     
 });
