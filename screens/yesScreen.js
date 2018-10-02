@@ -87,11 +87,20 @@ import ModalDropdown from 'react-native-modal-dropdown';
       this.state.disabled=true   
       if(JSON.stringify(bId)==1){
         this.props.navigation.navigate(bPath, {
-          sId: screenId,disabled:false})
+          sId: screenId,
+          disabled:false,
+          make: this.userInput,
+          model: this.userInput2,
+          year: this.userInput3,})
       } else{
         this.props.navigation.navigate(Path, {
-          sId: screenId,disabled:false})
+          sId: screenId,
+          disabled:false,
+          make: this.userInput,
+          model: this.userInput2,
+          year: this.userInput3,})
       }
+      
     },1000,{leading:true, trailing:false});
 
   } //End of class
