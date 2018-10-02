@@ -32,17 +32,19 @@ import { LinearGradient } from 'expo';
 
         this.timeoutHandle = setTimeout(()=>{
             this.props.navigation.navigate('Home')
-       }, 2500);
+       }, 10500);
       const { navigation } = this.props;
 
       return (
+      <View style={styles.welcomeContainer} onTouchStart={this.onPress}>
         <LinearGradient 
-        colors={['#1294EF','#719F2E']}
-        style={{ flex:1 }}>>
-            <View style={styles.welcomeContainer} onTouchStart={this.onPress}>
-                <Text style={styles.welcomeText}>Welcome to Carproof's consumer app!</Text>
+        colors={['#4FBCFA','#8FCAF3']}
+      
+        style={{ flex:1 }}
+        justifyContent={'center'}>
+            
+                <Text style={styles.welcomeText}>Welcome to Carproof's consumer app!</Text></LinearGradient>
             </View>
-            </LinearGradient>
       ); //End of return
     } //End of render
   } //End of class

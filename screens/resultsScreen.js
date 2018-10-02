@@ -20,6 +20,7 @@ import Amplify from 'aws-amplify';
 import { withAuthenticator } from 'aws-amplify-react-native';
 import ProgressBar from 'react-native-progress/Bar';
 
+
   const width = 375
 
   //results screen
