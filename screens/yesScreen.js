@@ -27,7 +27,7 @@ import ModalDropdown from 'react-native-modal-dropdown';
       };
 
     state = {
-      disabled: false,
+      disabled: false
     };
 
     render() { 
@@ -65,19 +65,17 @@ import ModalDropdown from 'react-native-modal-dropdown';
               ]}
               />
             </View>
-
           </View>
 
           <Button
             title = 'Enter Data' 
-            onPress={_.debounce(() => {this._onPress(screenId,bId=0)},400)}
+            onPress={_.debounce(() => {this._onPress(screenId, 0)},400)}
           />
 
-            <Button
-            title="Go back"
-            onPress={_.debounce(() => {this._onPress(screenId,bId=1)},400)}
+          <Button
+            title = 'Go back'
+            onPress={_.debounce(() => {this._onPress(screenId, 1)},400)}
           />
-
         </View>
       ); //End of return
     } //End of render
