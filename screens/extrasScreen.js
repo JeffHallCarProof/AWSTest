@@ -46,6 +46,7 @@ import _, {debounce} from 'lodash';
       const { navigation } = this.props;
       this.state.disabled = navigation.getParam('disabled', false);
       const screenId = navigation.getParam('sId');
+      const eventId = navigation.getParam('eId', 'Invalid');
       if(JSON.stringify(screenId)==1)
       {
         Path='No'
@@ -60,7 +61,7 @@ import _, {debounce} from 'lodash';
       return (
         <ScrollView contentContainerStyle={styles.contentContainer}>
             <Text style={styles.headingText}>Recommended</Text>
-
+            <Text style={styles.textS}>eId: {JSON.stringify(eventId)}</Text>
               <CheckBox
                 checkedIcon='check-circle-o'
                 uncheckedIcon='circle-o'
@@ -151,12 +152,12 @@ import _, {debounce} from 'lodash';
 
                 <Button
                   title="Go back"
-                  onPress={_.debounce(() => {this._onPress(screenId,bId=1)},400)}
+                  onPress={_.debounce(() => {this._onPress(screenId,bId=1,eventId)},400)}
                 />
                 <TouchableHighlight
                   underlayColor={'#0018A8'}
                   style={styles.button}
-                  onPress={_.debounce(() => {this._onPress(screenId,bId=0)},400)}
+                  onPress={_.debounce(() => {this._onPress(screenId,bId=0,eventId)},400)}
                 >
                   <Text style={styles.btext}> Confirm </Text>
                 </TouchableHighlight>
@@ -167,7 +168,7 @@ import _, {debounce} from 'lodash';
       ); //End of return
     } //End of render
 
-    _onPress =_.throttle((screenId, bId) =>{ 
+    _onPress =_.throttle((screenId, bId,eventId) =>{ 
       this.state.disabled=true   
       if(JSON.stringify(bId)==1){
         if(JSON.stringify(screenId)==1)
@@ -181,7 +182,7 @@ import _, {debounce} from 'lodash';
           rPath='Extras'
         }
         this.props.navigation.navigate(bPath, {
-          sId: screenId,disabled:false,Path: bPath})
+          sId: screenId,disabled:false,Path: bPath, eId: eventId})
         
       } else{
         if(JSON.stringify(screenId)==1)
@@ -195,7 +196,7 @@ import _, {debounce} from 'lodash';
           rPath='Extras'
         }
         this.props.navigation.navigate(Path, {
-          sId: screenId,})
+          sId: screenId,eId: eventId})
       } 
     
     },1000,{leading:true, trailing:false});

@@ -34,15 +34,12 @@ export default class noScreen extends React.Component {
       const { navigation } = this.props;
       this.state.disabled = navigation.getParam('disabled', false);
       const screenId = navigation.getParam('sId', 'Invalid');
-
       if(JSON.stringify(screenId)==0){
         Path ='Extras'
         bPath ='Home'
-        rPath='No'
       } else{
         Path='Preferences'
         bPath='Extras'
-        rPath='No'
       } 
 
 
@@ -54,13 +51,12 @@ export default class noScreen extends React.Component {
                 Why are you looking for a car?
               </Text>
             </View>
-
+            <Text >screenId: {JSON.stringify(screenId)}</Text>
             <View style={styles.bcontainer}>
               <TouchableHighlight
                 underlayColor={'#0018A8'}
                 style={styles.button}
-                eId={'1'}
-                onPress={_.debounce(() => {this._onPress(screenId,bId=0)},400)}
+                onPress={_.debounce(() => {this._onPress(screenId,1,0)},400)}
               >
                 <Text style={styles.btext}> Event1 </Text>
               </TouchableHighlight>
@@ -69,8 +65,7 @@ export default class noScreen extends React.Component {
               <TouchableHighlight
                 underlayColor={'#0018A8'}
                 style={styles.button}
-                eId={'2'}
-                onPress={_.debounce(() => {this._onPress(screenId,bId=0)},400)}
+                onPress={_.debounce(() => {this._onPress(screenId,2,0)},400)}
               >
                 <Text style={styles.btext}> Event2 </Text>
               </TouchableHighlight>
@@ -79,8 +74,7 @@ export default class noScreen extends React.Component {
               <TouchableHighlight
                 underlayColor={'#0018A8'}
                 style={styles.button}
-                eId={'3'}
-                onPress={_.debounce(() => {this._onPress(screenId,bId=0)},400)}
+                onPress={_.debounce(() => {this._onPress(screenId,3,0)},400)}
               >
                 <Text style={styles.btext}> Event3 </Text>
               </TouchableHighlight>
@@ -92,8 +86,7 @@ export default class noScreen extends React.Component {
               <TouchableHighlight
                 underlayColor={'#0018A8'}
                 style={styles.button}
-                eId={'4'}
-                onPress={_.debounce(() => {this._onPress(screenId,bId=0)},400)}
+                onPress={_.debounce(() => {this._onPress(screenId,4,0)},400)}
               >
                 <Text style={styles.btext}> Event4 </Text>
               </TouchableHighlight>              
@@ -101,8 +94,7 @@ export default class noScreen extends React.Component {
               <TouchableHighlight
                 underlayColor={'#0018A8'}
                 style={styles.button}
-                eId={'5'}
-                onPress={_.debounce(() => {this._onPress(screenId,bId=0)},400)}
+                onPress={_.debounce(() => {this._onPress(screenId,5,0)},400)}
               >
                 <Text style={styles.btext}> Event5 </Text>
               </TouchableHighlight>
@@ -110,8 +102,7 @@ export default class noScreen extends React.Component {
               <TouchableHighlight
                 underlayColor={'#0018A8'}
                 style={styles.button}
-                eId={'6'}
-                onPress={_.debounce(() => {this._onPress(screenId,bId=0)},400)}
+                onPress={_.debounce(() => {this._onPress(screenId,6,0)},400)}
               >
                 <Text style={styles.btext}> Other </Text>
               </TouchableHighlight>  
@@ -120,7 +111,7 @@ export default class noScreen extends React.Component {
             <View style={styles.buttonContainer}>
               <Button
                 title="Go back"
-                onPress={_.debounce(() => {this._onPress(screenId,bId=1)},400)}
+                onPress={_.debounce(() => {this._onPress(screenId,0,1)},400)}
               />
             </View>
 
@@ -128,7 +119,7 @@ export default class noScreen extends React.Component {
       ); //End of return
     } //End of render
 
-    _onPress =_.throttle((screenId, bId) =>{ 
+    _onPress =_.throttle((screenId, eventId, bId) =>{ 
       this.state.disabled=true
 
       if(JSON.stringify(bId)==1)
@@ -136,14 +127,13 @@ export default class noScreen extends React.Component {
         if(JSON.stringify(screenId)==0){
           Path ='Extras'
           bPath ='Home'
-          rPath='No'
         } else{
           Path='Preferences'
           bPath='Extras'
-          rPath='No'
+
         }
         this.props.navigation.navigate(bPath, {
-          sId: screenId,disabled:false, Path: bPath})
+          sId: screenId,disabled:false, Path: bPath,eId: eventId })
       }
       
       else
@@ -151,14 +141,12 @@ export default class noScreen extends React.Component {
         if(JSON.stringify(screenId)==0){
           Path ='Extras'
           bPath ='Home'
-          rPath='No'
         } else{
             Path='Preferences'
             bPath='Extras'
-            rPath='No'
         } 
         this.props.navigation.navigate(Path, {
-          sId: screenId,})
+          sId: screenId,eId: eventId})
       } 
       
     },1000,{leading:true, trailing:false}); //End of button function

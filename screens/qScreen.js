@@ -31,6 +31,7 @@ import {
       const { navigation } = this.props;
       this.state.disabled = navigation.getParam('disabled', false);
       const screenId = navigation.getParam('sId', 'Invalid');
+      const eventId = navigation.getParam('eId', 'Invalid');
       Path ='Preferences'
       bPath ='Extras'
       rPath='Questions'
@@ -40,6 +41,7 @@ import {
           <Text style={{ paddingLeft: 50, paddingRight: 50, fontWeight: 'bold', fontSize: 20}}>
           Questions
           </Text>
+          <Text style={styles.textS}>eId: {JSON.stringify(eventId)}</Text>
           </View>
                   <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
@@ -63,13 +65,13 @@ import {
                 <View style={styles.bcontainer}>
                 <Button
                   title="Go back"
-                  onPress={_.debounce(() => {this._onPress(screenId,bId=1)},400)}
+                  onPress={_.debounce(() => {this._onPress(screenId,bId=1,eventId)},400)}
                 />
                 <Text> </Text>
                 <TouchableHighlight
                   underlayColor={'#0018A8'}
                   style={styles.button}
-                  onPress={_.debounce(() => {this._onPress(screenId,bId=0)},400)}
+                  onPress={_.debounce(() => {this._onPress(screenId,bId=0,eventId)},400)}
                 >
                   <Text style={styles.btext}> Confirm </Text>
                 </TouchableHighlight>
@@ -82,17 +84,17 @@ import {
       } //End of render
     
       // set up functions as below but add debounce
-      _onPress =_.throttle((screenId, bId) =>{ 
+      _onPress =_.throttle((screenId, bId,eventId) =>{ 
         this.state.disabled=true   
         if(JSON.stringify(bId)==1){
           bPath = 'Extras'
           this.props.navigation.navigate(bPath, {
-          sId: screenId,disabled:false})
+          sId: screenId,disabled:false,eId: eventId})
         }
         else{
           Path = 'Preferences'
           this.props.navigation.navigate(Path, {
-          sId: screenId,})
+          sId: screenId,eId: eventId})
         } 
       },1000,{leading:true, trailing:false})
 

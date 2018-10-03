@@ -60,6 +60,7 @@ import _, {debounce} from 'lodash';
       const { navigation } = this.props;
       this.state.disabled = navigation.getParam('disabled', false);
       const screenId = navigation.getParam('sId', 'Invalid');
+      const eventId = navigation.getParam('eId', 'Invalid');
 
       if(JSON.stringify(screenId)==0){
         Path ='Login'
@@ -77,7 +78,7 @@ import _, {debounce} from 'lodash';
         <View style={styles.tContainer}>
           <Text>Preference Assesment</Text>
         </View>
-
+        <Text >eventId: {JSON.stringify(eventId)}</Text>
           <View style={styles.bcontainer}>
             <TouchableHighlight
                 selected={this.state.p1}

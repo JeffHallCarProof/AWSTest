@@ -110,6 +110,10 @@ import ProgressBar from 'react-native-progress/Bar';
                 <Text style={styles.colText}> Cargo Space </Text>
                 <ProgressBar progress={0.3} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={4}/>
               </View>
+              <View style={styles.rowContainer}>
+                <Text style={styles.colText}> Overall </Text>
+                <ProgressBar progress={0.9} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={4}/>
+              </View>
 
             </View>
             <View style={styles.colContainer}>
@@ -154,6 +158,10 @@ import ProgressBar from 'react-native-progress/Bar';
                 <Text style={styles.colText}> Cargo Space </Text>
                 <ProgressBar progress={0.3} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={4}/>
               </View>
+              <View style={styles.rowContainer}>
+                <Text style={styles.colText}> Overall </Text>
+                <ProgressBar progress={0.9} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={4}/>
+              </View>
 
             </View>
             <View style={styles.colContainer}>
@@ -175,7 +183,7 @@ import ProgressBar from 'react-native-progress/Bar';
                 <ProgressBar progress={1} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={4}/>
               </View>
               <View style={styles.rowContainer}>
-                <Text style={styles.colText}> Safety </Text>
+                <Text style={styles.colText}> Build Quality </Text>
                 <ProgressBar progress={0.1} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={4}/>
               </View>
               <View style={styles.rowContainer}>
@@ -183,7 +191,7 @@ import ProgressBar from 'react-native-progress/Bar';
                 <ProgressBar progress={0.7} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={4}/>
               </View>
               <View style={styles.rowContainer}>
-                <Text style={styles.colText}> Environment </Text>
+                <Text style={styles.colText}> Exterior Design </Text>
                 <ProgressBar progress={0.45} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={4}/>
               </View>
               <View style={styles.rowContainer}>
@@ -191,12 +199,16 @@ import ProgressBar from 'react-native-progress/Bar';
                 <ProgressBar progress={0.65} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={4}/>
               </View>
               <View style={styles.rowContainer}>
-                <Text style={styles.colText}> Style </Text>
+                <Text style={styles.colText}> Interior Design </Text>
                 <ProgressBar progress={0.8} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={4}/>
               </View>
               <View style={styles.rowContainer}>
-                <Text style={styles.colText}> Cargo Space </Text>
+                <Text style={styles.colText}> Fun to Drive </Text>
                 <ProgressBar progress={0.3} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={4}/>
+              </View>
+              <View style={styles.rowContainer}>
+                <Text style={styles.colText}> Overall </Text>
+                <ProgressBar progress={0.9} unfilledColor={'#c8c9d1'} height={18} color={'#0018A8'} borderRadius={4}/>
               </View>
 
             </View>
@@ -359,16 +371,17 @@ const styles = StyleSheet.create({
       fontWeight: 'bold',
       fontSize: 18,
       color: '#FFFFFF',
-      textAlign: 'center'
+      textAlign: 'center',
+      paddingBottom: 5,
     },
 
     carTitleContainer: {
-      paddingBottom: 10,
+      paddingBottom: 0,
     },
 
     topContainer: {
       alignItems: 'center',
-      paddingBottom: 50
+      paddingBottom: 40
     }
     
 });
