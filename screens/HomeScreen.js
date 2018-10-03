@@ -15,6 +15,7 @@ import { WebBrowser } from 'expo';
 import Amplify from 'aws-amplify';
 import { withAuthenticator } from 'aws-amplify-react-native';
 import _, {debounce} from 'lodash';
+import { LinearGradient } from 'expo';
 
   //home screen
   export default class HomeScreen extends React.Component {
@@ -35,8 +36,15 @@ import _, {debounce} from 'lodash';
 
       return (
         
-        <View style={styles.container}>
+   
+
           <View style={styles.bcontainer}>
+          <LinearGradient
+        colors={['#65B2EE','#8FCAF3','#8FCAF3','#65B2EE','#65B2EE','#8FCAF3','#65B2EE',]}
+        start={{x:0.2,y:0.8}}
+        end={{x:0.8,y:0.2}}
+        style={{ flex:1 }}
+        justifyContent={'center'}>
 
             <Text style={styles.qText}>Do you know what vehicle you're looking for?</Text>
 
@@ -51,15 +59,15 @@ import _, {debounce} from 'lodash';
             <Text></Text>
             <TouchableHighlight
               underlayColor={'#0018A8'}
+              
               style={styles.button}
               disabled={this.state.disabled}
               onPress={() => {this._onPress(screenId=0)}}
             >
               <Text style={styles.btext}> No </Text>
             </TouchableHighlight>
-
+</LinearGradient>
           </View>
-        </View>
   
       ); //End of return
     } //End of render
@@ -84,7 +92,6 @@ import _, {debounce} from 'lodash';
     container: {
       flex: 1,
       backgroundColor: 'white',
-      paddingHorizontal: 10
     },
 
     contentContainer: {
@@ -94,8 +101,9 @@ import _, {debounce} from 'lodash';
     bcontainer: {
       flex: 1,
       backgroundColor: 'white',
-      alignItems: 'center',
-      justifyContent: 'center'
+      alignItems: 'stretch',
+      justifyContent: 'center',
+      
     },
 
     btext: {
@@ -104,11 +112,14 @@ import _, {debounce} from 'lodash';
 
     button: {
       alignItems: 'center',
+      alignSelf: 'center',
+      justifyContent:'center',
       backgroundColor: '#1294EF',
       padding: 10,
       borderRadius: 4,
       borderColor: '#1653bc',
       borderWidth: 1,
+      width: 60,
     },
 
 
@@ -116,7 +127,10 @@ import _, {debounce} from 'lodash';
       paddingBottom: 40,
       paddingLeft: 25,
       paddingRight: 25,
-      fontSize: 18
+      fontSize: 18,
+      color:'#FFFFFF',
+      alignItems: 'center',
+      alignSelf: 'center',
     }
 
   });

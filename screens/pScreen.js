@@ -113,7 +113,7 @@ import _, {debounce} from 'lodash';
                 p6: false,
                 p7: false,
                 p8: false})}>
-                <Text style={styles.btext}> Environment </Text>
+                <Text style={styles.btext}> Exterior Design </Text>
             </TouchableHighlight>
             <Text> </Text>
             <TouchableHighlight
@@ -131,7 +131,7 @@ import _, {debounce} from 'lodash';
                 p6: false,
                 p7: false,
                 p8: false})}>
-                <Text style={styles.btext}> Fuel Eco </Text>
+                <Text style={styles.btext}> Interior Design </Text>
             </TouchableHighlight>
             </View>
             
@@ -169,7 +169,7 @@ import _, {debounce} from 'lodash';
                 p6: false,
                 p7: false,
                 p8: false})}>
-                <Text style={styles.btext}> Safety </Text>
+                <Text style={styles.btext}> Fuel Eco </Text>
             </TouchableHighlight>
             <Text> </Text>
             <TouchableHighlight
@@ -187,7 +187,7 @@ import _, {debounce} from 'lodash';
                 p1: false,
                 p7: false,
                 p8: false})}>
-                <Text style={styles.btext}> Style </Text>
+                <Text style={styles.btext}> Fun to Drive </Text>
             </TouchableHighlight>
             </View>
 
@@ -225,7 +225,7 @@ import _, {debounce} from 'lodash';
                 p6: false,
                 p7: false,
                 p1: false})}>
-                <Text style={styles.btext}> Cargo Space </Text>
+                <Text style={styles.btext}> Build Quality </Text>
             </TouchableHighlight>
             </View>
             

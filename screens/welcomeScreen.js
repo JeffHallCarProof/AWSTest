@@ -38,7 +38,7 @@ import { LinearGradient } from 'expo';
       return (
       <View style={styles.welcomeContainer} onTouchStart={this.onPress}>
         <LinearGradient 
-        colors={['#2063AF','#1294EF','#8FCAF3']}
+        colors={['#2487D2','#1294EF','#65B2EE','#8FCAF3']}
       
         style={{ flex:1 }}
         justifyContent={'center'}>

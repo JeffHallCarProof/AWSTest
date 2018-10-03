@@ -65,42 +65,42 @@ import _, {debounce} from 'lodash';
               <CheckBox
                 checkedIcon='check-circle-o'
                 uncheckedIcon='circle-o'
-                title="                                  Item1"
+                title="Heated Seats"
                 checked={this.state.cb1}
                 onPress={() => this.setState({ cb1: !this.state.cb1})}
               />
               <CheckBox
                 checkedIcon='check-circle-o'
                 uncheckedIcon='circle-o'              
-                title="                                  Item2"
+                title="Automatic E Braking"
                 checked={this.state.cb2}
                 onPress={() => this.setState({ cb2: !this.state.cb2})}
               />
               <CheckBox                
                 checkedIcon='check-circle-o'
                 uncheckedIcon='circle-o'
-                title="                                  Item3"
+                title="Backup Camera / Parking Sensors"
                 checked={this.state.cb3}
                 onPress={() => this.setState({ cb3: !this.state.cb3})}
               />
               <CheckBox                
                 checkedIcon='check-circle-o'
                 uncheckedIcon='circle-o'
-                title="                                  Item4"
+                title="Adjustable Seating and Steering"
                 checked={this.state.cb4}
                 onPress={() => this.setState({ cb4: !this.state.cb4})}
               />
               <CheckBox                
                 checkedIcon='check-circle-o'
                 uncheckedIcon='circle-o'
-                title="                                  Item5"
+                title="Autonomous / Semi-Autonomous Driving"
                 checked={this.state.cb5}
                 onPress={() => this.setState({ cb5: !this.state.cb5})}
               />
               <CheckBox                
                 checkedIcon='check-circle-o'
                 uncheckedIcon='circle-o'
-                title="                                  Item6"
+                title="Large Animal Detection"
                 checked={this.state.cb6}
                 onPress={() => this.setState({ cb6: !this.state.cb6})}
               />
@@ -108,42 +108,42 @@ import _, {debounce} from 'lodash';
               <CheckBox                
                 checkedIcon='check-circle-o'
                 uncheckedIcon='circle-o'
-                title="                                  Item7"
+                title="Next-Gen Forward Collision Warning"
                 checked={this.state.cb7}
                 onPress={() => this.setState({ cb7: !this.state.cb7})}
               />
               <CheckBox                
                 checkedIcon='check-circle-o'
                 uncheckedIcon='circle-o'
-                title="                                  Item8"
+                title="Plugs and Outlets"
                 checked={this.state.cb8}
                 onPress={() => this.setState({ cb8: !this.state.cb8})}
               />
               <CheckBox                
                 checkedIcon='check-circle-o'
                 uncheckedIcon='circle-o'
-                title="                                  Item9"
+                title="Rearview Cameras"
                 checked={this.state.cb9}
                 onPress={() => this.setState({ cb9: !this.state.cb9})}
               />
               <CheckBox                
                 checkedIcon='check-circle-o'
                 uncheckedIcon='circle-o'
-                title="                                  Item10"
+                title="Keyless entry and ignition"
                 checked={this.state.cb10}
                 onPress={() => this.setState({ cb10: !this.state.cb10})}
               />
               <CheckBox                
                 checkedIcon='check-circle-o'
                 uncheckedIcon='circle-o'
-                title="                                  Item11"
+                title="Leather seats/interior"
                 checked={this.state.cb11}
                 onPress={() => this.setState({ cb11: !this.state.cb11})}
               />
               <CheckBox                
                 checkedIcon='check-circle-o'
                 uncheckedIcon='circle-o'
-                title="                                  Item12"
+                title="Full Sized Spare Tire"
                 checked={this.state.cb12}
                 onPress={() => this.setState({ cb12: !this.state.cb12})}
               />
